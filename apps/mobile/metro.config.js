@@ -4,13 +4,11 @@ const { getDefaultConfig } = require('@expo/metro-config');
 const defaultConfig = getDefaultConfig(__dirname);
 
 module.exports = (async () => {
-  defaultConfig.transformer.babelTransformerPath = require.resolve(
-    'react-native-svg-transformer'
-  );
-  defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter(
-    (ext) => ext !== 'svg'
-  );
+  defaultConfig.transformer.babelTransformerPath = require.resolve('react-native-svg-transformer');
+  defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter((ext) => ext !== 'svg');
   defaultConfig.resolver.sourceExts.push('svg');
+  defaultConfig.resolver.assetExts.push('css');
+
   return withNxMetro(defaultConfig, {
     // Change this to true to see debugging info.
     // Useful if you have issues resolving modules

@@ -1,0 +1,49 @@
+import { ExpoConfig, ConfigContext } from 'expo/config';
+
+export default ({ config }: ConfigContext): ExpoConfig => ({
+  ...config,
+  name: 'Mobile',
+  slug: 'mobile',
+  platforms: ['ios', 'android'],
+  version: '1.0.0',
+  orientation: 'portrait',
+  icon: './assets/icon.png',
+  splash: {
+    image: './assets/splash.png',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff',
+  },
+  updates: {
+    fallbackToCacheTimeout: 0,
+  },
+  assetBundlePatterns: ['**/*'],
+  ios: {
+    supportsTablet: true,
+    bundleIdentifier: 'com.nano.mobile',
+  },
+  android: {
+    adaptiveIcon: {
+      foregroundImage: './assets/adaptive-icon.png',
+      backgroundColor: '#FFFFFF',
+    },
+    package: 'com.nano.mobile',
+  },
+  web: {
+    favicon: './assets/favicon.png',
+    bundler: 'webpack',
+  },
+  plugins: [
+    [
+      '@config-plugins/detox',
+      {
+        skipProguard: false,
+        subdomains: ['10.0.2.2', 'localhost'],
+      },
+    ],
+  ],
+  extra: {
+    eas: {
+      projectId: 'cb1c6f2a-cf2a-4fab-aced-3487493125f9',
+    },
+  },
+});

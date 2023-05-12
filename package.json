@@ -12,6 +12,7 @@
   "devDependencies": {
     "@config-plugins/detox": "~5.0.1",
     "@expo/cli": "~0.7.1",
+    "@expo/webpack-config": "^18.0.4",
     "@nx/cypress": "16.1.4",
     "@nx/detox": "16.1.4",
     "@nx/eslint-plugin": "16.1.4",
@@ -36,6 +37,7 @@
     "autoprefixer": "10.4.13",
     "babel-jest": "^29.4.1",
     "babel-preset-expo": "~9.3.2",
+    "concurrently": "^8.0.1",
     "cypress": "^12.11.0",
     "detox": "~20.8.0",
     "eas-cli": "~3.10.2",
@@ -56,6 +58,7 @@
     "nx": "16.1.4",
     "nx-cloud": "latest",
     "postcss": "8.4.21",
+    "postcss-loader": "^7.3.0",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "tailwindcss": "3.2.7",
@@ -65,7 +68,7 @@
   },
   "dependencies": {
     "@expo/metro-config": "0.7.1",
-    "expo": "48.0.15",
+    "expo": "48.0.16",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "nativewind": "^2.0.11",
