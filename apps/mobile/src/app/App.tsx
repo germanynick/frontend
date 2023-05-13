@@ -4,6 +4,8 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, TouchableO
 import Svg, { Path } from 'react-native-svg';
 import './global.css';
 
+import { Button } from '@frontend/ui';
+
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
   const scrollViewRef = useRef<null | ScrollView>(null);
@@ -11,7 +13,9 @@ export const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+
       <SafeAreaView>
+        <Button />
         <ScrollView
           ref={(ref) => {
             scrollViewRef.current = ref;

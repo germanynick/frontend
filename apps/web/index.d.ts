@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/// <reference types="nativewind/types" />
+
 declare module '*.svg' {
   const content: any;
   export const ReactComponent: any;
