@@ -7,6 +7,8 @@ tmp
 
 # dependencies
 node_modules
+yarn.lock
+package-lock.json
 
 # IDEs and editors
 /.idea
@@ -128,6 +130,7 @@ npm-debug.*
 *.orig.*
 web-build/
 cache/
+
 
 
 apps/expo-e2e/artifacts

@@ -2,7 +2,12 @@
   "name": "@frontend/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve:web": "nx run web:serve",
+    "serve:next": "nx run next:serve",
+    "serve:expo": "nx run expo:start",
+    "serve:mobile": "nx run mobile:serve"
+  },
   "private": true,
   "dependencies": {
     "@expo/metro-config": "0.7.1",
