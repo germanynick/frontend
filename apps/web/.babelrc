@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "@nx/react/babel",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ],
+  "plugins": [
+    ["react-native-web", { "commonjs": true }]
+    // [
+    //   "module-resolver",
+    //   {
+    //     "alias": {
+    //       // "^react-native$": "react-native-web",
+    //       "^react-native$": "react-native-web",
+    //       "react-native/*": "react-native-web/*"
+    //     }
+    //   }
+    // ]
+  ]
+}
