@@ -7,7 +7,7 @@ module.exports = composePlugins(withNx(), withReact(), (config) => {
   // e.g. `config.plugins.push(new MyPlugin())`
   config.resolve.alias = {
     ...config.resolve.alias,
-    'react-native': 'react-native-web',
+
     'react-native$': 'react-native-web',
   };
   return config;
