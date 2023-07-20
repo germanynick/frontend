@@ -2,21 +2,44 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
+const { withExpo } = require('@expo/next-adapter');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
-  nx: {
-    // Set this to true if you would like to use SVGR
-    // See: https://github.com/gregberge/svgr
-    svgr: false,
+  reactStrictMode: true,
+  swcMinify: true,
+  transpilePackages: [
+    'solito',
+    'react-native',
+    'expo',
+    '@expo/vector-icons',
+    'react-native-vector-icons',
+    '@react-native-aria',
+    'react-native-safe-area-context',
+    'react-native-web',
+    'react-native-svg',
+    'native-base',
+    '@native-base/next-adapter',
+    //
+    'app',
+  ],
+  experimental: {
+    forceSwcTransforms: true,
+    scrollRestoration: true,
+    legacyBrowsers: false,
+  },
+  // We already do linting on GH actions
+  eslint: {
+    ignoreDuringBuilds: !!process.env.CI,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    disableStaticImages: true,
   },
 };
 
-const plugins = [
-  // Add more Next.js plugins to this list if needed.
-  withNx,
-];
-
-module.exports = composePlugins(...plugins)(nextConfig);
+module.exports = composePlugins(withExpo, withNx)(nextConfig);

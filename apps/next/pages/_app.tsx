@@ -1,17 +1,12 @@
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+
+import { NativeBaseProvider } from 'native-base';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to next!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <NativeBaseProvider>
+      <Component {...pageProps} />
+    </NativeBaseProvider>
   );
 }
 
