@@ -1,4 +1,5 @@
 // import logo from "./logo.svg";
+import { UserListContainer } from '@frontend/features/users';
 import {
   Box,
   Image,
@@ -70,6 +71,7 @@ function ToggleDarkMode() {
         }
       />
       <Text>Light</Text>
+      <UserListContainer />
     </HStack>
   );
 }

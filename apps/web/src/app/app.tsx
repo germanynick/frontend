@@ -1,4 +1,5 @@
 // import logo from "./logo.svg";
+import { UserCreateContainer } from '@frontend/features/users';
 import {
   Box,
   Image,
@@ -69,6 +70,7 @@ function ToggleDarkMode() {
         }
       />
       <Text>Light</Text>
+      <UserCreateContainer />
     </HStack>
   );
 }
