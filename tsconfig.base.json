@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@frontend/core/styles": ["libs/core/styles/src/index.ts"],
       "@frontend/features/users": ["libs/features/users/src/index.ts"]
     }
   },

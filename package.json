@@ -92,7 +92,7 @@
     "nx": "16.5.2",
     "nx-cloud": "latest",
     "prettier": "2.6.2",
-    "react-native-svg": "12.5.1",
+    "react-native-svg": "13.9.0",
     "react-native-svg-transformer": "1.0.0",
     "react-refresh": "0.10.0",
     "react-test-renderer": "18.2.0",
