@@ -10,6 +10,7 @@
     "react-native-svg": "*",
     "metro-config": "*",
     "native-base": "*",
-    "i18next": "*"
+    "i18next": "*",
+    "react-native-safe-area-context": "*"
   }
 }

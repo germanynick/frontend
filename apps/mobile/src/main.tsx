@@ -1,10 +1,4 @@
-import React from 'react';
 import { AppRegistry } from 'react-native';
-import { NativeBaseProvider } from 'native-base';
-import { UserListContainer } from '@frontend/features/users';
+import { App } from './App';
 
-AppRegistry.registerComponent('Mobile', () => (
-  <NativeBaseProvider>
-    <UserListContainer />
-  </NativeBaseProvider>
-));
+AppRegistry.registerComponent('Mobile', () => App);
