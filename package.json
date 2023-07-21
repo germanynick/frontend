@@ -7,7 +7,7 @@
     "serve:web": "nx run web:serve --port=4100",
     "serve:next": "nx run next:serve --port=4200",
     "serve:expo": "nx run expo:start",
-    "serve:mobile": "nx run mobile:pod-install && nx run mobile:start"
+    "serve:mobile": "nx run mobile:start"
   },
   "private": true,
   "dependencies": {
