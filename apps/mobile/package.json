@@ -8,6 +8,8 @@
     "react": "*",
     "react-native": "*",
     "react-native-svg": "*",
-    "metro-config": "*"
+    "metro-config": "*",
+    "native-base": "*",
+    "i18next": "*"
   }
 }
