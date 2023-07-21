@@ -1,19 +1,21 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { NativeBaseProvider } from 'native-base';
-
-import App from './app/app';
+import { UserPage } from './pages/UserPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <NativeBaseProvider>
-        <App />
-      </NativeBaseProvider>
-    </BrowserRouter>
+    <NativeBaseProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="users/*" Component={UserPage} />
+        </Routes>
+      </BrowserRouter>
+    </NativeBaseProvider>
   </StrictMode>
 );
