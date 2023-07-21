@@ -11,6 +11,7 @@
     "metro-config": "*",
     "native-base": "*",
     "i18next": "*",
-    "react-native-safe-area-context": "*"
+    "react-native-safe-area-context": "*",
+    "react-i18next": "*"
   }
 }
