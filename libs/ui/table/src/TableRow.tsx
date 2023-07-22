@@ -10,7 +10,6 @@ export const TableRow: FunctionComponent<ITableRowProps> = (props) => {
 TableRow.defaultProps = {
   minWidth: 'full',
   width: 'full',
-  flex: 'row',
   flexDirection: 'row',
   height: '48px',
   _hover: {

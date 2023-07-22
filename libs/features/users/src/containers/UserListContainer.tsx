@@ -1,7 +1,9 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import i18n from '@frontend/core/i18n';
 import { DataTable, IDataColumn } from '@frontend/ui/table';
 import { Box } from 'native-base';
+import { observer } from 'mobx-react-lite';
+import { userListStore } from '../stores';
 
 const COLUMNS: IDataColumn[] = [
   { flexGrow: 2, minWidth: 200, header: () => i18n.t('FULLNAME'), cell: ({ rowIndex }) => rowIndex },
@@ -13,12 +15,16 @@ const COLUMNS: IDataColumn[] = [
   { flexGrow: 1, minWidth: 100, header: () => i18n.t('ACTIONS'), cell: () => 'None' },
 ];
 
-const DATA = Array(100).fill({});
+export const UserListContainer: FunctionComponent = observer(() => {
+  const { items, refreshItems } = userListStore;
 
-export const UserListContainer: FunctionComponent = () => {
+  useEffect(() => {
+    refreshItems();
+  }, []);
+
   return (
     <Box padding={3} height={500}>
-      <DataTable columns={COLUMNS} data={DATA} onClickRow={console.log} />
+      <DataTable columns={COLUMNS} data={items} onClickRow={console.log} />
     </Box>
   );
-};
+});

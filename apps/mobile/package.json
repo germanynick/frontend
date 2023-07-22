@@ -12,6 +12,8 @@
     "native-base": "*",
     "i18next": "*",
     "react-native-safe-area-context": "*",
-    "react-i18next": "*"
+    "react-i18next": "*",
+    "mobx-react-lite": "*",
+    "mobx": "*"
   }
 }
