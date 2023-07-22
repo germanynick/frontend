@@ -12,7 +12,7 @@ export interface ITableRowCellProps extends ICenterProps {
 export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({ column, columnIndex, rowData, rowIndex, _text, flexGrow, alignItems, ...props }) => {
   return (
     <Center minWidth={column.minWidth} flexGrow={column.flexGrow || flexGrow} alignItems={column.align || alignItems} {...props}>
-      <Text {..._text}>{createElement(column.cell, { column, columnIndex, rowData, rowIndex })}</Text>
+      <Text {..._text}>{column?.cell && createElement(column.cell, { column, columnIndex, rowData, rowIndex })}</Text>
     </Center>
   );
 };

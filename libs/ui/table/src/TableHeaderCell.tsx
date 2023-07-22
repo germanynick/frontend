@@ -10,7 +10,7 @@ export interface ITableHeaderCellProps extends ICenterProps {
 export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, _text, flexGrow, alignItems, ...props }) => {
   return (
     <Center minWidth={column.minWidth} flexGrow={column.flexGrow || flexGrow} alignItems={column.align || alignItems} {...props}>
-      <Text {..._text}>{createElement(column.header, { column, columnIndex })}</Text>
+      <Text {..._text}>{column?.header && createElement(column.header, { column, columnIndex })}</Text>
     </Center>
   );
 };

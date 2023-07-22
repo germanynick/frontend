@@ -16,6 +16,6 @@ export interface IDataColumn {
   minWidth?: number;
   flexGrow?: number;
   align?: 'flex-start' | 'flex-end' | 'center';
-  cell: (props: IRenderCellProps) => ReactNode;
-  header: (props: IRenderHeaderProps) => ReactNode;
+  cell?: (props: IRenderCellProps) => ReactNode;
+  header?: (props: IRenderHeaderProps) => ReactNode;
 }
