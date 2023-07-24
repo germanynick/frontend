@@ -7,8 +7,8 @@ import { userListStore } from '../stores';
 import { UserCellFullName } from '../components/UserCellFullName';
 
 const COLUMNS: IDataColumn[] = [
-  { flexGrow: 2, minWidth: 200, title: i18n.t('FULLNAME'), cell: UserCellFullName },
-  { flexGrow: 1, minWidth: 100, title: i18n.t('LAST_LOGIN'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
+  { flexGrow: 2, minWidth: 200, title: i18n.t('FULLNAME'), cell: UserCellFullName, fixed: 'left' },
+  { flexGrow: 1, minWidth: 100, title: i18n.t('LAST_LOGIN'), cell: ({ _text, rowIndex }) => <Text {..._text}> {rowIndex} Long Long Long Text</Text> },
   { flexGrow: 1, minWidth: 100, title: i18n.t('EMAIL'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
   { flexGrow: 2, minWidth: 200, title: i18n.t('PHONE'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
   { flexGrow: 2, minWidth: 200, title: i18n.t('ZIPCODE'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
@@ -23,6 +23,7 @@ const COLUMNS: IDataColumn[] = [
     minWidth: 100,
     header: ({ _text }) => <Text {..._text}>{i18n.t('ACTIONS')}</Text>,
     cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text>,
+    fixed: 'right',
   },
 ];
 

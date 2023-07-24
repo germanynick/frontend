@@ -1,10 +1,12 @@
 import { IScrollViewProps, ScrollView } from 'native-base';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, MutableRefObject } from 'react';
 
-export interface ITableBodyProps extends IScrollViewProps {}
+export interface ITableBodyProps extends IScrollViewProps {
+  scrollRef?: MutableRefObject<any>;
+}
 
-export const TableBody: FunctionComponent<ITableBodyProps> = ({ width, ...props }) => {
-  return <ScrollView {...props} />;
+export const TableBody: FunctionComponent<ITableBodyProps> = ({ scrollRef, width, ...props }) => {
+  return <ScrollView ref={scrollRef} {...props} />;
 };
 
 TableBody.defaultProps = {

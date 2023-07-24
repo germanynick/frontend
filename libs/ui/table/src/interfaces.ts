@@ -20,6 +20,7 @@ export interface IDataColumn {
   dataKey?: string;
   minWidth?: number;
   flexGrow?: number;
+  fixed?: 'left' | 'right';
   align?: 'flex-start' | 'flex-end' | 'center';
   cell?: (props: IRenderCellProps) => ReactNode;
   header?: (props: IRenderHeaderProps) => ReactNode;

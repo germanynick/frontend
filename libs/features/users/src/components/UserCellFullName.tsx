@@ -8,7 +8,7 @@ export const UserCellFullName: FunctionComponent<IUserCellFullNameProps> = (prop
   return (
     <HStack space={2} width="full" height="full">
       <Center>
-        <Avatar size="sm">A</Avatar>
+        <Avatar size="sm">{props.rowIndex}</Avatar>
       </Center>
       <Center width="full" flex={1}>
         <Text fontWeight="semibold" numberOfLines={1} ellipsizeMode="tail">
