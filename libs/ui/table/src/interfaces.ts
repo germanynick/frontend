@@ -1,18 +1,23 @@
 import { ReactNode } from 'react';
+import { ITextProps } from 'native-base';
 
 export interface IRenderCellProps {
   column: IDataColumn;
   columnIndex: number;
   rowData: any;
   rowIndex: number;
+  _text?: Partial<ITextProps>;
 }
 
 export interface IRenderHeaderProps {
   column: IDataColumn;
   columnIndex: number;
+  _text?: Partial<ITextProps>;
 }
 
 export interface IDataColumn {
+  title?: string;
+  dataKey?: string;
   minWidth?: number;
   flexGrow?: number;
   align?: 'flex-start' | 'flex-end' | 'center';

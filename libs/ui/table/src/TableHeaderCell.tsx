@@ -1,5 +1,5 @@
 import { Center, ICenterProps, Text } from 'native-base';
-import { FunctionComponent, createElement } from 'react';
+import { FunctionComponent, createElement, useMemo } from 'react';
 import { IDataColumn } from './interfaces';
 
 export interface ITableHeaderCellProps extends ICenterProps {
@@ -8,9 +8,17 @@ export interface ITableHeaderCellProps extends ICenterProps {
 }
 
 export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, _text, flexGrow, alignItems, ...props }) => {
+  const children = useMemo(() => {
+    if (!column?.header) {
+      return <Text {..._text}>{column.title}</Text>;
+    }
+
+    return createElement(column.header, { column, columnIndex, _text });
+  }, [column, columnIndex, _text]);
+
   return (
-    <Center minWidth={column.minWidth} flexGrow={column.flexGrow || flexGrow} alignItems={column.align || alignItems} {...props}>
-      <Text {..._text}>{column?.header && createElement(column.header, { column, columnIndex })}</Text>
+    <Center minWidth={column.minWidth} flexGrow={column.flexGrow || flexGrow} alignItems={column.align || alignItems} _text={_text} {...props}>
+      {children}
     </Center>
   );
 };

@@ -8,8 +8,13 @@ export class UserListStore {
   @observable items: any[] = [];
 
   @action
-  refreshItems = () => {
+  handleRefreshItems = () => {
     this.items = Array(100).fill({});
+  };
+
+  @action
+  handleLoadMoreItems = () => {
+    this.items = [...this.items, ...Array(100).fill({})];
   };
 }
 

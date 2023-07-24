@@ -1,25 +1,36 @@
 import { FunctionComponent, useEffect } from 'react';
 import i18n from '@frontend/core/i18n';
 import { DataTable, IDataColumn } from '@frontend/ui/table';
-import { Box } from 'native-base';
+import { Box, Text } from 'native-base';
 import { observer } from 'mobx-react-lite';
 import { userListStore } from '../stores';
+import { UserCellFullName } from '../components/UserCellFullName';
 
 const COLUMNS: IDataColumn[] = [
-  { flexGrow: 2, minWidth: 200, header: () => i18n.t('FULLNAME'), cell: ({ rowIndex }) => rowIndex },
-  { flexGrow: 1, minWidth: 100, header: () => i18n.t('LAST_LOGIN'), cell: () => 'None' },
-  { flexGrow: 1, minWidth: 100, header: () => i18n.t('EMAIL'), cell: () => 'None' },
-  { flexGrow: 2, minWidth: 200, header: () => i18n.t('PHONE'), cell: () => 'None' },
-  { flexGrow: 2, minWidth: 200, header: () => i18n.t('ZIPCODE'), cell: () => 'None' },
-  { flexGrow: 3, minWidth: 300, header: () => i18n.t('STATUS'), cell: () => 'None' },
-  { flexGrow: 1, minWidth: 100, header: () => i18n.t('ACTIONS'), cell: () => 'None' },
+  { flexGrow: 2, minWidth: 200, title: i18n.t('FULLNAME'), cell: UserCellFullName },
+  { flexGrow: 1, minWidth: 100, title: i18n.t('LAST_LOGIN'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
+  { flexGrow: 1, minWidth: 100, title: i18n.t('EMAIL'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
+  { flexGrow: 2, minWidth: 200, title: i18n.t('PHONE'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
+  { flexGrow: 2, minWidth: 200, title: i18n.t('ZIPCODE'), cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text> },
+  {
+    flexGrow: 3,
+    minWidth: 300,
+    header: ({ _text }) => <Text {..._text}>{i18n.t('STATUS')}</Text>,
+    cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text>,
+  },
+  {
+    flexGrow: 1,
+    minWidth: 100,
+    header: ({ _text }) => <Text {..._text}>{i18n.t('ACTIONS')}</Text>,
+    cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text>,
+  },
 ];
 
 export const UserListContainer: FunctionComponent = observer(() => {
-  const { items, refreshItems } = userListStore;
+  const { items, handleRefreshItems } = userListStore;
 
   useEffect(() => {
-    refreshItems();
+    handleRefreshItems();
   }, []);
 
   return (
