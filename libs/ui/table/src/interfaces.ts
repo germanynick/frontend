@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ITextProps } from 'native-base';
+import { ITextProps, ICenterProps } from 'native-base';
 
 export interface IRenderCellProps {
   column: IDataColumn;
@@ -18,6 +18,7 @@ export interface IRenderHeaderProps {
 export interface IDataColumn {
   title?: string;
   dataKey?: string;
+  width?: number;
   minWidth?: number;
   flexGrow?: number;
   fixed?: 'left' | 'right';

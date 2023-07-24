@@ -5,6 +5,7 @@ import { Box, Text } from 'native-base';
 import { observer } from 'mobx-react-lite';
 import { userListStore } from '../stores';
 import { UserCellFullName } from '../components/UserCellFullName';
+import { UserCellActions } from '../components/UserCellActions';
 
 const COLUMNS: IDataColumn[] = [
   { flexGrow: 2, minWidth: 200, title: i18n.t('FULLNAME'), cell: UserCellFullName, fixed: 'left' },
@@ -19,10 +20,11 @@ const COLUMNS: IDataColumn[] = [
     cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text>,
   },
   {
-    flexGrow: 1,
+    width: 100,
     minWidth: 100,
-    header: ({ _text }) => <Text {..._text}>{i18n.t('ACTIONS')}</Text>,
-    cell: ({ _text }) => <Text {..._text}>Long Long Long Text</Text>,
+    title: i18n.t('ACTIONS'),
+    cell: UserCellActions,
+    align: 'center',
     fixed: 'right',
   },
 ];

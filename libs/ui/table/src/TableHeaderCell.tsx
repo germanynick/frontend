@@ -7,7 +7,7 @@ export interface ITableHeaderCellProps extends ICenterProps {
   columnIndex: number;
 }
 
-export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, _text, flexGrow, alignItems, ...props }) => {
+export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, _text, alignItems, ...props }) => {
   const children = useMemo(() => {
     if (!column?.header) {
       return <Text {..._text}>{column.title}</Text>;
@@ -17,7 +17,7 @@ export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ colu
   }, [column, columnIndex, _text]);
 
   return (
-    <Center minWidth={column.minWidth} flexGrow={column.flexGrow || flexGrow} alignItems={column.align || alignItems} _text={_text} {...props}>
+    <Center minWidth={column.minWidth} width={column.width} flexGrow={column.flexGrow} alignItems={column.align || alignItems} _text={_text} {...props}>
       {children}
     </Center>
   );
@@ -25,7 +25,6 @@ export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ colu
 
 TableHeaderCell.defaultProps = {
   paddingX: '8px',
-  flexGrow: 1,
   flexBasis: 0,
   alignItems: 'flex-start',
   _text: { color: '#1E2F97', fontSize: 'md', fontWeight: 'semibold' },

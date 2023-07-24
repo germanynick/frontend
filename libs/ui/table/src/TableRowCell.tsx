@@ -9,7 +9,7 @@ export interface ITableRowCellProps extends ICenterProps {
   rowIndex: number;
 }
 
-export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({ column, columnIndex, rowData, rowIndex, _text, flexGrow, alignItems, ...props }) => {
+export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({ column, columnIndex, rowData, rowIndex, _text, alignItems, ...props }) => {
   const children = useMemo(() => {
     if (!column.cell) {
       return '';
@@ -19,7 +19,7 @@ export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({ column, co
   }, [column, columnIndex, rowData, rowIndex, _text]);
 
   return (
-    <Center minWidth={column.minWidth} flexGrow={column.flexGrow || flexGrow} alignItems={column.align || alignItems} _text={_text} {...props}>
+    <Center width={column.width} minWidth={column.minWidth} flexGrow={column.flexGrow} alignItems={column.align || alignItems} _text={_text} {...props}>
       {children}
     </Center>
   );
@@ -27,7 +27,6 @@ export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({ column, co
 
 TableRowCell.defaultProps = {
   paddingX: '8px',
-  flexGrow: 1,
   flexBasis: 0,
   alignItems: 'flex-start',
   _text: { color: '#333335', fontSize: 'md', fontWeight: 'normal', numberOfLines: 1 },
