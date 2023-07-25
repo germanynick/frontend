@@ -27,5 +27,5 @@ TableHeaderCell.defaultProps = {
   paddingX: '8px',
   flexBasis: 0,
   alignItems: 'flex-start',
-  _text: { color: '#1E2F97', fontSize: 'md', fontWeight: 'semibold' },
+  _text: { color: 'primary.600', fontSize: 'md', fontWeight: 'semibold' },
 };

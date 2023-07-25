@@ -10,5 +10,7 @@ export const en: ResourceLanguage = {
     ZIPCODE: 'Zipcode',
     STATUS: 'Status',
     ACTIONS: 'Actions',
+    CREATE_USER: 'Create User',
+    EXPORT: 'Export',
   },
 };

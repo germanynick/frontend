@@ -13,7 +13,7 @@ Table.defaultProps = {
   horizontal: true,
   borderWidth: '1px',
   borderRadius: '8px',
-  borderColor: '#A7D6D9',
+  borderColor: 'primary.50',
   backgroundColor: '#ffffff',
   _contentContainerStyle: { minWidth: 'full', style: { flexDirection: 'column' } },
 };
