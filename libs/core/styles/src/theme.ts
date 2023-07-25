@@ -34,6 +34,18 @@ export const theme = extendTheme({
         },
       },
     },
+    Input: {
+      defaultProps: {
+        variant: 'underlined',
+      },
+    },
+    FormControlLabel: {
+      baseStyle: {
+        _text: {
+          color: 'primary.600',
+        },
+      },
+    },
     ModalHeader: {
       baseStyle: {
         borderBottomWidth: 0,

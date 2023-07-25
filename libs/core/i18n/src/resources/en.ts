@@ -12,5 +12,10 @@ export const en: ResourceLanguage = {
     ACTIONS: 'Actions',
     CREATE_USER: 'Create User',
     EXPORT: 'Export',
+    FIRST_NAME: 'First Name',
+    LAST_NAME: 'Last Name',
+    GENDER: 'Gender',
+    MALE: 'Male',
+    FEMALE: 'Female',
   },
 };
