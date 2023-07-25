@@ -23,11 +23,28 @@ export const theme = extendTheme({
     Button: {
       baseStyle: {
         rounded: 'full',
+        _text: {
+          textTransform: 'uppercase',
+        },
       },
+
       variants: {
         outline: {
           borderColor: 'primary.600',
         },
+      },
+    },
+    ModalHeader: {
+      baseStyle: {
+        borderBottomWidth: 0,
+        _text: {
+          color: 'primary.600',
+        },
+      },
+    },
+    ModalFooter: {
+      baseStyle: {
+        borderTopWidth: 0,
       },
     },
   },
