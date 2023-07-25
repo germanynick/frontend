@@ -6,8 +6,6 @@ import { userCreateStore } from '../stores';
 export const UserCreateContainer: FunctionComponent = observer(() => {
   const { createValue, handleCancelCreate, handleSubmitCreate } = userCreateStore;
 
-  console.log(createValue);
-
   if (!createValue) {
     return null;
   }

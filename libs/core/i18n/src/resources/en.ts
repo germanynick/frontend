@@ -17,5 +17,8 @@ export const en: ResourceLanguage = {
     GENDER: 'Gender',
     MALE: 'Male',
     FEMALE: 'Female',
+    HOBBIES: 'Hobbies',
+    COMPUTER: 'Computer',
+    BOOK: 'Book',
   },
 };

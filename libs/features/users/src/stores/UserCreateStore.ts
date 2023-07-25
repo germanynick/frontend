@@ -18,7 +18,9 @@ export class UserCreateStore {
   };
 
   @action
-  handleSubmitCreate = async (formData: any) => {};
+  handleSubmitCreate = async (formData: any) => {
+    console.log(formData);
+  };
 }
 
 export const userCreateStore = new UserCreateStore();

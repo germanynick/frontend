@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import i18n from '@frontend/core/i18n';
 import { GestureResponderEvent } from 'react-native';
 import { Modal, HStack, Center, Button, useBreakpointValue, VStack } from 'native-base';
-import { InputField, RadioField } from '@frontend/ui/fields';
+import { CheckboxField, InputField, RadioField } from '@frontend/ui/fields';
 import { Controller, useForm } from 'react-hook-form';
 
 export interface IUserCreateModalProps {
@@ -86,6 +86,25 @@ export const UserCreateModal: FunctionComponent<IUserCreateModalProps> = ({ isOp
                   options={[
                     { label: i18n.t('MALE'), value: 'male' },
                     { label: i18n.t('FEMALE'), value: 'female' },
+                  ]}
+                />
+              )}
+            />
+            <Controller
+              name="hobbies"
+              control={control}
+              rules={{ required: 'Required' }}
+              render={({ field, fieldState }) => (
+                <CheckboxField
+                  ref={field.ref}
+                  name={field.name}
+                  error={fieldState?.error?.message}
+                  label={i18n.t('HOBBIES')}
+                  onChange={field.onChange}
+                  isRequired={true}
+                  options={[
+                    { label: i18n.t('COMPUTER'), value: 'computer' },
+                    { label: i18n.t('BOOK'), value: 'book' },
                   ]}
                 />
               )}
