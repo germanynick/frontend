@@ -20,5 +20,10 @@ export const en: ResourceLanguage = {
     HOBBIES: 'Hobbies',
     COMPUTER: 'Computer',
     BOOK: 'Book',
+    MAJORr: 'Major',
+
+    $PLACEHOLDERS: {
+      FIRST_NAME: 'Lily Harris',
+    },
   },
 };

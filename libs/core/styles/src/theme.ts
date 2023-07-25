@@ -44,6 +44,13 @@ export const theme = extendTheme({
         _text: {
           color: 'primary.600',
         },
+        my: 0,
+        mt: 1,
+      },
+    },
+    FormControlErrorMessage: {
+      baseStyle: {
+        mt: 1,
       },
     },
     ModalHeader: {
