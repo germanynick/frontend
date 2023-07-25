@@ -2,8 +2,15 @@ import { FunctionComponent } from 'react';
 import i18n from '@frontend/core/i18n';
 import { GestureResponderEvent } from 'react-native';
 import { Modal, HStack, Center, Button, useBreakpointValue, VStack } from 'native-base';
-import { CheckboxField, InputField, RadioField, SelectField } from '@frontend/ui/fields';
-import { Controller, useForm } from 'react-hook-form';
+
+import {
+  useForm,
+  CheckboxFieldController,
+  InputFieldController,
+  RadioFieldController,
+  SelectFieldController,
+} from '@frontend/core/form';
+import { UserCreateSchema } from '../schemas';
 
 export interface IUserCreateModalProps {
   isOpen: boolean;
@@ -13,7 +20,7 @@ export interface IUserCreateModalProps {
 
 export const UserCreateModal: FunctionComponent<IUserCreateModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const size = useBreakpointValue({ base: 'full', xl: 'lg' });
-  const { control, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm({ schema: UserCreateSchema });
 
   return (
     <Modal isOpen={isOpen} size={size}>
@@ -22,122 +29,59 @@ export const UserCreateModal: FunctionComponent<IUserCreateModalProps> = ({ isOp
         <Modal.Header>{i18n.t('CREATE_USER')}</Modal.Header>
         <Modal.Body>
           <VStack space={2}>
-            <Controller
+            <InputFieldController
               name="firstName"
               control={control}
-              rules={{ required: 'Required' }}
-              render={({ field, fieldState }) => (
-                <InputField
-                  ref={field.ref}
-                  error={fieldState?.error?.message}
-                  id={field.name}
-                  value={field.value}
-                  label={i18n.t('FIRST_NAME')}
-                  onChangeText={field.onChange}
-                  onBlur={field.onBlur}
-                  isRequired={true}
-                  placeholder={i18n.t('$PLACEHOLDERS.FIRST_NAME')}
-                />
-              )}
+              label={i18n.t('FIRST_NAME')}
+              placeholder={i18n.t('$PLACEHOLDERS.FIRST_NAME')}
+              isRequired={true}
             />
-            <Controller
+            <InputFieldController
               name="lastName"
               control={control}
-              rules={{ required: 'Required' }}
-              render={({ field, fieldState }) => (
-                <InputField
-                  ref={field.ref}
-                  value={field.value}
-                  error={fieldState?.error?.message}
-                  id={field.name}
-                  label={i18n.t('LAST_NAME')}
-                  onChangeText={field.onChange}
-                  onBlur={field.onBlur}
-                  isRequired={true}
-                  placeholder={i18n.t('$PLACEHOLDERS.FIRST_NAME')}
-                />
-              )}
+              label={i18n.t('LAST_NAME')}
+              placeholder={i18n.t('$PLACEHOLDERS.LAST_NAME')}
+              isRequired={true}
             />
-
-            <Controller
+            <InputFieldController
               name="email"
               control={control}
-              rules={{ required: 'Required' }}
-              render={({ field, fieldState }) => (
-                <InputField
-                  ref={field.ref}
-                  error={fieldState?.error?.message}
-                  id={field.name}
-                  value={field.value}
-                  label={i18n.t('EMAIL')}
-                  onChangeText={field.onChange}
-                  onBlur={field.onBlur}
-                  isRequired={true}
-                  placeholder={i18n.t('$PLACEHOLDERS.FIRST_NAME')}
-                />
-              )}
+              label={i18n.t('EMAIL')}
+              placeholder={i18n.t('$PLACEHOLDERS.EMAIL')}
+              isRequired={true}
             />
-            <Controller
-              name="gender"
+            <RadioFieldController
               control={control}
-              rules={{ required: 'Required' }}
-              render={({ field, fieldState }) => (
-                <RadioField
-                  ref={field.ref}
-                  name={field.name}
-                  value={field.value}
-                  error={fieldState?.error?.message}
-                  label={i18n.t('GENDER')}
-                  onChange={field.onChange}
-                  isRequired={true}
-                  options={[
-                    { label: i18n.t('MALE'), value: 'male' },
-                    { label: i18n.t('FEMALE'), value: 'female' },
-                  ]}
-                />
-              )}
-            />
-            <Controller
-              name="hobbies"
-              control={control}
-              rules={{ required: 'Required' }}
-              render={({ field, fieldState }) => (
-                <CheckboxField
-                  ref={field.ref}
-                  name={field.name}
-                  value={field.value}
-                  error={fieldState?.error?.message}
-                  label={i18n.t('HOBBIES')}
-                  onChange={field.onChange}
-                  isRequired={true}
-                  options={[
-                    { label: i18n.t('COMPUTER'), value: 'computer' },
-                    { label: i18n.t('BOOK'), value: 'book' },
-                  ]}
-                />
-              )}
+              name="gener"
+              label={i18n.t('GENDER')}
+              isRequired={true}
+              options={[
+                { label: i18n.t('MALE'), value: 'male' },
+                { label: i18n.t('FEMALE'), value: 'female' },
+              ]}
             />
 
-            <Controller
+            <CheckboxFieldController
+              control={control}
+              name="hobbies"
+              label={i18n.t('HOBBIES')}
+              isRequired={true}
+              options={[
+                { label: i18n.t('COMPUTER'), value: 'computer' },
+                { label: i18n.t('BOOK'), value: 'book' },
+              ]}
+            />
+
+            <SelectFieldController
               name="major"
               control={control}
-              rules={{ required: 'Required' }}
-              render={({ field, fieldState }) => (
-                <SelectField
-                  ref={field.ref}
-                  name={field.name}
-                  error={fieldState?.error?.message}
-                  label={i18n.t('MAJOR')}
-                  selectedValue={field.value}
-                  onValueChange={field.onChange}
-                  isRequired={true}
-                  placeholder={i18n.t('$PLACEHOLDERS.FIRST_NAME')}
-                  options={[
-                    { label: i18n.t('COMPUTER'), value: 'computer' },
-                    { label: i18n.t('BOOK'), value: 'book' },
-                  ]}
-                />
-              )}
+              label={i18n.t('MAJOR')}
+              placeholder={i18n.t('$PLACEHOLDERS.MAJOR')}
+              isRequired={true}
+              options={[
+                { label: i18n.t('COMPUTER'), value: 'computer' },
+                { label: i18n.t('BOOK'), value: 'book' },
+              ]}
             />
           </VStack>
         </Modal.Body>

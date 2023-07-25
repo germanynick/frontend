@@ -20,10 +20,18 @@ export const en: ResourceLanguage = {
     HOBBIES: 'Hobbies',
     COMPUTER: 'Computer',
     BOOK: 'Book',
-    MAJORr: 'Major',
+    MAJOR: 'Major',
 
     $PLACEHOLDERS: {
-      FIRST_NAME: 'Lily Harris',
+      FIRST_NAME: 'Lily',
+      LAST_NAME: 'Harris',
+      EMAIL: 'email@gmail.com',
+      MAJOR: 'Select your major',
+    },
+
+    $ERRORS: {
+      REQUIRED: 'Required',
+      EMAIL: 'Invalid Email',
     },
   },
 };
