@@ -24,6 +24,11 @@ export const theme = extendTheme({
       baseStyle: {
         rounded: 'full',
       },
+      variants: {
+        outline: {
+          borderColor: 'primary.600',
+        },
+      },
     },
   },
 });
