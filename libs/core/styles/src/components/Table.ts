@@ -5,7 +5,7 @@ export const Table = {
     horizontal: true,
     borderWidth: '1px',
     borderRadius: '8px',
-    borderColor: 'primary.300',
+    borderColor: 'primary.100',
     backgroundColor: '#ffffff',
     _contentContainerStyle: { minWidth: 'full', style: { flexDirection: 'column' } },
   },
@@ -18,8 +18,6 @@ export const TableHeader = {
     width: 'full',
     direction: 'row',
     backgroundColor: '#F1FEFF',
-    borderBottomWidth: '1px',
-    borderColor: 'primary.300',
   },
 };
 
@@ -28,6 +26,9 @@ export const TableBody = {
     minWidth: 'full',
     width: 'full',
     height: 'full',
+    minHeight: '300px',
+    borderTopWidth: '1px',
+    borderColor: 'primary.100',
     _contentContainerStyle: { minWidth: 'full', width: 'full', flexDirection: 'column' },
   },
 };
@@ -59,5 +60,25 @@ export const TableRowCell = {
     flexBasis: 0,
     alignItems: 'flex-start',
     _text: { color: '#333335', fontSize: 'md', fontWeight: 'normal', numberOfLines: 1 },
+  },
+};
+
+export const TableLoading = {
+  baseStyle: {
+    top: 0,
+    left: '1/2',
+    position: 'absolute',
+    height: 'full',
+    space: 2,
+  },
+};
+
+export const TableEmpty = {
+  baseStyle: {
+    top: 0,
+    left: '1/2',
+    position: 'absolute',
+    height: 'full',
+    space: 2,
   },
 };

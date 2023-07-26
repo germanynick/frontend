@@ -7,14 +7,26 @@ import { TableRow } from './TableRow';
 import { TableRowCell } from './TableRowCell';
 import { IDataColumn } from './interfaces';
 import { GestureResponderEvent } from 'react-native';
+import { TableLoading } from './TableLoading';
+import { TableEmpty } from './TableEmpty';
 
 export interface IDataTableProps {
   data?: any[];
   columns: IDataColumn[];
+  loading?: boolean;
+  loadingText?: string;
+  emptyText?: string;
   onClickRow?: (event: GestureResponderEvent, rowData: any, rowIndex: number) => void;
 }
 
-export const DataTable: FunctionComponent<IDataTableProps> = ({ columns, data, onClickRow }) => {
+export const DataTable: FunctionComponent<IDataTableProps> = ({
+  columns,
+  data,
+  loading,
+  loadingText,
+  emptyText,
+  onClickRow,
+}) => {
   const width = useMemo(() => columns?.reduce((a, b) => a + (b.minWidth || 0), 0), [columns]);
 
   return (
@@ -39,6 +51,8 @@ export const DataTable: FunctionComponent<IDataTableProps> = ({ columns, data, o
           </TableRow>
         ))}
       </TableBody>
+      {data?.length === 0 && !loading && <TableEmpty emptyText={emptyText} />}
+      <TableLoading loading={loading} loadingText={loadingText} />
     </Table>
   );
 };
