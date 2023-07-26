@@ -1,19 +1,10 @@
 import { FunctionComponent } from 'react';
-import { IScrollViewProps, ScrollView } from 'native-base';
+import { IScrollViewProps, ScrollView, usePropsResolution } from 'native-base';
 
 export interface ITableProps extends IScrollViewProps {}
 
-export const Table: FunctionComponent<ITableProps> = ({ _contentContainerStyle, width, ...props }) => {
-  return <ScrollView _contentContainerStyle={{ ..._contentContainerStyle, width }} {...props} />;
-};
+export const Table: FunctionComponent<ITableProps> = ({ ...props }) => {
+  const themeProps = usePropsResolution('Table', props);
 
-Table.defaultProps = {
-  minWidth: 'full',
-  width: 'full',
-  horizontal: true,
-  borderWidth: '1px',
-  borderRadius: '8px',
-  borderColor: 'primary.50',
-  backgroundColor: '#ffffff',
-  _contentContainerStyle: { minWidth: 'full', style: { flexDirection: 'column' } },
+  return <ScrollView {...themeProps} />;
 };

@@ -1,4 +1,4 @@
-import { Center, ICenterProps, Text } from 'native-base';
+import { Center, ICenterProps, Text, usePropsResolution } from 'native-base';
 import { FunctionComponent, createElement, useMemo } from 'react';
 import { IDataColumn } from './interfaces';
 
@@ -7,25 +7,32 @@ export interface ITableHeaderCellProps extends ICenterProps {
   columnIndex: number;
 }
 
-export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, _text, alignItems, ...props }) => {
+export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({
+  column,
+  columnIndex,
+  alignItems,
+  ...props
+}) => {
+  const themeProps = usePropsResolution('TableHeaderCell', props);
+
   const children = useMemo(() => {
     if (!column?.header) {
-      return <Text {..._text}>{column.title}</Text>;
+      return <Text {...themeProps._text}>{column.title}</Text>;
     }
 
-    return createElement(column.header, { column, columnIndex, _text });
-  }, [column, columnIndex, _text]);
+    return createElement(column.header, { column, columnIndex, _text: themeProps._text });
+  }, [column, columnIndex, themeProps]);
 
   return (
-    <Center minWidth={column.minWidth} width={column.width} flexGrow={column.flexGrow} alignItems={column.align || alignItems} _text={_text} {...props}>
+    <Center
+      minWidth={column.minWidth}
+      width={column.width}
+      flexGrow={column.flexGrow}
+      alignItems={column.align || alignItems}
+      _text={themeProps._text}
+      {...themeProps}
+    >
       {children}
     </Center>
   );
-};
-
-TableHeaderCell.defaultProps = {
-  paddingX: '8px',
-  flexBasis: 0,
-  alignItems: 'flex-start',
-  _text: { color: 'primary.600', fontSize: 'md', fontWeight: 'semibold' },
 };

@@ -1,17 +1,12 @@
-import { IScrollViewProps, ScrollView } from 'native-base';
+import { IScrollViewProps, ScrollView, usePropsResolution } from 'native-base';
 import { FunctionComponent, MutableRefObject } from 'react';
 
 export interface ITableBodyProps extends IScrollViewProps {
   scrollRef?: MutableRefObject<any>;
 }
 
-export const TableBody: FunctionComponent<ITableBodyProps> = ({ scrollRef, width, ...props }) => {
-  return <ScrollView ref={scrollRef} {...props} />;
-};
+export const TableBody: FunctionComponent<ITableBodyProps> = ({ scrollRef, ...props }) => {
+  const themeProps = usePropsResolution('TableBody', props);
 
-TableBody.defaultProps = {
-  minWidth: 'full',
-  width: 'full',
-  height: 'full',
-  _contentContainerStyle: { minWidth: 'full', width: 'full', flexDirection: 'column' },
+  return <ScrollView ref={scrollRef} {...themeProps} />;
 };

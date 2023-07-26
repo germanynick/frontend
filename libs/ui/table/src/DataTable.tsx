@@ -18,7 +18,7 @@ export const DataTable: FunctionComponent<IDataTableProps> = ({ columns, data, o
   const width = useMemo(() => columns?.reduce((a, b) => a + (b.minWidth || 0), 0), [columns]);
 
   return (
-    <Table width={width}>
+    <Table _contentContainerStyle={{ width }}>
       <TableHeader>
         {columns.map((column, columnIndex) => (
           <TableHeaderCell column={column} columnIndex={columnIndex} key={columnIndex} />
@@ -28,7 +28,13 @@ export const DataTable: FunctionComponent<IDataTableProps> = ({ columns, data, o
         {data?.map((rowData, rowIndex) => (
           <TableRow key={rowIndex} onPress={onClickRow ? (e) => onClickRow(e, rowData, rowIndex) : undefined}>
             {columns?.map((column, columnIndex) => (
-              <TableRowCell key={columnIndex} rowData={rowData} rowIndex={rowIndex} column={column} columnIndex={columnIndex} />
+              <TableRowCell
+                key={columnIndex}
+                rowData={rowData}
+                rowIndex={rowIndex}
+                column={column}
+                columnIndex={columnIndex}
+              />
             ))}
           </TableRow>
         ))}
