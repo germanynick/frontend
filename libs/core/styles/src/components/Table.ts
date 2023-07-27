@@ -29,6 +29,7 @@ export const TableBody = {
     minHeight: '300px',
     borderTopWidth: '1px',
     borderColor: 'primary.100',
+    scrollEventThrottle: 400,
     _contentContainerStyle: { minWidth: 'full', width: 'full', flexDirection: 'column' },
   },
 };
