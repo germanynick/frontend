@@ -8,7 +8,7 @@ const { withExpo } = require('@expo/next-adapter');
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   transpilePackages: [
     'solito',

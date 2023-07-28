@@ -9,15 +9,15 @@ import { theme } from '@frontend/core/styles';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <StrictMode>
-    <NativeBaseProvider theme={theme}>
-      <Box height="100vh">
-        <BrowserRouter>
-          <Routes>
-            <Route path="users/*" Component={UserPage} />
-          </Routes>
-        </BrowserRouter>
-      </Box>
-    </NativeBaseProvider>
-  </StrictMode>
+  // <StrictMode> // Disabled Strict Mode because It render 2 times
+  <NativeBaseProvider theme={theme}>
+    <Box height="100vh">
+      <BrowserRouter>
+        <Routes>
+          <Route path="users/*" Component={UserPage} />
+        </Routes>
+      </BrowserRouter>
+    </Box>
+  </NativeBaseProvider>
+  // </StrictMode>
 );

@@ -7,11 +7,12 @@ import i18n from '@frontend/core/i18n';
 import { UserCreateContainer } from './UserCreateContainer';
 
 export const UserListContainer: FunctionComponent = observer(() => {
-  const { items, handleRefreshItems } = userListStore;
+  const { items, loading, handleRefreshItemsAsync, handleLoadMoreItemsAsync } = userListStore;
   const { handleClickCreate } = userCreateStore;
 
   useEffect(() => {
-    handleRefreshItems();
+    console.log('AAA');
+    handleRefreshItemsAsync();
   }, []);
 
   return (
@@ -24,7 +25,7 @@ export const UserListContainer: FunctionComponent = observer(() => {
         </Center>
       </HStack>
 
-      <UserList data={items} loading={false} />
+      <UserList data={items} loading={loading} onScrollToEnd={handleLoadMoreItemsAsync} />
       <UserCreateContainer />
     </VStack>
   );
