@@ -19,7 +19,8 @@
         // "styles": ["apps/web/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "apps/web/webpack.config.js"
+        "webpackConfig": "apps/web/webpack.config.js",
+        "statsJson": true
       },
       "configurations": {
         "development": {
@@ -86,6 +87,12 @@
           "ci": true,
           "codeCoverage": true
         }
+      }
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack-bundle-analyzer dist/apps/web/stats.json"
       }
     }
   },

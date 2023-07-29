@@ -1,5 +1,4 @@
 import { observable, action, makeObservable, flow } from 'mobx';
-import { faker } from '@faker-js/faker';
 
 export class UserListStore {
   constructor() {
@@ -30,20 +29,7 @@ export class UserListStore {
 
       this.loading = true;
       yield new Promise((resolve) => setTimeout(() => resolve('AA'), 1000));
-      this.items = [
-        ...this.items,
-        ...Array(20)
-          .fill({})
-          .map(() => ({
-            avatar: faker.image.avatar(),
-            firstName: faker.person.firstName(),
-            lastName: faker.person.lastName(),
-            email: faker.internet.email(),
-            phone: faker.phone.number(),
-            zipcode: faker.location.zipCode(),
-            lastLoginAt: faker.date.anytime(),
-          })),
-      ];
+      this.items = [...this.items, ...Array(20).fill({})];
     } catch (error) {
       console.debug(error);
     } finally {
