@@ -2,17 +2,17 @@ import { FunctionComponent, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { userCreateStore, userListStore } from '../stores';
 import { UserList } from '../components/UserList';
-import { Button, VStack, HStack, Center, AddIcon } from 'native-base';
+import { Button, VStack, HStack, Center, AddIcon, Input, SearchIcon } from 'native-base';
 import i18n from '@frontend/core/i18n';
 import { UserCreateContainer } from './UserCreateContainer';
+import { debounce } from 'lodash';
 
 export const UserListContainer: FunctionComponent = observer(() => {
-  const { items, loading, handleRefreshItemsAsync, handleLoadMoreItemsAsync } = userListStore;
+  const { items, loading, handleKeywordChangeAsync, handleLoadMoreItemsAsync } = userListStore;
   const { handleClickCreate } = userCreateStore;
 
   useEffect(() => {
-    console.log('AAA');
-    handleRefreshItemsAsync();
+    handleKeywordChangeAsync('');
   }, []);
 
   return (
@@ -22,6 +22,13 @@ export const UserListContainer: FunctionComponent = observer(() => {
           <Button startIcon={<AddIcon />} onPress={handleClickCreate}>
             {i18n.t('CREATE_USER')}
           </Button>
+        </Center>
+        <Center marginLeft="auto">
+          <Input
+            InputRightElement={<SearchIcon />}
+            placeholder={i18n.t('$PLACEHOLDERS.SEARCH')}
+            onChangeText={debounce(handleKeywordChangeAsync, 500)}
+          />
         </Center>
       </HStack>
 

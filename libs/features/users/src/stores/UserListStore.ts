@@ -1,4 +1,5 @@
 import { observable, action, makeObservable, flow } from 'mobx';
+import { faker } from '@faker-js/faker';
 
 export class UserListStore {
   constructor() {
@@ -7,6 +8,7 @@ export class UserListStore {
 
   @observable loading: boolean = false;
   @observable items: any[] = [];
+  @observable keyword: string = '';
 
   @action
   setItems = (items: any[]) => {
@@ -14,28 +16,34 @@ export class UserListStore {
   };
 
   @flow.bound
+  *handleKeywordChangeAsync(keyword: string) {
+    this.keyword = keyword;
+    yield this.handleLoadMoreItemsAsync();
+  }
+
+  @flow.bound
   *handleLoadMoreItemsAsync() {
     try {
-      if (this.loading || this.items.length === 0) {
+      if (this.loading) {
         return;
       }
 
       this.loading = true;
       yield new Promise((resolve) => setTimeout(() => resolve('AA'), 1000));
-      this.items = [...this.items, ...Array(20).fill({})];
-    } catch (error) {
-      console.debug(error);
-    } finally {
-      this.loading = false;
-    }
-  }
-
-  @flow.bound
-  *handleRefreshItemsAsync() {
-    try {
-      this.loading = true;
-      yield new Promise((resolve) => setTimeout(() => resolve('AA'), 1000));
-      this.items = Array(20).fill({});
+      this.items = [
+        ...this.items,
+        ...Array(20)
+          .fill({})
+          .map(() => ({
+            avatar: faker.image.avatar(),
+            firstName: faker.person.firstName(),
+            lastName: faker.person.lastName(),
+            email: faker.internet.email(),
+            phone: faker.phone.number(),
+            zipcode: faker.location.zipCode(),
+            lastLoginAt: faker.date.anytime(),
+          })),
+      ];
     } catch (error) {
       console.debug(error);
     } finally {

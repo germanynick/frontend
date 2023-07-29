@@ -4,15 +4,19 @@ import { FunctionComponent } from 'react';
 
 export interface IUserCellFullNameProps extends IRenderCellProps {}
 
-export const UserCellFullName: FunctionComponent<IUserCellFullNameProps> = (props) => {
+export const UserCellFullName: FunctionComponent<IUserCellFullNameProps> = ({ rowData, rowIndex }) => {
+  const fullName = [rowData.firstName, rowData.lastName].join(' ');
+
   return (
     <HStack space={2} width="full" height="full">
       <Center>
-        <Avatar size="sm">{props.rowIndex}</Avatar>
+        <Avatar size="sm" source={{ uri: rowData.avatar }}>
+          {fullName}
+        </Avatar>
       </Center>
-      <Center width="full" flex={1}>
+      <Center width="full" flex={1} alignItems="flex-start">
         <Text fontWeight="semibold" numberOfLines={1} ellipsizeMode="tail">
-          A Hello World Long Long Long Logn Text A
+          {fullName}
         </Text>
       </Center>
     </HStack>

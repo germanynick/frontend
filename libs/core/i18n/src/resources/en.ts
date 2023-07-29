@@ -27,6 +27,7 @@ export const en: ResourceLanguage = {
       LAST_NAME: 'Harris',
       EMAIL: 'email@gmail.com',
       MAJOR: 'Select your major',
+      SEARCH: 'Search',
     },
 
     $ERRORS: {

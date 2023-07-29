@@ -7,21 +7,16 @@ export interface ITableHeaderCellProps extends ICenterProps {
   columnIndex: number;
 }
 
-export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({
-  column,
-  columnIndex,
-  alignItems,
-  ...props
-}) => {
-  const themeProps = usePropsResolution('TableHeaderCell', props);
+export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, ...props }) => {
+  const { _text, alignItems, ...themeProps } = usePropsResolution('TableHeaderCell', props);
 
   const children = useMemo(() => {
     if (!column?.header) {
-      return <Text {...themeProps._text}>{column.title}</Text>;
+      return <Text {..._text}>{column.title}</Text>;
     }
 
-    return createElement(column.header, { column, columnIndex, _text: themeProps._text });
-  }, [column, columnIndex, themeProps]);
+    return createElement(column.header, { column, columnIndex, _text });
+  }, [column, columnIndex, _text]);
 
   return (
     <Center
@@ -29,7 +24,6 @@ export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({
       width={column.width}
       flexGrow={column.flexGrow}
       alignItems={column.align || alignItems}
-      _text={themeProps._text}
       {...themeProps}
     >
       {children}

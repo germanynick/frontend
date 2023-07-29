@@ -1,6 +1,7 @@
-import { Center, ICenterProps, usePropsResolution } from 'native-base';
+import { Center, ICenterProps, usePropsResolution, Tooltip, Text } from 'native-base';
 import { FunctionComponent, createElement, useMemo } from 'react';
 import { IDataColumn } from './interfaces';
+import { get } from 'lodash';
 
 export interface ITableRowCellProps extends ICenterProps {
   column: IDataColumn;
@@ -14,18 +15,23 @@ export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({
   columnIndex,
   rowData,
   rowIndex,
-  alignItems,
   ...props
 }) => {
-  const themeProps = usePropsResolution('TableRowCell', props);
+  const { _text, alignItems, ...themeProps } = usePropsResolution('TableRowCell', props);
 
   const children = useMemo(() => {
     if (!column.cell) {
-      return '';
+      const content = column.dataKey ? get(rowData, column.dataKey) : '';
+
+      return (
+        <Tooltip label={content}>
+          <Text {..._text}>{content}</Text>
+        </Tooltip>
+      );
     }
 
-    return createElement(column.cell, { column, columnIndex, rowData, rowIndex, _text: themeProps._text });
-  }, [column, columnIndex, rowData, rowIndex, themeProps._text]);
+    return createElement(column.cell, { column, columnIndex, rowData, rowIndex, _text });
+  }, [column, columnIndex, rowData, rowIndex, _text]);
 
   return (
     <Center
@@ -33,7 +39,6 @@ export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({
       minWidth={column.minWidth}
       flexGrow={column.flexGrow}
       alignItems={column.align || alignItems}
-      _text={themeProps._text}
       {...themeProps}
     >
       {children}
