@@ -1,0 +1,6 @@
+mutation destroyWorkerExpense($id: String!){
+    destroyWorkerExpense(id: $id){
+        id
+        success
+    }
+}

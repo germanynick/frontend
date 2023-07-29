@@ -1,0 +1,5 @@
+mutation setDefaultPaymentMethod($paymentMethodId: String!){
+    setDefaultPaymentMethod(paymentMethodId: $paymentMethodId){
+        success
+    }
+}

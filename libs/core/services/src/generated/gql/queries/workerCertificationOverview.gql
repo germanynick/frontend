@@ -1,0 +1,16 @@
+query workerCertificationOverview($id: String!){
+    workerCertificationOverview(id: $id){
+        id
+        workerCertifications{
+            certificationType
+            compactLicense
+            createdAt
+            expirationDate
+            id
+            licenseDiscipline
+            licenseNumber
+            licenseState
+            title
+        }
+    }
+}

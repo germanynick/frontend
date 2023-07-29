@@ -1,0 +1,21 @@
+query workerQuizzes($workerId: String!){
+    workerQuizzes(workerId: $workerId){
+        correctionPercentage
+        id
+        quiz{
+            companyId
+            description
+            id
+            name
+            passingPercentage
+            quizQuestionsNumber
+        }
+        state
+        workerId
+        workerQuizAnswers{
+            id
+            quizAnswerId
+            workerId
+        }
+    }
+}

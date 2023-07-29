@@ -1,0 +1,90 @@
+mutation updateWorkerOnboarding($jobId: String!, $id: String!, $state: String!){
+    updateWorkerOnboarding(id: $id, state: $state){
+        companyOnboardingId
+        currentPartIndex
+        id
+        message
+        numOfCompletedSteps
+        pendingWorkerOnboardingPart{
+            id
+            integration{
+                __typename
+                ... on GroupOnboardingPart {
+                    id
+                    state
+                }
+                ... on ProfileOnboarding {
+                    id
+                }
+                ... on UserTermsOfService {
+                    agreedAt
+                    id
+                }
+                ... on WorkExperienceOverview {
+                    discipline
+                    id
+                    primarySpecialty
+                    secondarySpecialty
+                    yearsOfExperience
+                }
+                ... on WorkerCertificationOverview {
+                    id
+                }
+                ... on WorkerEducationOverview {
+                    id
+                }
+                ... on WorkerReferenceOnboarding {
+                    id
+                }
+            }
+            integrationConfigurations
+            integrationObject
+            state
+            workerId
+        }
+        percentageCompleted
+        permittedEvents
+        state
+        worker{
+            agreedToTerms
+            availableStartDate
+            avatarUrl
+            blocked
+            changePasswordRequired
+            completedJobsNumber
+            dateOfBirth
+            email
+            employmentType
+            facilityTypes
+            firstName
+            hasActiveAssignment
+            id
+            isFavorited
+            jobCategoriesWorkedNumber
+            jobMatchingScore(jobId: $jobId)
+            lastName
+            lastOtpExpiredAt
+            lastSignInAt
+            locationsWorkedNumber
+            maidenName
+            noCall
+            noEmail
+            noNotification
+            noSms
+            noTalentMatches
+            overallRating
+            phone
+            phoneVerifiedAt
+            profilePercentageCompleted
+            referralCode
+            referralMethod
+            referrerCode
+            remainingExpirationTime
+            shiftRequested
+            socialSecurityNumber
+            timeOffRequested
+            totalUnreadMessage
+            workAuthorized
+        }
+    }
+}

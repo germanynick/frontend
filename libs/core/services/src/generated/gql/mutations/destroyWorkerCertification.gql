@@ -1,0 +1,6 @@
+mutation destroyWorkerCertification($id: String!){
+    destroyWorkerCertification(id: $id){
+        id
+        success
+    }
+}

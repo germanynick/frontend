@@ -18,6 +18,7 @@
     "paths": {
       "@frontend/core/form": ["libs/core/form/src/index.ts"],
       "@frontend/core/i18n": ["libs/core/i18n/src/index.ts"],
+      "@frontend/core/services": ["libs/core/services/src/index.ts"],
       "@frontend/core/styles": ["libs/core/styles/src/index.ts"],
       "@frontend/features/users": ["libs/features/users/src/index.ts"],
       "@frontend/ui/fields": ["libs/ui/fields/src/index.ts"],

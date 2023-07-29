@@ -1,0 +1,46 @@
+mutation syncAnonymousWorkerData($jobId: String!, $bookmarkJobsAttributes: [BookmarkJobArgument!], $likeJobsAttributes: [LikeJobArgument!], $savedFiltersAttributes: [SavedFilterArgument!], $workerViewedJobsAttributes: [WorkerViewedJobArgument!]){
+    syncAnonymousWorkerData(bookmarkJobsAttributes: $bookmarkJobsAttributes, likeJobsAttributes: $likeJobsAttributes, savedFiltersAttributes: $savedFiltersAttributes, workerViewedJobsAttributes: $workerViewedJobsAttributes){
+        success
+        worker{
+            agreedToTerms
+            availableStartDate
+            avatarUrl
+            blocked
+            changePasswordRequired
+            completedJobsNumber
+            dateOfBirth
+            email
+            employmentType
+            facilityTypes
+            firstName
+            hasActiveAssignment
+            id
+            isFavorited
+            jobCategoriesWorkedNumber
+            jobMatchingScore(jobId: $jobId)
+            lastName
+            lastOtpExpiredAt
+            lastSignInAt
+            locationsWorkedNumber
+            maidenName
+            noCall
+            noEmail
+            noNotification
+            noSms
+            noTalentMatches
+            overallRating
+            phone
+            phoneVerifiedAt
+            profilePercentageCompleted
+            referralCode
+            referralMethod
+            referrerCode
+            remainingExpirationTime
+            shiftRequested
+            socialSecurityNumber
+            timeOffRequested
+            totalUnreadMessage
+            workAuthorized
+        }
+    }
+}

@@ -1,0 +1,6 @@
+mutation dismissBulletin($bulletinId: String!){
+    dismissBulletin(bulletinId: $bulletinId){
+        bulletinId
+        success
+    }
+}

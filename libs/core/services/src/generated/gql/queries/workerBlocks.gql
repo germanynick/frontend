@@ -1,0 +1,31 @@
+query workerBlocks($workerId: String!){
+    workerBlocks(workerId: $workerId){
+        blockedByClients{
+            address1
+            address2
+            city
+            contactEmail
+            contactFirstName
+            contactLastName
+            contactName
+            contactPhone
+            country
+            description
+            ein
+            id
+            latitude
+            longitude
+            name
+            phone
+            state
+            status
+            taxId
+            url
+            verifiedAt
+            verifyStatus
+            zipCode
+        }
+        blockedByCompany
+        note
+    }
+}

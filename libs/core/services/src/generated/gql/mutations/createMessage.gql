@@ -1,0 +1,23 @@
+mutation createMessage($attachmentSignedBlobId: String, $message: String, $messageThreadId: String, $objectId: String, $objectType: MessageObjectTypeEnum, $receiverId: String!, $receiverType: MessageReceiverTypeEnum!){
+    createMessage(attachmentSignedBlobId: $attachmentSignedBlobId, message: $message, messageThreadId: $messageThreadId, objectId: $objectId, objectType: $objectType, receiverId: $receiverId, receiverType: $receiverType){
+        message{
+            createdAt
+            id
+            message
+            objectId
+            objectType
+            status
+        }
+        messageThread{
+            clientId
+            companyId
+            id
+            lastMessage
+            lastTimestamp
+            objectId
+            objectType
+            threadIconUrl
+            unreadMessageCounter
+        }
+    }
+}

@@ -1,0 +1,5 @@
+mutation replayDismissedBulletin($bulletinIds: [String!]!){
+    replayDismissedBulletin(bulletinIds: $bulletinIds){
+        success
+    }
+}

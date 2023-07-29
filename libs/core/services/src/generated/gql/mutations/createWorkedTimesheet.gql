@@ -1,0 +1,14 @@
+mutation createWorkedTimesheet($size: [String!]!, $timesheetImagesSignedBlobIds: [String!]){
+    createWorkedTimesheet(timesheetImagesSignedBlobIds: $timesheetImagesSignedBlobIds){
+        id
+        timesheetImages{
+            blobId
+            contentType
+            fileUrl
+            filename
+            id
+            imageUrls(size: $size)
+            thumbnails
+        }
+    }
+}

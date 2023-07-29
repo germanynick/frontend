@@ -1,0 +1,44 @@
+mutation markMessageAsRead($size: [String!]!, $messageId: String!){
+    markMessageAsRead(messageId: $messageId){
+        attachment{
+            blobId
+            contentType
+            fileUrl
+            filename
+            id
+            imageUrls(size: $size)
+            thumbnails
+        }
+        createdAt
+        id
+        message
+        messageThread{
+            clientId
+            companyId
+            id
+            lastMessage
+            lastTimestamp
+            objectId
+            objectType
+            threadIconUrl
+            unreadMessageCounter
+        }
+        objectId
+        objectType
+        receiver{
+            email
+            firstName
+            id
+            lastName
+            phone
+        }
+        sender{
+            email
+            firstName
+            id
+            lastName
+            phone
+        }
+        status
+    }
+}

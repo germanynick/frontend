@@ -1,0 +1,47 @@
+mutation createIntegrationWorker($jobId: String!, $email: String!, $employmentType: String, $externalJobId: String, $facilityTypes: String, $firstName: String!, $lastName: String!, $password: String!, $passwordConfirmation: String!, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
+    createIntegrationWorker(email: $email, employmentType: $employmentType, externalJobId: $externalJobId, facilityTypes: $facilityTypes, firstName: $firstName, lastName: $lastName, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone, recaptchaToken: $recaptchaToken, referrerCode: $referrerCode, socialAuthenticationId: $socialAuthenticationId, source: $source, workerSpecialtiesAttributes: $workerSpecialtiesAttributes, workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
+        authToken
+        notificationChannel
+        worker{
+            agreedToTerms
+            availableStartDate
+            avatarUrl
+            blocked
+            changePasswordRequired
+            completedJobsNumber
+            dateOfBirth
+            email
+            employmentType
+            facilityTypes
+            firstName
+            hasActiveAssignment
+            id
+            isFavorited
+            jobCategoriesWorkedNumber
+            jobMatchingScore(jobId: $jobId)
+            lastName
+            lastOtpExpiredAt
+            lastSignInAt
+            locationsWorkedNumber
+            maidenName
+            noCall
+            noEmail
+            noNotification
+            noSms
+            noTalentMatches
+            overallRating
+            phone
+            phoneVerifiedAt
+            profilePercentageCompleted
+            referralCode
+            referralMethod
+            referrerCode
+            remainingExpirationTime
+            shiftRequested
+            socialSecurityNumber
+            timeOffRequested
+            totalUnreadMessage
+            workAuthorized
+        }
+    }
+}

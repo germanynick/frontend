@@ -1,0 +1,8 @@
+query currentWeekManagement{
+    currentWeekManagement{
+        active
+        endDate
+        id
+        startDate
+    }
+}

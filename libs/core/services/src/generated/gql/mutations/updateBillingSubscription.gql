@@ -1,0 +1,5 @@
+mutation updateBillingSubscription($billingPriceId: String!, $clientId: String, $paymentMethodId: String!){
+    updateBillingSubscription(billingPriceId: $billingPriceId, clientId: $clientId, paymentMethodId: $paymentMethodId){
+        success
+    }
+}

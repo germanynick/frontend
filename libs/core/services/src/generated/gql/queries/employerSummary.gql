@@ -1,0 +1,50 @@
+query employerSummary($filter: EmployerSummaryFilters, $limit: Int, $offset: Int, $filter1: EmployerSummaryFilters!, $filter2: EmployerSummaryFilters, $clientId: String){
+    employerSummary(clientId: $clientId){
+        clients{
+            activeClientCount
+            newClientsCount
+        }
+        dateRanges
+        employer{
+            agreedToTerms
+            changePasswordRequired
+            email
+            firstName
+            id
+            intervieweesNumber
+            lastName
+            lastSignInAt
+            paymentMethod
+            permittedEvents
+            phone
+            scope
+            scopesAreAllowedToUpdate
+            status
+            title
+            totalUnreadMessage
+        }
+        jobApplicants(filter: $filter, limit: $limit, offset: $offset){
+            activeJobApplicantsCount
+            newJobApplicantsCount
+        }
+        jobs{
+            fillRate
+            newJobsCount
+        }
+        onboardingSubmissions(filter: $filter1)
+        reports(filter: $filter2){
+            jobApplicants
+            jobApplicantsCompletedCount
+            jobsAvailableCount
+            jobsCompletedCount
+            totalFacilityLocationsCount
+            totalJobApplicantsCount
+        }
+        workers{
+            activeWorkersCount
+            directHiredCount
+            newWorkersCount
+            normalInterviewCount
+        }
+    }
+}

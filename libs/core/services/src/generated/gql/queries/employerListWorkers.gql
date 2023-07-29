@@ -1,0 +1,56 @@
+query employerListWorkers($jobId: String!, $after: String, $before: String, $first: Int, $last: Int){
+    employerListWorkers(after: $after, before: $before, first: $first, last: $last){
+        edges{
+            cursor
+        }
+        nodes{
+            agreedToTerms
+            availableStartDate
+            avatarUrl
+            blocked
+            changePasswordRequired
+            completedJobsNumber
+            dateOfBirth
+            email
+            employmentType
+            facilityTypes
+            firstName
+            hasActiveAssignment
+            id
+            isFavorited
+            jobCategoriesWorkedNumber
+            jobMatchingScore(jobId: $jobId)
+            lastName
+            lastOtpExpiredAt
+            lastSignInAt
+            locationsWorkedNumber
+            maidenName
+            noCall
+            noEmail
+            noNotification
+            noSms
+            noTalentMatches
+            overallRating
+            phone
+            phoneVerifiedAt
+            profilePercentageCompleted
+            referralCode
+            referralMethod
+            referrerCode
+            remainingExpirationTime
+            shiftRequested
+            socialSecurityNumber
+            timeOffRequested
+            totalUnreadMessage
+            workAuthorized
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            pageSize
+            startCursor
+        }
+        totalCount
+    }
+}

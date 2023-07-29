@@ -1,0 +1,11 @@
+query states($countryCode: String!){
+    states(countryCode: $countryCode){
+        countryCode
+        countryId
+        id
+        latitude
+        longitude
+        name
+        stateCode
+    }
+}

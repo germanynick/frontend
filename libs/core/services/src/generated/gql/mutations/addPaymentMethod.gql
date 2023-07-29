@@ -1,0 +1,7 @@
+mutation addPaymentMethod($clientId: String, $stripeToken: String!){
+    addPaymentMethod(clientId: $clientId, stripeToken: $stripeToken){
+        cardInfo
+        id
+        isDefault
+    }
+}

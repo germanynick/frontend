@@ -1,0 +1,16 @@
+query workerEducationOverview($id: String!){
+    workerEducationOverview(id: $id){
+        id
+        workerEducations{
+            city
+            country
+            createdAt
+            degreeDate
+            degreeName
+            id
+            major
+            schoolName
+            state
+        }
+    }
+}

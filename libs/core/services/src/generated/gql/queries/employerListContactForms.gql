@@ -1,0 +1,29 @@
+query employerListContactForms($after: String, $before: String, $first: Int, $last: Int){
+    employerListContactForms(after: $after, before: $before, first: $first, last: $last){
+        edges{
+            cursor
+        }
+        nodes{
+            contactType
+            createdAt
+            description
+            email
+            fullName
+            id
+            ownerId
+            ownerType
+            phone
+            source
+            status
+            subject
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            pageSize
+            startCursor
+        }
+        totalCount
+    }
+}

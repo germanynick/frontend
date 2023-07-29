@@ -1,0 +1,9 @@
+mutation createDirectUpload($byteSize: Int!, $checksum: String!, $contentType: String!, $filename: String!){
+    createDirectUpload(byteSize: $byteSize, checksum: $checksum, contentType: $contentType, filename: $filename){
+        blobId
+        headers
+        preSignedUrl
+        signedBlobId
+        url
+    }
+}

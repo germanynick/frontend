@@ -1,0 +1,33 @@
+query listEmployers($after: String, $before: String, $first: Int, $fullNameContain: String, $last: Int){
+    listEmployers(after: $after, before: $before, first: $first, fullNameContain: $fullNameContain, last: $last){
+        edges{
+            cursor
+        }
+        nodes{
+            agreedToTerms
+            changePasswordRequired
+            email
+            firstName
+            id
+            intervieweesNumber
+            lastName
+            lastSignInAt
+            paymentMethod
+            permittedEvents
+            phone
+            scope
+            scopesAreAllowedToUpdate
+            status
+            title
+            totalUnreadMessage
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            pageSize
+            startCursor
+        }
+        totalCount
+    }
+}

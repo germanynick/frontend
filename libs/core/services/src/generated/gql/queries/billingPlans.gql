@@ -1,0 +1,19 @@
+query billingPlans{
+    billingPlans{
+        active
+        billingPrices{
+            active
+            amount
+            currency
+            id
+            interval
+            intervalCount
+            isDefault
+        }
+        description
+        id
+        imageUrl
+        isFree
+        name
+    }
+}

@@ -1,0 +1,5 @@
+mutation markAllNotificationsStatus($events: [String!], $exceptEvents: [String!], $status: NotificationStatusEnum){
+    markAllNotificationsStatus(events: $events, exceptEvents: $exceptEvents, status: $status){
+        success
+    }
+}

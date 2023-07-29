@@ -1,0 +1,46 @@
+query employerFavoritedWorkers($jobId: String!, $filter: WorkerFilter, $jobId1: String, $limit: Int, $offset: Int, $sortBy: WorkerManagementSort){
+    employerFavoritedWorkers(filter: $filter, jobId: $jobId1, limit: $limit, offset: $offset, sortBy: $sortBy){
+        totalCount
+        workers{
+            agreedToTerms
+            availableStartDate
+            avatarUrl
+            blocked
+            changePasswordRequired
+            completedJobsNumber
+            dateOfBirth
+            email
+            employmentType
+            facilityTypes
+            firstName
+            hasActiveAssignment
+            id
+            isFavorited
+            jobCategoriesWorkedNumber
+            jobMatchingScore(jobId: $jobId)
+            lastName
+            lastOtpExpiredAt
+            lastSignInAt
+            locationsWorkedNumber
+            maidenName
+            noCall
+            noEmail
+            noNotification
+            noSms
+            noTalentMatches
+            overallRating
+            phone
+            phoneVerifiedAt
+            profilePercentageCompleted
+            referralCode
+            referralMethod
+            referrerCode
+            remainingExpirationTime
+            shiftRequested
+            socialSecurityNumber
+            timeOffRequested
+            totalUnreadMessage
+            workAuthorized
+        }
+    }
+}

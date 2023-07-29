@@ -1,0 +1,10 @@
+mutation updateCompanyOnboarding($description: String, $id: String!, $name: String, $referenceUrl: String){
+    updateCompanyOnboarding(description: $description, id: $id, name: $name, referenceUrl: $referenceUrl){
+        companyId
+        description
+        id
+        name
+        onboardingPartsNumber
+        referenceUrl
+    }
+}

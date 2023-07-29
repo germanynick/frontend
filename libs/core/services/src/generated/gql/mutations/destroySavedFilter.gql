@@ -1,0 +1,6 @@
+mutation destroySavedFilter($savedFilter: SavedFilterArgument){
+    destroySavedFilter(savedFilter: $savedFilter){
+        id
+        success
+    }
+}

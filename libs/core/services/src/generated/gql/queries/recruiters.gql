@@ -1,0 +1,10 @@
+query recruiters{
+    recruiters{
+        companyId
+        email
+        id
+        name
+        phone
+        title
+    }
+}

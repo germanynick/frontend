@@ -1,0 +1,10 @@
+mutation updateWorkingAuthorization($dateOfBirth: ISO8601Date, $id: String!, $idPhotoBase64: String, $idPhotoFileName: String, $legalRightToWork: Boolean, $socialSecurityNumber: String){
+    updateWorkingAuthorization(dateOfBirth: $dateOfBirth, id: $id, idPhotoBase64: $idPhotoBase64, idPhotoFileName: $idPhotoFileName, legalRightToWork: $legalRightToWork, socialSecurityNumber: $socialSecurityNumber){
+        dateOfBirth
+        id
+        idPhotoUrl
+        legalRightToWork
+        socialSecurityNumber
+        workerId
+    }
+}

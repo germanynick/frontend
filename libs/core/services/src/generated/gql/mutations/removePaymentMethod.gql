@@ -1,0 +1,5 @@
+mutation removePaymentMethod($clientId: String, $paymentMethodId: String!){
+    removePaymentMethod(clientId: $clientId, paymentMethodId: $paymentMethodId){
+        success
+    }
+}

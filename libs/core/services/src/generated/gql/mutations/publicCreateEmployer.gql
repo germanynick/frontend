@@ -1,0 +1,5 @@
+mutation publicCreateEmployer($agreedToTerms: Boolean, $avatarSignedBlobId: String, $clientAttributes: ClientArgument!, $email: String, $firstName: String, $lastName: String, $password: String, $passwordConfirmation: String, $paymentMethod: String, $phone: String, $recaptchaToken: String, $scope: EmployerScopeEnum, $source: SignupSourceEnum, $title: String){
+    publicCreateEmployer(agreedToTerms: $agreedToTerms, avatarSignedBlobId: $avatarSignedBlobId, clientAttributes: $clientAttributes, email: $email, firstName: $firstName, lastName: $lastName, password: $password, passwordConfirmation: $passwordConfirmation, paymentMethod: $paymentMethod, phone: $phone, recaptchaToken: $recaptchaToken, scope: $scope, source: $source, title: $title){
+        success
+    }
+}

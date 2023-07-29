@@ -1,0 +1,57 @@
+mutation verifySocialAuthentication($jobId: String!, $clientId: String!, $clientToken: String, $code: String, $email: String, $providerName: SocialProviderEnum!, $recaptchaToken: String, $redirectUri: String){
+    verifySocialAuthentication(clientId: $clientId, clientToken: $clientToken, code: $code, email: $email, providerName: $providerName, recaptchaToken: $recaptchaToken, redirectUri: $redirectUri){
+        authToken
+        emailHasAccount
+        notificationChannel
+        userSocialAuthentication{
+            email
+            firstName
+            id
+            lastName
+            providerName
+            providerUuid
+            userId
+        }
+        worker{
+            agreedToTerms
+            availableStartDate
+            avatarUrl
+            blocked
+            changePasswordRequired
+            completedJobsNumber
+            dateOfBirth
+            email
+            employmentType
+            facilityTypes
+            firstName
+            hasActiveAssignment
+            id
+            isFavorited
+            jobCategoriesWorkedNumber
+            jobMatchingScore(jobId: $jobId)
+            lastName
+            lastOtpExpiredAt
+            lastSignInAt
+            locationsWorkedNumber
+            maidenName
+            noCall
+            noEmail
+            noNotification
+            noSms
+            noTalentMatches
+            overallRating
+            phone
+            phoneVerifiedAt
+            profilePercentageCompleted
+            referralCode
+            referralMethod
+            referrerCode
+            remainingExpirationTime
+            shiftRequested
+            socialSecurityNumber
+            timeOffRequested
+            totalUnreadMessage
+            workAuthorized
+        }
+    }
+}

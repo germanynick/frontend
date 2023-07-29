@@ -1,0 +1,5 @@
+mutation markAllMessagesAsRead($ids: [String!]!){
+    markAllMessagesAsRead(ids: $ids){
+        success
+    }
+}

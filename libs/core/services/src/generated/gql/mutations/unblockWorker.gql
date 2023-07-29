@@ -1,0 +1,5 @@
+mutation unblockWorker($id: String!){
+    unblockWorker(id: $id){
+        success
+    }
+}

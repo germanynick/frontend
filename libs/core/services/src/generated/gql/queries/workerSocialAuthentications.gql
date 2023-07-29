@@ -1,0 +1,11 @@
+query workerSocialAuthentications{
+    workerSocialAuthentications{
+        email
+        firstName
+        id
+        lastName
+        providerName
+        providerUuid
+        userId
+    }
+}

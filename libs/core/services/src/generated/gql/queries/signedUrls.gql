@@ -1,0 +1,11 @@
+query signedUrls($size: [String!]!, $blobIds: [String!]!){
+    signedUrls(blobIds: $blobIds){
+        blobId
+        contentType
+        fileUrl
+        filename
+        id
+        imageUrls(size: $size)
+        thumbnails
+    }
+}

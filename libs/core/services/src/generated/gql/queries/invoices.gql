@@ -1,0 +1,28 @@
+query invoices($after: String, $before: String, $first: Int, $last: Int){
+    invoices(after: $after, before: $before, first: $first, last: $last){
+        edges{
+            cursor
+        }
+        nodes{
+            amountDue
+            amountPaid
+            createdAt
+            description
+            externalId
+            id
+            invoicePdf
+            number
+            paidAt
+            rawData
+            status
+        }
+        pageInfo{
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            pageSize
+            startCursor
+        }
+        totalCount
+    }
+}

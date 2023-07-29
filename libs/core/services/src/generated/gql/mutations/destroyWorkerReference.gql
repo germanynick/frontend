@@ -1,0 +1,6 @@
+mutation destroyWorkerReference($id: String!){
+    destroyWorkerReference(id: $id){
+        id
+        success
+    }
+}

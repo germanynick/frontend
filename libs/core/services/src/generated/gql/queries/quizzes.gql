@@ -1,0 +1,18 @@
+query quizzes($companyOnboardingId: String!){
+    quizzes(companyOnboardingId: $companyOnboardingId){
+        companyId
+        description
+        id
+        name
+        passingPercentage
+        quizQuestions{
+            companyId
+            description
+            id
+            name
+            question
+            quizAnswersNumber
+        }
+        quizQuestionsNumber
+    }
+}

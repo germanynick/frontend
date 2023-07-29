@@ -1,0 +1,12 @@
+query cities($stateCode: String!){
+    cities(stateCode: $stateCode){
+        countryCode
+        countryId
+        id
+        latitude
+        longitude
+        name
+        stateCode
+        stateId
+    }
+}

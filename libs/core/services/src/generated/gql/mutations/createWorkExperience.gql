@@ -1,0 +1,32 @@
+mutation createWorkExperience($agency: String, $assignmentType: String, $bedsInUnit: Int, $birthsPerMonth: String, $chartingSoftwareUsed: String, $city: String, $country: String, $currentlyEmployed: Boolean, $dailyCensus: Float, $dutiesPerformed: String, $endDate: ISO8601Date, $facilityName: String!, $facilityType: String, $floatSpecialty: String, $id: String, $mayContactSupervisor: Boolean, $numberSuites: Float, $nurseRatio: String, $patientRatio: String, $patientType: String, $position: String, $reasonForLeaving: String, $startDate: ISO8601Date!, $state: String, $supervisor: String, $travelAssignment: Boolean, $unitSpecialty: String, $zipcode: String){
+    createWorkExperience(agency: $agency, assignmentType: $assignmentType, bedsInUnit: $bedsInUnit, birthsPerMonth: $birthsPerMonth, chartingSoftwareUsed: $chartingSoftwareUsed, city: $city, country: $country, currentlyEmployed: $currentlyEmployed, dailyCensus: $dailyCensus, dutiesPerformed: $dutiesPerformed, endDate: $endDate, facilityName: $facilityName, facilityType: $facilityType, floatSpecialty: $floatSpecialty, id: $id, mayContactSupervisor: $mayContactSupervisor, numberSuites: $numberSuites, nurseRatio: $nurseRatio, patientRatio: $patientRatio, patientType: $patientType, position: $position, reasonForLeaving: $reasonForLeaving, startDate: $startDate, state: $state, supervisor: $supervisor, travelAssignment: $travelAssignment, unitSpecialty: $unitSpecialty, zipcode: $zipcode){
+        agency
+        assignmentType
+        bedsInUnit
+        birthsPerMonth
+        chartingSoftwareUsed
+        city
+        country
+        currentlyEmployed
+        dailyCensus
+        dutiesPerformed
+        endDate
+        facilityName
+        facilityType
+        floatSpecialty
+        id
+        mayContactSupervisor
+        numberSuites
+        nurseRatio
+        patientRatio
+        patientType
+        position
+        reasonForLeaving
+        startDate
+        state
+        supervisor
+        travelAssignment
+        unitSpecialty
+        zipcode
+    }
+}

@@ -1,0 +1,10 @@
+query companyOnboardings($companyId: String!){
+    companyOnboardings(companyId: $companyId){
+        companyId
+        description
+        id
+        name
+        onboardingPartsNumber
+        referenceUrl
+    }
+}

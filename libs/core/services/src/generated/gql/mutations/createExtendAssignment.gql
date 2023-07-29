@@ -1,0 +1,13 @@
+mutation createExtendAssignment($applicantTimeOffs: [ApplicantTimeOffArgument!], $note: String, $workerAssignmentId: String!){
+    createExtendAssignment(applicantTimeOffs: $applicantTimeOffs, note: $note, workerAssignmentId: $workerAssignmentId){
+        applicantTimeOffs{
+            endDate
+            id
+            startDate
+        }
+        id
+        note
+        timeOffEndDate
+        timeOffStartDate
+    }
+}

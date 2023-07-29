@@ -1,0 +1,6 @@
+mutation destroyJobTemplate($id: String!){
+    destroyJobTemplate(id: $id){
+        id
+        success
+    }
+}

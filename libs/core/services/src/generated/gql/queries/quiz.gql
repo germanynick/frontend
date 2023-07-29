@@ -1,0 +1,18 @@
+query quiz($id: String!){
+    quiz(id: $id){
+        companyId
+        description
+        id
+        name
+        passingPercentage
+        quizQuestions{
+            companyId
+            description
+            id
+            name
+            question
+            quizAnswersNumber
+        }
+        quizQuestionsNumber
+    }
+}

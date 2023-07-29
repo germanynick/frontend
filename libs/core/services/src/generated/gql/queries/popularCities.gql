@@ -1,0 +1,17 @@
+query popularCities{
+    popularCities{
+        availableJobs
+        avgWeeklyRate
+        city
+        cityImage
+        highWeeklyRate
+        locationImage{
+            city
+            id
+            state
+        }
+        lowWeeklyRate
+        state
+        totalJobs
+    }
+}

@@ -1,0 +1,19 @@
+query bulletins{
+    bulletins{
+        active
+        allowDismiss
+        companyId
+        content
+        createdAt
+        data
+        expiredAt
+        id
+        isDismissed
+        kind
+        mediaUrl
+        name
+        scope
+        targetedClass
+        title
+    }
+}

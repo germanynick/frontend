@@ -1,0 +1,5 @@
+mutation quickApplyJob($email: String!, $employmentType: String, $facilityTypes: String, $firstName: String!, $jobId: String!, $lastName: String!, $password: String, $passwordConfirmation: String, $phone: String!, $recaptchaToken: String, $referrerCode: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
+    quickApplyJob(email: $email, employmentType: $employmentType, facilityTypes: $facilityTypes, firstName: $firstName, jobId: $jobId, lastName: $lastName, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone, recaptchaToken: $recaptchaToken, referrerCode: $referrerCode, source: $source, workerSpecialtiesAttributes: $workerSpecialtiesAttributes, workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
+        success
+    }
+}

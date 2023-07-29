@@ -1,0 +1,39 @@
+mutation adminSendAdminReminders($additionalData: JSON, $content: String!, $objectIds: [String!]!, $reminderChannels: JSON, $reminderTime: ISO8601DateTime, $reminderType: AdminReminderTypeEnum, $title: String!){
+    adminSendAdminReminders(additionalData: $additionalData, content: $content, objectIds: $objectIds, reminderChannels: $reminderChannels, reminderTime: $reminderTime, reminderType: $reminderType, title: $title){
+        company{
+            address
+            addressState
+            city
+            country
+            description
+            id
+            logoUrl
+            mainContactEmail
+            mainContactName
+            name
+            phone
+            zip
+        }
+        content
+        createdAt
+        employer{
+            address
+            addressState
+            city
+            country
+            description
+            id
+            logoUrl
+            mainContactEmail
+            mainContactName
+            name
+            phone
+            zip
+        }
+        id
+        reminderChannels
+        reminderType
+        title
+        updatedAt
+    }
+}

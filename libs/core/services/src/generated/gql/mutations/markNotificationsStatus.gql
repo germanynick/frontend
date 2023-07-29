@@ -1,0 +1,5 @@
+mutation markNotificationsStatus($notificationIds: [String!]!, $status: NotificationStatusEnum){
+    markNotificationsStatus(notificationIds: $notificationIds, status: $status){
+        success
+    }
+}

@@ -1,0 +1,10 @@
+mutation createCompanyOnboarding($description: String!, $name: String!, $referenceUrl: String){
+    createCompanyOnboarding(description: $description, name: $name, referenceUrl: $referenceUrl){
+        companyId
+        description
+        id
+        name
+        onboardingPartsNumber
+        referenceUrl
+    }
+}

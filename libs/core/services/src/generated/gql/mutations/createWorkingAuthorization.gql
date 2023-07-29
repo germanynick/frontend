@@ -1,0 +1,10 @@
+mutation createWorkingAuthorization($dateOfBirth: ISO8601Date, $idPhotoBase64: String!, $idPhotoFileName: String!, $legalRightToWork: Boolean!, $socialSecurityNumber: String, $workerId: String!){
+    createWorkingAuthorization(dateOfBirth: $dateOfBirth, idPhotoBase64: $idPhotoBase64, idPhotoFileName: $idPhotoFileName, legalRightToWork: $legalRightToWork, socialSecurityNumber: $socialSecurityNumber, workerId: $workerId){
+        dateOfBirth
+        id
+        idPhotoUrl
+        legalRightToWork
+        socialSecurityNumber
+        workerId
+    }
+}

@@ -1,0 +1,15 @@
+query appWalkthroughs{
+    appWalkthroughs{
+        completed
+        components{
+            completed
+            description
+            id
+            target
+            title
+        }
+        id
+        name
+        webUrl
+    }
+}

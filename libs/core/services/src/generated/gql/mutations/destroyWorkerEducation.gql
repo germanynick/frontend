@@ -1,0 +1,6 @@
+mutation destroyWorkerEducation($id: String!){
+    destroyWorkerEducation(id: $id){
+        id
+        success
+    }
+}

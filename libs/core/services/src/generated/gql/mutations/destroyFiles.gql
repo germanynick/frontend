@@ -1,0 +1,6 @@
+mutation destroyFiles($ids: [String!]!){
+    destroyFiles(ids: $ids){
+        ids
+        success
+    }
+}
