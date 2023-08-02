@@ -16,12 +16,41 @@ const config: CodegenConfig = {
   documents: path.resolve(__dirname, './src/generated/gql/**/*.gql'),
 
   generates: {
-    [path.resolve(__dirname, './src/generated/sdk.ts')]: {
-      plugins: ['typescript', 'typescript-graphql-request', 'typescript-operations'],
+    [path.resolve(__dirname, './src/generated/types.ts')]: {
+      plugins: ['typescript', 'typescript-operations'],
       config: {
-        omitOperationSuffix: false,
+        skipDocumentsValidation: true,
+      },
+    },
+    [path.resolve(__dirname, './src/generated/hooks.ts')]: {
+      preset: 'import-types',
+      presetConfig: { typesPath: './types' },
+      plugins: ['typescript-react-query'],
+      config: {
         preResolveTypes: true,
         skipDocumentsValidation: true,
+        exposeDocument: false,
+        exposeQueryKeys: true,
+        exposeMutationKeys: true,
+        exposeFetcher: true,
+        addInfiniteQuery: true,
+
+        fetcher: {
+          func: '../fetcher#fetcher',
+          isReactHook: false,
+        },
+      },
+    },
+    [path.resolve(__dirname, './src/generated/sdk.ts')]: {
+      preset: 'import-types',
+      presetConfig: { typesPath: './types' },
+      plugins: ['typescript-graphql-request'],
+      config: {
+        preResolveTypes: true,
+        skipDocumentsValidation: true,
+        noExport: true,
+        documentMode: 'external',
+        importDocumentNodeExternallyFrom: './hooks',
       },
     },
   },
