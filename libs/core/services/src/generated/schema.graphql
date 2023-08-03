@@ -276,6 +276,7 @@ input ClientArgument {
   longitude: BigDecimal
   name: String!
   phone: String
+  removeImageId: String
   source: SignupSourceEnum = opus_web_portal
   state: String
   taxId: String
@@ -1608,6 +1609,7 @@ type Mutation {
     name: String!
     ownerAttributes: EmployerArgument
     phone: String
+    removeImageId: String
     source: SignupSourceEnum = opus_web_portal
     state: String
     taxId: String
@@ -1635,7 +1637,7 @@ type Mutation {
   createExtendAssignment(applicantTimeOffs: [ApplicantTimeOffArgument!], note: String, workerAssignmentId: String!): ExtendAssignment
   createFeedbackContactForm(contactType: ContactTypeEnum!, description: String, email: String, fullName: String, imagesSignedBlobIds: [String!], phone: String, subject: String): ContactForm
   createImportBatch(clientId: String, fileSignedBlobId: String!, objectType: ImportBatchObjectEnum!): ImportBatch
-  createIntegrationWorker(email: String!, employmentType: String, externalJobId: String, facilityTypes: String, firstName: String!, lastName: String!, password: String!, passwordConfirmation: String!, phone: String!, recaptchaToken: String, referrerCode: String, socialAuthenticationId: String, source: SignupSourceEnum = opus_web_portal, workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): CreateIntegrationWorkerPayload
+  createIntegrationWorker(email: String!, employmentType: String, externalJobId: String, facilityTypes: [String!], firstName: String!, lastName: String!, password: String!, passwordConfirmation: String!, phone: String!, recaptchaToken: String, referrerCode: String, socialAuthenticationId: String, source: SignupSourceEnum = opus_web_portal, workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): CreateIntegrationWorkerPayload
   createInterview(address1: String, address2: String, city: String, clientId: String, description: String, employerNote: String, interviewEndTime: ISO8601DateTime!, interviewLink: String, interviewStartTime: ISO8601DateTime!, interviewType: InterviewTypeEnum = online, interviewersAttributes: [InterviewerArgument!]!, jobApplicantId: String, jobId: String, source: JobApplicantSourceEnum = opus_web_portal, state: String, timezone: String!, title: String!, workerId: String!, zipCode: String): Interview
   createJob(accountId: String, address: String, address2: String, benefitContent: String, certificationsRequired: String, city: String, clientId: String, complianceRequirements: [String!], country: String, customStartDate: String, deletedBy: String, description: String, discipline: String, duration: Int, durationType: String, employerOfRecord: JobEmployerOfRecordEnum, exclusiveJob: String, facilityType: String, frequency: String, hospital: String, hoursPerWeek: Int, isAsap: Boolean, isSkillChecklist: Boolean, jobInvitationsAttributes: [JobInvitationArgument!], jobType: String, latitude: BigDecimal, licenseStateCompact: Boolean, licenseStateRequired: [String!], licensesRequired: [String!], locationId: String, longitude: BigDecimal, minExpYear: Int, minWeeklyPayAmount: Float, profileRequirements: [String!], recommendType: JobRecommendTypeEnum, requirementNotes: String, scope: String, shifts: [String!], skillId: Int, skillLongName: String, skillName: String, slotsNumber: Int, slug: String, source: String, specialty: [String!], startDate: ISO8601DateTime, state: String, title: String, weeklyPayAmount: Float, zipcode: String): Job
   createJobApplicant(applicantTimeOffs: [ApplicantTimeOffArgument!], jobId: String!, note: String, source: JobApplicantSourceEnum = opus_mobile_app): JobApplicant
@@ -1808,9 +1810,9 @@ type Mutation {
   markNotificationsStatus(notificationIds: [String!]!, status: NotificationStatusEnum = read): MarkStatusPayload
   publicCreateContactForm(description: String, email: String, fullName: String, phone: String, recaptchaToken: String, subject: String): PublicCreateContactFormPayload
   publicCreateEmployer(agreedToTerms: Boolean, avatarSignedBlobId: String, clientAttributes: ClientArgument!, email: String, firstName: String, lastName: String, password: String, passwordConfirmation: String, paymentMethod: String, phone: String, recaptchaToken: String, scope: EmployerScopeEnum, source: SignupSourceEnum = opus_web_portal, title: String): PublicCreateEmployerPayload
-  publicCreateWorker(email: String!, employmentType: String, facilityTypes: String, firstName: String!, jobId: String, lastName: String!, password: String, passwordConfirmation: String, phone: String!, recaptchaToken: String, referrerCode: String, socialAuthenticationId: String, source: SignupSourceEnum = opus_web_portal, workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): PublicCreateWorkerPayload
+  publicCreateWorker(email: String!, employmentType: String, facilityTypes: [String!], firstName: String!, jobId: String, lastName: String!, password: String, passwordConfirmation: String, phone: String!, recaptchaToken: String, referrerCode: String, socialAuthenticationId: String, source: SignupSourceEnum = opus_web_portal, workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): PublicCreateWorkerPayload
   publishDraftJob(accountId: String, address: String, address2: String, benefitContent: String, certificationsRequired: String, city: String, clientId: String, complianceRequirements: [String!], country: String, customStartDate: String, deletedBy: String, description: String, discipline: String, duration: Int, durationType: String, employerOfRecord: JobEmployerOfRecordEnum, exclusiveJob: String, facilityType: String, frequency: String, hospital: String, hoursPerWeek: Int, id: String!, isAsap: Boolean, isSkillChecklist: Boolean, jobInvitationsAttributes: [JobInvitationArgument!], jobType: String, latitude: BigDecimal, licenseStateCompact: Boolean, licenseStateRequired: [String!], licensesRequired: [String!], locationId: String, longitude: BigDecimal, minExpYear: Int, minWeeklyPayAmount: Float, profileRequirements: [String!], recommendType: JobRecommendTypeEnum, requirementNotes: String, scope: String, shifts: [String!], skillId: Int, skillLongName: String, skillName: String, slotsNumber: Int, slug: String, source: String, specialty: [String!], startDate: ISO8601DateTime, state: String, title: String, weeklyPayAmount: Float, zipcode: String): Job
-  quickApplyJob(email: String!, employmentType: String, facilityTypes: String, firstName: String!, jobId: String!, lastName: String!, password: String, passwordConfirmation: String, phone: String!, recaptchaToken: String, referrerCode: String, source: SignupSourceEnum = opus_web_portal, workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): QuickApplyJobWorkerPayload
+  quickApplyJob(email: String!, employmentType: String, facilityTypes: [String!], firstName: String!, jobId: String!, lastName: String!, password: String, passwordConfirmation: String, phone: String!, recaptchaToken: String, referrerCode: String, source: SignupSourceEnum = opus_web_portal, workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): QuickApplyJobWorkerPayload
   rejectClient(id: String!, rejectedReason: String!): RejectClientPayload
   removeBillingSubscription(clientId: String): RemoveSubscriptionPayload
   removeEmployer(id: String!): RemoveEmployerPayload
@@ -1851,6 +1853,7 @@ type Mutation {
     longitude: BigDecimal
     name: String!
     phone: String
+    removeImageId: String
     source: SignupSourceEnum = opus_web_portal
     state: String
     taxId: String
@@ -1953,7 +1956,7 @@ type Mutation {
     """"""
     zipcode: String
   ): WorkExperience
-  updateWorker(agreedToTerms: Boolean, availableStartDate: ISO8601Date, avatarImageBase64: String, avatarImageFileName: String, dateOfBirth: ISO8601Date, email: String, emergencyContactAttributes: EmergencyContactArgument, facilityTypes: String, firstName: String, lastName: String, noCall: Boolean, noEmail: Boolean, noNotification: Boolean, noSms: Boolean, password: String, phone: String, shiftRequested: [String!], socialSecurityNumber: String, timeOffRequested: String, workerAddressAttributes: WorkerAddressArgument, workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): Worker
+  updateWorker(agreedToTerms: Boolean, availableStartDate: ISO8601Date, avatarSignedBlobId: String, dateOfBirth: ISO8601Date, email: String, emergencyContactAttributes: EmergencyContactArgument, facilityTypes: [String!], firstName: String, lastName: String, noCall: Boolean, noEmail: Boolean, noNotification: Boolean, noSms: Boolean, password: String, phone: String, removeAvatarId: String, shiftRequested: [String!], socialSecurityNumber: String, timeOffRequested: String, workerAddressAttributes: WorkerAddressArgument, workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]): Worker
   updateWorkerBlock(id: String!, note: String!): WorkerBlock
   updateWorkerCertification(
     _destroy: Boolean
@@ -3146,7 +3149,7 @@ type Worker {
   email: String
   emergencyContact: EmergencyContact
   employmentType: String
-  facilityTypes: String
+  facilityTypes: [String!]
   firstName: String
   hasActiveAssignment: Boolean
   id: String
@@ -3160,6 +3163,7 @@ type Worker {
   maidenName: String
   noCall: Boolean
   noEmail: Boolean
+  noJobMatches: Int
   noNotification: Boolean
   noSms: Boolean
   noTalentMatches: Int
