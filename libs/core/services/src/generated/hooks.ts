@@ -211,6 +211,7 @@ export const AdminCreateOrUpdateWorkerBlockDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -375,6 +376,7 @@ export const AdminUpdateWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -419,6 +421,7 @@ export const AdminUpdateWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -505,6 +508,7 @@ export const AdminUpdateWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -679,6 +683,7 @@ export const AdminUploadDocumentsWorkerDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -1159,6 +1164,7 @@ export const CancelWorkerOnboardingDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -1238,6 +1244,7 @@ export const CancelWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -1282,6 +1289,7 @@ export const CancelWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -1368,6 +1376,7 @@ export const CancelWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -1819,7 +1828,7 @@ useCloseJobMutation.getKey = () => ['closeJob'];
 
 useCloseJobMutation.fetcher = (variables: Types.CloseJobMutationVariables, options?: RequestInit['headers']) => fetcher<Types.CloseJobMutation, Types.CloseJobMutationVariables>(CloseJobDocument, variables, options);
 export const CreateClientDocument = `
-    mutation createClient($size: [String!]!, $address1: String, $address2: String, $city: String, $contactEmail: String, $contactFirstName: String, $contactLastName: String, $contactPhone: String, $country: String, $description: String, $ein: String, $imageSignedBlobId: String, $latitude: BigDecimal, $locationsAttributes: [LocationArgument!], $longitude: BigDecimal, $name: String!, $ownerAttributes: EmployerArgument, $phone: String, $source: SignupSourceEnum, $state: String, $taxId: String, $url: String, $zipCode: String) {
+    mutation createClient($size: [String!]!, $address1: String, $address2: String, $city: String, $contactEmail: String, $contactFirstName: String, $contactLastName: String, $contactPhone: String, $country: String, $description: String, $ein: String, $imageSignedBlobId: String, $latitude: BigDecimal, $locationsAttributes: [LocationArgument!], $longitude: BigDecimal, $name: String!, $ownerAttributes: EmployerArgument, $phone: String, $removeImageId: String, $source: SignupSourceEnum, $state: String, $taxId: String, $url: String, $zipCode: String) {
   createClient(
     address1: $address1
     address2: $address2
@@ -1838,6 +1847,7 @@ export const CreateClientDocument = `
     name: $name
     ownerAttributes: $ownerAttributes
     phone: $phone
+    removeImageId: $removeImageId
     source: $source
     state: $state
     taxId: $taxId
@@ -2410,7 +2420,7 @@ useCreateImportBatchMutation.getKey = () => ['createImportBatch'];
 
 useCreateImportBatchMutation.fetcher = (variables: Types.CreateImportBatchMutationVariables, options?: RequestInit['headers']) => fetcher<Types.CreateImportBatchMutation, Types.CreateImportBatchMutationVariables>(CreateImportBatchDocument, variables, options);
 export const CreateIntegrationWorkerDocument = `
-    mutation createIntegrationWorker($jobId: String!, $email: String!, $employmentType: String, $externalJobId: String, $facilityTypes: String, $firstName: String!, $lastName: String!, $password: String!, $passwordConfirmation: String!, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
+    mutation createIntegrationWorker($jobId: String!, $email: String!, $employmentType: String, $externalJobId: String, $facilityTypes: [String!], $firstName: String!, $lastName: String!, $password: String!, $passwordConfirmation: String!, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
   createIntegrationWorker(
     email: $email
     employmentType: $employmentType
@@ -2454,6 +2464,7 @@ export const CreateIntegrationWorkerDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -2701,6 +2712,7 @@ export const CreateInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -3221,6 +3233,7 @@ export const CreateJobApplicantDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -3778,6 +3791,7 @@ export const CreateMultiJobApplicantsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -3964,6 +3978,7 @@ export const CreateOrUpdateSupportDocumentDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -4055,6 +4070,7 @@ export const CreateOrUpdateWorkerResumesDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -4305,6 +4321,7 @@ export const CreateOrUpdateWorkerSpecialtyDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -4519,6 +4536,7 @@ export const CreateSavedFilterDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -4745,6 +4763,7 @@ export const CreateWorkerBlockDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -4849,6 +4868,7 @@ export const CreateWorkerCertificationDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -4941,6 +4961,7 @@ export const CreateWorkerEducationDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -5048,6 +5069,7 @@ export const CreateWorkerOnboardingDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -5192,6 +5214,7 @@ export const CreateWorkerReferenceDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -5819,6 +5842,7 @@ export const DirectOfferDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -6112,6 +6136,7 @@ export const EmployerCancelInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -6204,6 +6229,7 @@ export const EmployerFavoriteWorkerDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -6604,6 +6630,7 @@ export const EmployerRescheduleInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -6832,6 +6859,7 @@ export const EmployerUpdateInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -7086,6 +7114,7 @@ export const EmployerUpdateJobApplicantDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -7936,7 +7965,7 @@ usePublicCreateEmployerMutation.getKey = () => ['publicCreateEmployer'];
 
 usePublicCreateEmployerMutation.fetcher = (variables: Types.PublicCreateEmployerMutationVariables, options?: RequestInit['headers']) => fetcher<Types.PublicCreateEmployerMutation, Types.PublicCreateEmployerMutationVariables>(PublicCreateEmployerDocument, variables, options);
 export const PublicCreateWorkerDocument = `
-    mutation publicCreateWorker($email: String!, $employmentType: String, $facilityTypes: String, $firstName: String!, $jobId: String, $lastName: String!, $password: String, $passwordConfirmation: String, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
+    mutation publicCreateWorker($email: String!, $employmentType: String, $facilityTypes: [String!], $firstName: String!, $jobId: String, $lastName: String!, $password: String, $passwordConfirmation: String, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
   publicCreateWorker(
     email: $email
     employmentType: $employmentType
@@ -8233,7 +8262,7 @@ usePublishDraftJobMutation.getKey = () => ['publishDraftJob'];
 
 usePublishDraftJobMutation.fetcher = (variables: Types.PublishDraftJobMutationVariables, options?: RequestInit['headers']) => fetcher<Types.PublishDraftJobMutation, Types.PublishDraftJobMutationVariables>(PublishDraftJobDocument, variables, options);
 export const QuickApplyJobDocument = `
-    mutation quickApplyJob($email: String!, $employmentType: String, $facilityTypes: String, $firstName: String!, $jobId: String!, $lastName: String!, $password: String, $passwordConfirmation: String, $phone: String!, $recaptchaToken: String, $referrerCode: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
+    mutation quickApplyJob($email: String!, $employmentType: String, $facilityTypes: [String!], $firstName: String!, $jobId: String!, $lastName: String!, $password: String, $passwordConfirmation: String, $phone: String!, $recaptchaToken: String, $referrerCode: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
   quickApplyJob(
     email: $email
     employmentType: $employmentType
@@ -8496,6 +8525,7 @@ export const SendOtpCodeDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -8660,6 +8690,7 @@ export const SignInWorkerDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -8859,6 +8890,7 @@ export const StartWorkerOnboardingDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -8924,6 +8956,7 @@ export const SyncAnonymousWorkerDataDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -8999,7 +9032,7 @@ useUpdateBillingSubscriptionMutation.getKey = () => ['updateBillingSubscription'
 
 useUpdateBillingSubscriptionMutation.fetcher = (variables: Types.UpdateBillingSubscriptionMutationVariables, options?: RequestInit['headers']) => fetcher<Types.UpdateBillingSubscriptionMutation, Types.UpdateBillingSubscriptionMutationVariables>(UpdateBillingSubscriptionDocument, variables, options);
 export const UpdateClientDocument = `
-    mutation updateClient($size: [String!]!, $address1: String, $address2: String, $city: String, $contactEmail: String, $contactFirstName: String, $contactLastName: String, $contactPhone: String, $country: String, $description: String, $ein: String, $id: String!, $imageSignedBlobId: String, $latitude: BigDecimal, $longitude: BigDecimal, $name: String!, $phone: String, $source: SignupSourceEnum, $state: String, $taxId: String, $url: String, $zipCode: String) {
+    mutation updateClient($size: [String!]!, $address1: String, $address2: String, $city: String, $contactEmail: String, $contactFirstName: String, $contactLastName: String, $contactPhone: String, $country: String, $description: String, $ein: String, $id: String!, $imageSignedBlobId: String, $latitude: BigDecimal, $longitude: BigDecimal, $name: String!, $phone: String, $removeImageId: String, $source: SignupSourceEnum, $state: String, $taxId: String, $url: String, $zipCode: String) {
   updateClient(
     address1: $address1
     address2: $address2
@@ -9017,6 +9050,7 @@ export const UpdateClientDocument = `
     longitude: $longitude
     name: $name
     phone: $phone
+    removeImageId: $removeImageId
     source: $source
     state: $state
     taxId: $taxId
@@ -9465,6 +9499,7 @@ export const UpdateIntegrationWorkerDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -10317,6 +10352,7 @@ export const UpdatePrimaryWorkerSpecialtyDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -10496,6 +10532,7 @@ export const UpdateSavedFilterDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -10605,12 +10642,11 @@ useUpdateWorkExperienceMutation.getKey = () => ['updateWorkExperience'];
 
 useUpdateWorkExperienceMutation.fetcher = (variables: Types.UpdateWorkExperienceMutationVariables, options?: RequestInit['headers']) => fetcher<Types.UpdateWorkExperienceMutation, Types.UpdateWorkExperienceMutationVariables>(UpdateWorkExperienceDocument, variables, options);
 export const UpdateWorkerDocument = `
-    mutation updateWorker($size: [String!]!, $jobId: String!, $size1: [String!]!, $agreedToTerms: Boolean, $availableStartDate: ISO8601Date, $avatarImageBase64: String, $avatarImageFileName: String, $dateOfBirth: ISO8601Date, $email: String, $emergencyContactAttributes: EmergencyContactArgument, $facilityTypes: String, $firstName: String, $lastName: String, $noCall: Boolean, $noEmail: Boolean, $noNotification: Boolean, $noSms: Boolean, $password: String, $phone: String, $shiftRequested: [String!], $socialSecurityNumber: String, $timeOffRequested: String, $workerAddressAttributes: WorkerAddressArgument, $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
+    mutation updateWorker($size: [String!]!, $jobId: String!, $size1: [String!]!, $agreedToTerms: Boolean, $availableStartDate: ISO8601Date, $avatarSignedBlobId: String, $dateOfBirth: ISO8601Date, $email: String, $emergencyContactAttributes: EmergencyContactArgument, $facilityTypes: [String!], $firstName: String, $lastName: String, $noCall: Boolean, $noEmail: Boolean, $noNotification: Boolean, $noSms: Boolean, $password: String, $phone: String, $removeAvatarId: String, $shiftRequested: [String!], $socialSecurityNumber: String, $timeOffRequested: String, $workerAddressAttributes: WorkerAddressArgument, $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]) {
   updateWorker(
     agreedToTerms: $agreedToTerms
     availableStartDate: $availableStartDate
-    avatarImageBase64: $avatarImageBase64
-    avatarImageFileName: $avatarImageFileName
+    avatarSignedBlobId: $avatarSignedBlobId
     dateOfBirth: $dateOfBirth
     email: $email
     emergencyContactAttributes: $emergencyContactAttributes
@@ -10623,6 +10659,7 @@ export const UpdateWorkerDocument = `
     noSms: $noSms
     password: $password
     phone: $phone
+    removeAvatarId: $removeAvatarId
     shiftRequested: $shiftRequested
     socialSecurityNumber: $socialSecurityNumber
     timeOffRequested: $timeOffRequested
@@ -10685,6 +10722,7 @@ export const UpdateWorkerDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -10971,6 +11009,7 @@ export const UpdateWorkerBlockDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -11075,6 +11114,7 @@ export const UpdateWorkerCertificationDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -11167,6 +11207,7 @@ export const UpdateWorkerEducationDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -11271,6 +11312,7 @@ export const UpdateWorkerOnboardingDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -11353,6 +11395,7 @@ export const UpdateWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -11397,6 +11440,7 @@ export const UpdateWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -11483,6 +11527,7 @@ export const UpdateWorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -11669,6 +11714,7 @@ export const UpdateWorkerReferenceDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -11859,6 +11905,7 @@ export const VerifySocialAuthenticationDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -12086,6 +12133,7 @@ export const WorkerProcessInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -12346,6 +12394,7 @@ export const WorkerRescheduleInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -12816,6 +12865,7 @@ export const AdminWorkerOnboardingOverviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -13007,6 +13057,7 @@ export const AppInitDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -13347,6 +13398,7 @@ export const AppliedJobsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -14082,6 +14134,7 @@ export const CompanyDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -14471,6 +14524,7 @@ export const CurrentWorkerAssignmentDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -15349,6 +15403,7 @@ export const EmployerDetailInterviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -15627,6 +15682,7 @@ export const EmployerDetailJobApplicantDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -15956,6 +16012,7 @@ export const EmployerFavoritedWorkersDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -16049,6 +16106,7 @@ export const EmployerJobMatchesDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -16846,6 +16904,7 @@ export const EmployerListWorkersDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -17060,6 +17119,7 @@ export const EmployerSearchWorkersDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -17356,6 +17416,7 @@ export const EmployerTalentWorkersDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -17471,6 +17532,7 @@ export const EmployerWorkerDetailsDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -18666,6 +18728,7 @@ export const JobApplicantDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -19418,6 +19481,7 @@ export const MessageThreadDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -19563,6 +19627,7 @@ export const MessageThreadsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -20928,6 +20993,7 @@ export const SavedFiltersDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -21487,6 +21553,7 @@ export const SupportDocumentsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -21887,6 +21954,7 @@ export const WorkerDocument = `
     maidenName
     noCall
     noEmail
+    noJobMatches
     noNotification
     noSms
     noTalentMatches
@@ -22299,6 +22367,7 @@ export const WorkerAssignmentDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -22546,6 +22615,7 @@ export const WorkerAssignmentsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -22785,6 +22855,7 @@ export const WorkerCertificationsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -22945,6 +23016,7 @@ export const WorkerEducationsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -23073,6 +23145,7 @@ export const WorkerOnboardingDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -23183,6 +23256,7 @@ export const WorkerOnboardingOverviewDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -23286,6 +23360,7 @@ export const WorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -23330,6 +23405,7 @@ export const WorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -23416,6 +23492,7 @@ export const WorkerOnboardingPartDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -23599,6 +23676,7 @@ export const WorkerOnboardingPartsDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -23643,6 +23721,7 @@ export const WorkerOnboardingPartsDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -23729,6 +23808,7 @@ export const WorkerOnboardingPartsDocument = `
           maidenName
           noCall
           noEmail
+          noJobMatches
           noNotification
           noSms
           noTalentMatches
@@ -23937,6 +24017,7 @@ export const WorkerOnboardingsDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -24168,6 +24249,7 @@ export const WorkerReferencesDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -24323,6 +24405,7 @@ export const WorkerSpecialtiesDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
@@ -24412,6 +24495,7 @@ export const WorkerTokenDocument = `
       maidenName
       noCall
       noEmail
+      noJobMatches
       noNotification
       noSms
       noTalentMatches
