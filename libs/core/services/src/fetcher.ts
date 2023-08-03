@@ -7,9 +7,11 @@ export const fetcher =
     variables?: TVariables,
     requestHeaders?: RequestInit['headers']
   ) =>
-  (_context?: QueryFunctionContext) =>
-    client.request<TData>({
+  (_context?: QueryFunctionContext) => {
+    console.log(client);
+    return client.request<TData>({
       document,
       variables,
       requestHeaders,
     });
+  };

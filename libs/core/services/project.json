@@ -31,8 +31,10 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "gqlg --schemaFilePath libs/core/services/src/generated/schema.graphql --destDirPath libs/core/services/src/generated/gql --depthLimit 2",
-          "rm libs/core/services/src/generated/gql/index.js"
+          "gqlg --schemaFilePath libs/core/services/src/generated/schema.graphql --destDirPath libs/core/services/src/documents --depthLimit 2",
+          "rm libs/core/services/src/documents/index.js",
+          "rm libs/core/services/src/documents/mutations/index.js",
+          "rm libs/core/services/src/documents/queries/index.js"
         ],
         "parallel": false
       }

@@ -1,7 +1,8 @@
 import { GraphQLClient } from 'graphql-request';
+import { CONFIGS } from '@frontend/core/config';
 
-export const client = new GraphQLClient(process.env['NEXT_PUBLIC__GRAPHQL_API'] as string, {
+export const client = new GraphQLClient(CONFIGS.graphql.endpointUrl, {
   headers: {
-    GraphiQL_Authorization: process.env['NEXT_PUBLIC__GRAPHQL_TOKEN'] as string,
+    GraphiQL_Authorization: CONFIGS.graphql.endpointToken,
   },
 });
