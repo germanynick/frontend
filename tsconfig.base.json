@@ -16,6 +16,7 @@
     "useDefineForClassFields": true,
     "baseUrl": ".",
     "paths": {
+      "@frontend/core/config": ["libs/core/config/src/index.ts"],
       "@frontend/core/form": ["libs/core/form/src/index.ts"],
       "@frontend/core/i18n": ["libs/core/i18n/src/index.ts"],
       "@frontend/core/services": ["libs/core/services/src/index.ts"],
