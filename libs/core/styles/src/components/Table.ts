@@ -39,7 +39,7 @@ export const TableHeaderCell = {
     paddingX: '8px',
     flexBasis: 0,
     alignItems: 'flex-start',
-    _text: { color: 'primary.600', fontSize: 'md', fontWeight: 'semibold' },
+    _text: { color: 'primary.600', fontSize: 'md', fontWeight: 'semibold', numberOfLines: 1 },
   },
 };
 

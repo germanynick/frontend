@@ -1,4 +1,4 @@
-import { Center, ICenterProps, Text, usePropsResolution } from 'native-base';
+import { Center, ICenterProps, Text, Tooltip, usePropsResolution } from 'native-base';
 import { FunctionComponent, createElement, useMemo } from 'react';
 import { IDataColumn } from './interfaces';
 
@@ -12,7 +12,11 @@ export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ colu
 
   const children = useMemo(() => {
     if (!column?.header) {
-      return <Text {..._text}>{column.title}</Text>;
+      return (
+        <Tooltip label={column.title || ''}>
+          <Text {..._text}>{column.title}</Text>
+        </Tooltip>
+      );
     }
 
     return createElement(column.header, { column, columnIndex, _text });
