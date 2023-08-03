@@ -6,11 +6,9 @@ import { Button, VStack, HStack, Center, AddIcon, Input, SearchIcon } from 'nati
 import i18n from '@frontend/core/i18n';
 import { UserCreateContainer } from './UserCreateContainer';
 import { debounce } from 'lodash';
-import { useRouter } from 'next/router';
 import { useInfiniteJobSearchQuery } from '@frontend/core/services';
 
 export const UserListContainer: FunctionComponent = observer(() => {
-  const { push } = useRouter();
   const { data, isLoading, fetchNextPage, isFetchingNextPage } = useInfiniteJobSearchQuery('offset', undefined, {
     getNextPageParam: (lastPage, allPages) => {
       const total = allPages.length * 20;
@@ -45,7 +43,6 @@ export const UserListContainer: FunctionComponent = observer(() => {
         data={flat}
         loading={isLoading || isFetchingNextPage}
         onScrollToEnd={debounce(() => fetchNextPage(), 500)}
-        onClickRow={() => push('/users/123')}
       />
       <UserCreateContainer />
     </VStack>
