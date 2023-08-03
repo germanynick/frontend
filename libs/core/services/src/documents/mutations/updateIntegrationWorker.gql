@@ -56,6 +56,7 @@ mutation updateIntegrationWorker($size: [String!]!, $jobId: String!, $size1: [St
         maidenName
         noCall
         noEmail
+        noJobMatches
         noNotification
         noSms
         noTalentMatches

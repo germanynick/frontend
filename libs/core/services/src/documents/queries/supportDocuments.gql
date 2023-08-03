@@ -49,6 +49,7 @@ query supportDocuments($size: [String!]!, $jobId: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

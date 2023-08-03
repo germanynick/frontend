@@ -56,6 +56,7 @@ query employerWorkerDetails($size: [String!]!, $jobId: String!, $size1: [String!
         maidenName
         noCall
         noEmail
+        noJobMatches
         noNotification
         noSms
         noTalentMatches

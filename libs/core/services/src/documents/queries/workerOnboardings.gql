@@ -69,6 +69,7 @@ query workerOnboardings($jobId: String!, $companyId: String){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

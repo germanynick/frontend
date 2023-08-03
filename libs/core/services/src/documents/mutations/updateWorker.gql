@@ -1,5 +1,5 @@
-mutation updateWorker($size: [String!]!, $jobId: String!, $size1: [String!]!, $agreedToTerms: Boolean, $availableStartDate: ISO8601Date, $avatarImageBase64: String, $avatarImageFileName: String, $dateOfBirth: ISO8601Date, $email: String, $emergencyContactAttributes: EmergencyContactArgument, $facilityTypes: String, $firstName: String, $lastName: String, $noCall: Boolean, $noEmail: Boolean, $noNotification: Boolean, $noSms: Boolean, $password: String, $phone: String, $shiftRequested: [String!], $socialSecurityNumber: String, $timeOffRequested: String, $workerAddressAttributes: WorkerAddressArgument, $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
-    updateWorker(agreedToTerms: $agreedToTerms, availableStartDate: $availableStartDate, avatarImageBase64: $avatarImageBase64, avatarImageFileName: $avatarImageFileName, dateOfBirth: $dateOfBirth, email: $email, emergencyContactAttributes: $emergencyContactAttributes, facilityTypes: $facilityTypes, firstName: $firstName, lastName: $lastName, noCall: $noCall, noEmail: $noEmail, noNotification: $noNotification, noSms: $noSms, password: $password, phone: $phone, shiftRequested: $shiftRequested, socialSecurityNumber: $socialSecurityNumber, timeOffRequested: $timeOffRequested, workerAddressAttributes: $workerAddressAttributes, workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
+mutation updateWorker($size: [String!]!, $jobId: String!, $size1: [String!]!, $agreedToTerms: Boolean, $availableStartDate: ISO8601Date, $avatarSignedBlobId: String, $dateOfBirth: ISO8601Date, $email: String, $emergencyContactAttributes: EmergencyContactArgument, $facilityTypes: [String!], $firstName: String, $lastName: String, $noCall: Boolean, $noEmail: Boolean, $noNotification: Boolean, $noSms: Boolean, $password: String, $phone: String, $removeAvatarId: String, $shiftRequested: [String!], $socialSecurityNumber: String, $timeOffRequested: String, $workerAddressAttributes: WorkerAddressArgument, $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
+    updateWorker(agreedToTerms: $agreedToTerms, availableStartDate: $availableStartDate, avatarSignedBlobId: $avatarSignedBlobId, dateOfBirth: $dateOfBirth, email: $email, emergencyContactAttributes: $emergencyContactAttributes, facilityTypes: $facilityTypes, firstName: $firstName, lastName: $lastName, noCall: $noCall, noEmail: $noEmail, noNotification: $noNotification, noSms: $noSms, password: $password, phone: $phone, removeAvatarId: $removeAvatarId, shiftRequested: $shiftRequested, socialSecurityNumber: $socialSecurityNumber, timeOffRequested: $timeOffRequested, workerAddressAttributes: $workerAddressAttributes, workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
         agreedToTerms
         availableStartDate
         avatar{
@@ -56,6 +56,7 @@ mutation updateWorker($size: [String!]!, $jobId: String!, $size1: [String!]!, $a
         maidenName
         noCall
         noEmail
+        noJobMatches
         noNotification
         noSms
         noTalentMatches

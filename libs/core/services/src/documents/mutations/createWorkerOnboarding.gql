@@ -69,6 +69,7 @@ mutation createWorkerOnboarding($jobId: String!, $companyOnboardingId: String!, 
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

@@ -56,6 +56,7 @@ mutation updateWorkerCertification($size: [String!]!, $jobId: String!, $_destroy
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

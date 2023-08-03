@@ -218,6 +218,7 @@ mutation createMultiJobApplicants($jobId: String!, $applicantTimeOffs: [Applican
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

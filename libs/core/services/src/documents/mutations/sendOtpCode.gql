@@ -25,6 +25,7 @@ mutation sendOtpCode($jobId: String!, $phoneNumber: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

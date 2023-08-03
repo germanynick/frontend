@@ -26,6 +26,7 @@ query workerToken($jobId: String!, $token: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

@@ -25,6 +25,7 @@ mutation syncAnonymousWorkerData($jobId: String!, $bookmarkJobsAttributes: [Book
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

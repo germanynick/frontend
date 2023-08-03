@@ -47,6 +47,7 @@ mutation updateWorkerEducation($jobId: String!, $_destroy: Boolean, $city: Strin
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

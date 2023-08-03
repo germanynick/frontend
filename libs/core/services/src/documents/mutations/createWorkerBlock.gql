@@ -85,6 +85,7 @@ mutation createWorkerBlock($jobId: String!, $clientId: String, $note: String!, $
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

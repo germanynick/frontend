@@ -85,6 +85,7 @@ mutation updateWorkerBlock($jobId: String!, $id: String!, $note: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

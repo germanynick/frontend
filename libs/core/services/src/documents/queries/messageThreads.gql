@@ -80,6 +80,7 @@ query messageThreads($jobId: String!, $filter: CompanyManagementFilter, $keyword
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

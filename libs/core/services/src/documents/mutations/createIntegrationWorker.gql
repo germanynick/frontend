@@ -1,4 +1,4 @@
-mutation createIntegrationWorker($jobId: String!, $email: String!, $employmentType: String, $externalJobId: String, $facilityTypes: String, $firstName: String!, $lastName: String!, $password: String!, $passwordConfirmation: String!, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
+mutation createIntegrationWorker($jobId: String!, $email: String!, $employmentType: String, $externalJobId: String, $facilityTypes: [String!], $firstName: String!, $lastName: String!, $password: String!, $passwordConfirmation: String!, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
     createIntegrationWorker(email: $email, employmentType: $employmentType, externalJobId: $externalJobId, facilityTypes: $facilityTypes, firstName: $firstName, lastName: $lastName, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone, recaptchaToken: $recaptchaToken, referrerCode: $referrerCode, socialAuthenticationId: $socialAuthenticationId, source: $source, workerSpecialtiesAttributes: $workerSpecialtiesAttributes, workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
         authToken
         notificationChannel
@@ -26,6 +26,7 @@ mutation createIntegrationWorker($jobId: String!, $email: String!, $employmentTy
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

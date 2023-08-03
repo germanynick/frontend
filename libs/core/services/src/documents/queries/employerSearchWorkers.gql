@@ -25,6 +25,7 @@ query employerSearchWorkers($jobId: String!, $filter: WorkerFilter, $jobId1: Str
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

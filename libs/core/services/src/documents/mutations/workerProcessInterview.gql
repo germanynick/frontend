@@ -192,6 +192,7 @@ mutation workerProcessInterview($jobId: String!, $event: String!, $id: String!, 
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

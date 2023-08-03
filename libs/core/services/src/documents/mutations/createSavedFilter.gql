@@ -137,6 +137,7 @@ mutation createSavedFilter($jobId: String!, $filterConditions: JobFilter, $saved
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

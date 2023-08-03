@@ -44,6 +44,7 @@ query workerOnboardingPart($jobId: String!, $jobId1: String!, $jobId2: String!, 
                     maidenName
                     noCall
                     noEmail
+                    noJobMatches
                     noNotification
                     noSms
                     noTalentMatches
@@ -88,6 +89,7 @@ query workerOnboardingPart($jobId: String!, $jobId1: String!, $jobId2: String!, 
                     maidenName
                     noCall
                     noEmail
+                    noJobMatches
                     noNotification
                     noSms
                     noTalentMatches
@@ -174,6 +176,7 @@ query workerOnboardingPart($jobId: String!, $jobId1: String!, $jobId2: String!, 
                     maidenName
                     noCall
                     noEmail
+                    noJobMatches
                     noNotification
                     noSms
                     noTalentMatches

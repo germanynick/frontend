@@ -51,6 +51,7 @@ query adminWorkerOnboardingOverview($jobId: String!, $workerId: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

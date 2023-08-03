@@ -25,6 +25,7 @@ query employerTalentWorkers($jobId: String!, $favorited: Boolean, $filter: Worke
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

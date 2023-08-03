@@ -36,6 +36,7 @@ mutation verifySocialAuthentication($jobId: String!, $clientId: String!, $client
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

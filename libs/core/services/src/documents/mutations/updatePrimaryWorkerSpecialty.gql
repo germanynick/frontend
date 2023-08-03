@@ -47,6 +47,7 @@ mutation updatePrimaryWorkerSpecialty($jobId: String!, $id: String!, $isPrimary:
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

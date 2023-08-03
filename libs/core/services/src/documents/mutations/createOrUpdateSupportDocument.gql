@@ -49,6 +49,7 @@ mutation createOrUpdateSupportDocument($size: [String!]!, $jobId: String!, $supp
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

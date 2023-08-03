@@ -85,6 +85,7 @@ mutation adminCreateOrUpdateWorkerBlock($jobId: String!, $workerBlocksAttributes
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

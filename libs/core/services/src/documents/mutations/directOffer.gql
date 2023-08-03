@@ -218,6 +218,7 @@ mutation directOffer($jobId: String!, $clientId: String, $employerNote: String, 
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

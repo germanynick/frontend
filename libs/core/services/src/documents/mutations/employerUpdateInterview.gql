@@ -192,6 +192,7 @@ mutation employerUpdateInterview($jobId: String!, $employerNote: String, $event:
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

@@ -137,6 +137,7 @@ query savedFilters($jobId: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

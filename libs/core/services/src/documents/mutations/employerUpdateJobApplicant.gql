@@ -218,6 +218,7 @@ mutation employerUpdateJobApplicant($jobId: String!, $employerNote: String, $eve
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

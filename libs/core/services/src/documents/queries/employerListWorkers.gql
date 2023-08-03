@@ -27,6 +27,7 @@ query employerListWorkers($jobId: String!, $after: String, $before: String, $fir
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

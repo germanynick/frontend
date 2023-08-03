@@ -192,6 +192,7 @@ mutation createInterview($jobId: String!, $address1: String, $address2: String, 
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

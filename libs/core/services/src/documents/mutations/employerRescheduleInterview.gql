@@ -192,6 +192,7 @@ mutation employerRescheduleInterview($jobId: String!, $employerNote: String, $id
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

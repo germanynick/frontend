@@ -218,6 +218,7 @@ query appliedJobs($jobId: String!, $filter: JobApplicantStatusEnum, $limit: Int,
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

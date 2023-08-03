@@ -47,6 +47,7 @@ query workerEducations($jobId: String!){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

@@ -47,6 +47,7 @@ mutation createOrUpdateWorkerSpecialty($jobId: String!, $workerSpecialtiesAttrib
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

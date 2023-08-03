@@ -187,6 +187,7 @@ query workerAssignments($jobId: String!, $limit: Int, $offset: Int){
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

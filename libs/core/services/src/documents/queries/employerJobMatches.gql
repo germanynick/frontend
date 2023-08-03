@@ -27,6 +27,7 @@ query employerJobMatches($jobId: String!, $after: String, $before: String, $favo
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches

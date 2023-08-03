@@ -80,6 +80,7 @@ query messageThread($jobId: String!, $id: String, $objectId: String, $objectType
             maidenName
             noCall
             noEmail
+            noJobMatches
             noNotification
             noSms
             noTalentMatches
