@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from 'react';
+import { FunctionComponent } from 'react';
 import { observer } from 'mobx-react-lite';
 import { userCreateStore, userListStore } from '../stores';
 import { UserList } from '../components/UserList';
@@ -6,14 +6,23 @@ import { Button, VStack, HStack, Center, AddIcon, Input, SearchIcon } from 'nati
 import i18n from '@frontend/core/i18n';
 import { UserCreateContainer } from './UserCreateContainer';
 import { debounce } from 'lodash';
+import { useRouter } from 'next/router';
+import { useInfiniteJobSearchQuery } from '@frontend/core/services';
 
 export const UserListContainer: FunctionComponent = observer(() => {
-  const { items, loading, handleKeywordChangeAsync, handleLoadMoreItemsAsync } = userListStore;
+  const { push } = useRouter();
+  const { data, isLoading, fetchNextPage, isFetchingNextPage } = useInfiniteJobSearchQuery('offset', undefined, {
+    getNextPageParam: (lastPage, allPages) => {
+      const total = allPages.length * 20;
+
+      return (total <= (lastPage.jobSearch?.totalCount || 0) && { offset: total }) || null;
+    },
+  });
+
+  const { handleKeywordChangeAsync } = userListStore;
   const { handleClickCreate } = userCreateStore;
 
-  useEffect(() => {
-    handleKeywordChangeAsync('');
-  }, []);
+  const flat = data?.pages?.flatMap((item) => item.jobSearch?.jobs);
 
   return (
     <VStack space={2} margin={2} maxHeight="full">
@@ -32,7 +41,12 @@ export const UserListContainer: FunctionComponent = observer(() => {
         </Center>
       </HStack>
 
-      <UserList data={items} loading={loading} onScrollToEnd={handleLoadMoreItemsAsync} />
+      <UserList
+        data={flat}
+        loading={isLoading || isFetchingNextPage}
+        onScrollToEnd={debounce(() => fetchNextPage(), 500)}
+        onClickRow={() => push('/users/123')}
+      />
       <UserCreateContainer />
     </VStack>
   );

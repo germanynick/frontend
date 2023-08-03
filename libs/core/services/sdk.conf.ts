@@ -5,9 +5,9 @@ const config: CodegenConfig = {
   overwrite: true,
   schema: [
     {
-      [process.env.NX_APP_GRAPHQL_API as string]: {
+      [process.env.NEXT_PUBLIC__GRAPHQL_API as string]: {
         headers: {
-          GraphiQL_Authorization: process.env.NX_APP_GRAPHQL_TOKEN as string,
+          GraphiQL_Authorization: process.env.NEXT_PUBLIC__GRAPHQL_TOKEN as string,
         },
       },
     },

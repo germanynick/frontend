@@ -310,6 +310,7 @@ export type ClientArgument = {
   longitude?: InputMaybe<Scalars['BigDecimal']['input']>;
   name: Scalars['String']['input'];
   phone?: InputMaybe<Scalars['String']['input']>;
+  removeImageId?: InputMaybe<Scalars['String']['input']>;
   source?: InputMaybe<SignupSourceEnum>;
   state?: InputMaybe<Scalars['String']['input']>;
   taxId?: InputMaybe<Scalars['String']['input']>;
@@ -1903,6 +1904,7 @@ export type MutationCreateClientArgs = {
   name: Scalars['String']['input'];
   ownerAttributes?: InputMaybe<EmployerArgument>;
   phone?: InputMaybe<Scalars['String']['input']>;
+  removeImageId?: InputMaybe<Scalars['String']['input']>;
   source?: InputMaybe<SignupSourceEnum>;
   state?: InputMaybe<Scalars['String']['input']>;
   taxId?: InputMaybe<Scalars['String']['input']>;
@@ -2874,6 +2876,7 @@ export type MutationUpdateClientArgs = {
   longitude?: InputMaybe<Scalars['BigDecimal']['input']>;
   name: Scalars['String']['input'];
   phone?: InputMaybe<Scalars['String']['input']>;
+  removeImageId?: InputMaybe<Scalars['String']['input']>;
   source?: InputMaybe<SignupSourceEnum>;
   state?: InputMaybe<Scalars['String']['input']>;
   taxId?: InputMaybe<Scalars['String']['input']>;
@@ -3180,8 +3183,7 @@ export type MutationUpdateWorkExperienceArgs = {
 export type MutationUpdateWorkerArgs = {
   agreedToTerms?: InputMaybe<Scalars['Boolean']['input']>;
   availableStartDate?: InputMaybe<Scalars['ISO8601Date']['input']>;
-  avatarImageBase64?: InputMaybe<Scalars['String']['input']>;
-  avatarImageFileName?: InputMaybe<Scalars['String']['input']>;
+  avatarSignedBlobId?: InputMaybe<Scalars['String']['input']>;
   dateOfBirth?: InputMaybe<Scalars['ISO8601Date']['input']>;
   email?: InputMaybe<Scalars['String']['input']>;
   emergencyContactAttributes?: InputMaybe<EmergencyContactArgument>;
@@ -3194,6 +3196,7 @@ export type MutationUpdateWorkerArgs = {
   noSms?: InputMaybe<Scalars['Boolean']['input']>;
   password?: InputMaybe<Scalars['String']['input']>;
   phone?: InputMaybe<Scalars['String']['input']>;
+  removeAvatarId?: InputMaybe<Scalars['String']['input']>;
   shiftRequested?: InputMaybe<Array<Scalars['String']['input']>>;
   socialSecurityNumber?: InputMaybe<Scalars['String']['input']>;
   timeOffRequested?: InputMaybe<Scalars['String']['input']>;
@@ -7604,7 +7607,7 @@ export type JobSearchQueryVariables = Exact<{
 }>;
 
 
-export type JobSearchQuery = { __typename?: 'Query', jobSearch?: { __typename?: 'JobWithPagination', totalCount?: number | null, jobs?: Array<{ __typename?: 'Job', address?: string | null, address2?: string | null, applicantCount?: number | null, benefitContent?: string | null, canApply?: boolean | null, city?: string | null, complianceRequirements?: Array<string> | null, country?: string | null, createdAt?: any | null, createdDate?: any | null, customStartDate?: string | null, description?: string | null, discipline?: string | null, distance?: number | null, distanceToCurrentUserSearchLocation?: number | null, draftId?: string | null, duration?: number | null, durationType?: string | null, employerOfRecord?: string | null, exclusiveJob?: boolean | null, externalCreatedAt?: any | null, externalJobId?: string | null, externalUpdatedAt?: any | null, facilityType?: string | null, favoriteCount?: number | null, frequency?: string | null, hospital?: string | null, hoursPerWeek?: number | null, id?: string | null, images?: Array<string> | null, isAsap?: boolean | null, isBookmarked?: boolean | null, isDisliked?: boolean | null, isFavorited?: boolean | null, isLiked?: boolean | null, isSkillChecklist?: string | null, jobType?: string | null, latitude?: number | null, longitude?: number | null, matchingPercentage?: number | null, minExpYear?: number | null, minWeeklyPayAmount?: number | null, noTalentMatches?: number | null, profileRequirements?: Array<string> | null, publishedAt?: any | null, requirementNotes?: string | null, shifts?: Array<string> | null, skillId?: number | null, skillLongName?: string | null, skillName?: string | null, slotsNumber?: number | null, slug?: string | null, specialty?: Array<string> | null, startDate?: any | null, state?: string | null, status?: string | null, templateName?: string | null, title?: string | null, topWorkerMatchingScores?: any | null, updatedAt?: any | null, viewCount?: number | null, weeklyPayAmount?: number | null, zipcode?: string | null }> | null, summary?: { __typename?: 'JobSearchSummary', disciplines?: any | null } | null } | null };
+export type JobSearchQuery = { __typename?: 'Query', jobSearch?: { __typename?: 'JobWithPagination', totalCount?: number | null, jobs?: Array<{ __typename?: 'Job', slug?: string | null, benefitContent?: string | null, requirementNotes?: string | null, hoursPerWeek?: number | null, id?: string | null, externalCreatedAt?: any | null, minWeeklyPayAmount?: number | null, title?: string | null, updatedAt?: any | null, weeklyPayAmount?: number | null, createdAt?: any | null, location?: { __typename?: 'Location', region?: string | null, city?: string | null, zipcode?: string | null, addressState?: string | null, latitude?: number | null, longitude?: number | null, distanceToCurrentUserSearchLocation?: number | null, country?: string | null, address?: string | null, name?: string | null } | null }> | null } | null };
 
 export type LastViewedJobsQueryVariables = Exact<{ [key: string]: never; }>;
 

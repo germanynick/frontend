@@ -18840,72 +18840,31 @@ export const JobSearchDocument = `
     summaryRequire: $summaryRequire
   ) {
     jobs {
-      address
-      address2
-      applicantCount
+      location {
+        region
+        city
+        zipcode
+        addressState
+        latitude
+        longitude
+        zipcode
+        region
+        distanceToCurrentUserSearchLocation
+        country
+        address
+        name
+      }
+      slug
       benefitContent
-      canApply
-      city
-      complianceRequirements
-      country
-      createdAt
-      createdDate
-      customStartDate
-      description
-      discipline
-      distance
-      distanceToCurrentUserSearchLocation
-      draftId
-      duration
-      durationType
-      employerOfRecord
-      exclusiveJob
-      externalCreatedAt
-      externalJobId
-      externalUpdatedAt
-      facilityType
-      favoriteCount
-      frequency
-      hospital
+      requirementNotes
       hoursPerWeek
       id
-      images
-      isAsap
-      isBookmarked
-      isDisliked
-      isFavorited
-      isLiked
-      isSkillChecklist
-      jobType
-      latitude
-      longitude
-      matchingPercentage
-      minExpYear
+      externalCreatedAt
       minWeeklyPayAmount
-      noTalentMatches
-      profileRequirements
-      publishedAt
-      requirementNotes
-      shifts
-      skillId
-      skillLongName
-      skillName
-      slotsNumber
-      slug
-      specialty
-      startDate
-      state
-      status
-      templateName
       title
-      topWorkerMatchingScores
       updatedAt
-      viewCount
       weeklyPayAmount
-      zipcode
-    }
-    summary {
-      disciplines
+      createdAt
     }
     totalCount
   }

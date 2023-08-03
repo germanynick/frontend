@@ -1,73 +1,33 @@
-query jobSearch($filter: JobFilter, $limit: Int, $offset: Int, $sortBy: JobManagementSort, $summaryRequire: Boolean){
-    jobSearch(filter: $filter, limit: $limit, offset: $offset, sortBy: $sortBy, summaryRequire: $summaryRequire){
-        jobs{
-            address
-            address2
-            applicantCount
-            benefitContent
-            canApply
-            city
-            complianceRequirements
-            country
-            createdAt
-            createdDate
-            customStartDate
-            description
-            discipline
-            distance
-            distanceToCurrentUserSearchLocation
-            draftId
-            duration
-            durationType
-            employerOfRecord
-            exclusiveJob
-            externalCreatedAt
-            externalJobId
-            externalUpdatedAt
-            facilityType
-            favoriteCount
-            frequency
-            hospital
-            hoursPerWeek
-            id
-            images
-            isAsap
-            isBookmarked
-            isDisliked
-            isFavorited
-            isLiked
-            isSkillChecklist
-            jobType
-            latitude
-            longitude
-            matchingPercentage
-            minExpYear
-            minWeeklyPayAmount
-            noTalentMatches
-            profileRequirements
-            publishedAt
-            requirementNotes
-            shifts
-            skillId
-            skillLongName
-            skillName
-            slotsNumber
-            slug
-            specialty
-            startDate
-            state
-            status
-            templateName
-            title
-            topWorkerMatchingScores
-            updatedAt
-            viewCount
-            weeklyPayAmount
-            zipcode
-        }
-        summary{
-            disciplines
-        }
-        totalCount
+query jobSearch($filter: JobFilter, $limit: Int, $offset: Int, $sortBy: JobManagementSort, $summaryRequire: Boolean) {
+  jobSearch(filter: $filter, limit: $limit, offset: $offset, sortBy: $sortBy, summaryRequire: $summaryRequire) {
+    jobs {
+      location {
+        region
+        city
+        zipcode
+        addressState
+        latitude
+        longitude
+        zipcode
+        region
+        distanceToCurrentUserSearchLocation
+        country
+        address
+        name
+      }
+      slug
+      benefitContent
+      requirementNotes
+      hoursPerWeek
+      id
+      externalCreatedAt
+      minWeeklyPayAmount
+      title
+      updatedAt
+      weeklyPayAmount
+      createdAt
     }
+
+    totalCount
+  }
 }

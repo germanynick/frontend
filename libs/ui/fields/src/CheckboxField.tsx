@@ -15,16 +15,18 @@ export interface ICheckboxFieldProps extends ICheckboxGroupProps, IBaseFieldProp
   children?: ReactNode;
 }
 
-export const CheckboxField = forwardRef<any, ICheckboxFieldProps>(({ label, error, isRequired, options, ...props }, ref) => {
-  return (
-    <BaseField label={label} error={error} isRequired={isRequired}>
-      <Checkbox.Group flexDirection="column" {...props}>
-        {options?.map(({ value, label, _checkbox, _text }, index) => (
-          <Checkbox ref={ref as any} size="sm" my={1} key={value} value={value} {..._checkbox}>
-            <Text {..._text}>{label}</Text>
-          </Checkbox>
-        ))}
-      </Checkbox.Group>
-    </BaseField>
-  );
-});
+export const CheckboxField = forwardRef<any, ICheckboxFieldProps>(
+  ({ label, error, isRequired, options, ...props }, ref) => {
+    return (
+      <BaseField label={label} error={error} isRequired={isRequired}>
+        <Checkbox.Group flexDirection="column" {...props}>
+          {options?.map(({ value, label, _checkbox, _text }, index) => (
+            <Checkbox ref={ref as any} size="sm" my={1} key={index} value={value} {..._checkbox}>
+              <Text {..._text}>{label}</Text>
+            </Checkbox>
+          ))}
+        </Checkbox.Group>
+      </BaseField>
+    );
+  }
+);

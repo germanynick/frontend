@@ -4,7 +4,7 @@ import { FunctionComponent } from 'react';
 
 export interface IUserCellFullNameProps extends IRenderCellProps {}
 
-export const UserCellFullName: FunctionComponent<IUserCellFullNameProps> = ({ rowData, rowIndex }) => {
+export const UserCellFullName: FunctionComponent<IUserCellFullNameProps> = ({ rowData }) => {
   const fullName = [rowData.firstName, rowData.lastName].join(' ');
 
   return (

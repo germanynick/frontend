@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ITextProps, ICenterProps } from 'native-base';
+import { ITextProps } from 'native-base';
 
 export interface IRenderCellProps {
   column: IDataColumn;
