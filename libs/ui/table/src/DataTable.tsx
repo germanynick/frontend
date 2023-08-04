@@ -9,6 +9,7 @@ import { IDataColumn } from './interfaces';
 import { GestureResponderEvent, NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import { TableLoading } from './TableLoading';
 import { TableEmpty } from './TableEmpty';
+import { Box } from 'native-base';
 
 export interface IDataTableProps {
   data?: any[];
@@ -53,29 +54,31 @@ export const DataTable: FunctionComponent<IDataTableProps> = ({
   );
 
   return (
-    <Table _contentContainerStyle={{ width }}>
-      <TableHeader>
-        {columns.map((column, columnIndex) => (
-          <TableHeaderCell column={column} columnIndex={columnIndex} key={columnIndex} />
-        ))}
-      </TableHeader>
-      <TableBody onScroll={handleScroll}>
-        {data?.map((rowData, rowIndex) => (
-          <TableRow key={rowIndex} onPress={onClickRow ? (e) => onClickRow(e, rowData, rowIndex) : undefined}>
-            {columns?.map((column, columnIndex) => (
-              <TableRowCell
-                key={columnIndex}
-                rowData={rowData}
-                rowIndex={rowIndex}
-                column={column}
-                columnIndex={columnIndex}
-              />
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-      {data?.length === 0 && !loading && <TableEmpty emptyText={emptyText} />}
+    <Box position="relative" height="full">
+      <Table _contentContainerStyle={{ width }}>
+        <TableHeader>
+          {columns.map((column, columnIndex) => (
+            <TableHeaderCell column={column} columnIndex={columnIndex} key={columnIndex} />
+          ))}
+        </TableHeader>
+        <TableBody onScroll={handleScroll}>
+          {data?.map((rowData, rowIndex) => (
+            <TableRow key={rowIndex} onPress={onClickRow ? (e) => onClickRow(e, rowData, rowIndex) : undefined}>
+              {columns?.map((column, columnIndex) => (
+                <TableRowCell
+                  key={columnIndex}
+                  rowData={rowData}
+                  rowIndex={rowIndex}
+                  column={column}
+                  columnIndex={columnIndex}
+                />
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+        {data?.length === 0 && !loading && <TableEmpty emptyText={emptyText} />}
+      </Table>
       <TableLoading loading={loading} loadingText={loadingText || 'Loading'} />
-    </Table>
+    </Box>
   );
 };
