@@ -67,10 +67,14 @@ export const TableRowCell = {
 export const TableLoading = {
   baseStyle: {
     top: 0,
-    left: '1/2',
     position: 'absolute',
     height: 'full',
+    width: 'full',
     space: 2,
+    backgroundColor: 'primary.50',
+    opacity: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 };
 

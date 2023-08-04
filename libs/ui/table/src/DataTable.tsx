@@ -75,7 +75,7 @@ export const DataTable: FunctionComponent<IDataTableProps> = ({
         ))}
       </TableBody>
       {data?.length === 0 && !loading && <TableEmpty emptyText={emptyText} />}
-      <TableLoading loading={loading} loadingText={loadingText} />
+      <TableLoading loading={loading} loadingText={loadingText || 'Loading'} />
     </Table>
   );
 };

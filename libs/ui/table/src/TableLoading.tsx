@@ -12,6 +12,10 @@ export interface ITableLoadingProps extends IStackProps {
 export const TableLoading: FunctionComponent<ITableLoadingProps> = ({ loading, loadingText, ...props }) => {
   const { _text, _spinner, ...themeProps } = usePropsResolution('TableLoading', props);
 
+  if (!loading) {
+    return null;
+  }
+
   return (
     <HStack {...themeProps}>
       {loading && <Spinner {..._spinner} />}
