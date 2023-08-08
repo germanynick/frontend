@@ -10,15 +10,15 @@ const COLUMNS: IDataColumn[] = [
   {
     flexGrow: 1,
     minWidth: 100,
-    title: i18n.t('LAST_LOGIN'),
-    cell: ({ _text, rowData }) => <Text {..._text}>{rowData?.lastLoginAt?.toString()}</Text>,
+    title: i18n.t('UPDATED_AT'),
+    cell: ({ _text, rowData }) => <Text {..._text}>{rowData?.updatedAt}</Text>,
   },
   {
     flexGrow: 1,
     minWidth: 100,
-    title: i18n.t('EMAIL'),
+    title: i18n.t('TITLE'),
     align: 'flex-end',
-    dataKey: 'email',
+    dataKey: 'title',
   },
   {
     flexGrow: 2,

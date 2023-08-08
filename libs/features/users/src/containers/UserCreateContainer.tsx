@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react';
 import { UserCreateModal } from '../components/UserCreateModal';
 import { observer } from 'mobx-react-lite';
-import { userCreateStore } from '../stores';
+import { useUserCreateStore } from '../stores';
 
 export const UserCreateContainer: FunctionComponent = observer(() => {
-  const { createValue, handleCancelCreate, handleSubmitCreate } = userCreateStore;
+  const { showModal, handleCancelCreate, handleSubmitCreate } = useUserCreateStore();
 
-  if (!createValue) {
+  if (!showModal) {
     return null;
   }
 

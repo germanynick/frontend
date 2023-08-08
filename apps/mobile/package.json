@@ -19,6 +19,12 @@
     "lodash": "*",
     "@hookform/resolvers": "*",
     "yup": "*",
-    "@faker-js/faker": "*"
+    "@faker-js/faker": "*",
+    "@graphql-codegen/cli": "*",
+    "graphql-request": "*",
+    "@tanstack/react-query": "*",
+    "@react-native-community/netinfo": "*",
+    "zustand": "*",
+    "ahooks": "*"
   }
 }

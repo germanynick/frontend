@@ -21,6 +21,8 @@ export const en: ResourceLanguage = {
     COMPUTER: 'Computer',
     BOOK: 'Book',
     MAJOR: 'Major',
+    TITLE: 'Title',
+    UPDATED_AT: 'Updated At',
 
     $PLACEHOLDERS: {
       FIRST_NAME: 'Lily',
