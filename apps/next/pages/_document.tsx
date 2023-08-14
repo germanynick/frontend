@@ -77,8 +77,9 @@ Document.getInitialProps = async (ctx) => {
         </>
       ),
     };
-  } finally {
-    //TODO: DONOTHING
+  } catch (error) {
+    console.debug('🚀 ~ file: _document.tsx:81 ~ Document.getInitialProps= ~ error:', error);
+    throw error;
   }
 };
 

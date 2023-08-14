@@ -7,7 +7,7 @@ export const useLocationCreateFormStart = () => {
   const setShow = useLocationCreateState((state) => state.setShow);
 
   const startForm = debounce(
-    (defaultValues: ILocationCreateSchema) => {
+    (defaultValues: Partial<ILocationCreateSchema>) => {
       reset(defaultValues);
       setShow(true);
     },
