@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import i18n from '@frontend/core/i18n';
 import { DataTable, IDataColumn, IDataTableProps } from '@frontend/ui/table';
 import { Text } from 'native-base';
@@ -50,6 +50,6 @@ const COLUMNS: IDataColumn[] = [
 
 export interface IUserListProps extends Partial<IDataTableProps> {}
 
-export const UserList: FunctionComponent<IUserListProps> = (props) => {
+export const UserList: FC<IUserListProps> = (props) => {
   return <DataTable {...props} columns={COLUMNS} />;
 };

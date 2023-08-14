@@ -1,9 +1,9 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { UserCreateModal } from '../components/UserCreateModal';
 import { observer } from 'mobx-react-lite';
 import { useUserCreateStore } from '../stores';
 
-export const UserCreateContainer: FunctionComponent = observer(() => {
+export const UserCreateContainer: FC = observer(() => {
   const { showModal, handleCancelCreate, handleSubmitCreate } = useUserCreateStore();
 
   if (!showModal) {

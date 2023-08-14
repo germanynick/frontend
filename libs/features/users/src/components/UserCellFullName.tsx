@@ -1,10 +1,10 @@
 import { IRenderCellProps } from '@frontend/ui/table';
 import { Avatar, Center, HStack, Text } from 'native-base';
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 
 export interface IUserCellFullNameProps extends IRenderCellProps {}
 
-export const UserCellFullName: FunctionComponent<IUserCellFullNameProps> = ({ rowData }) => {
+export const UserCellFullName: FC<IUserCellFullNameProps> = ({ rowData }) => {
   const fullName = [rowData.firstName, rowData.lastName].join(' ');
 
   return (

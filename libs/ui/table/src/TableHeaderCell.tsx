@@ -1,5 +1,5 @@
 import { Center, ICenterProps, Text, Tooltip, usePropsResolution } from 'native-base';
-import { FunctionComponent, createElement, useMemo } from 'react';
+import { FC, createElement, useMemo } from 'react';
 import { IDataColumn } from './interfaces';
 
 export interface ITableHeaderCellProps extends ICenterProps {
@@ -7,7 +7,7 @@ export interface ITableHeaderCellProps extends ICenterProps {
   columnIndex: number;
 }
 
-export const TableHeaderCell: FunctionComponent<ITableHeaderCellProps> = ({ column, columnIndex, ...props }) => {
+export const TableHeaderCell: FC<ITableHeaderCellProps> = ({ column, columnIndex, ...props }) => {
   const { _text, alignItems, ...themeProps } = usePropsResolution('TableHeaderCell', props);
 
   const children = useMemo(() => {

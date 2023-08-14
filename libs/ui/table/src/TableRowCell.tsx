@@ -1,5 +1,5 @@
 import { Center, ICenterProps, usePropsResolution, Tooltip, Text } from 'native-base';
-import { FunctionComponent, createElement, useMemo } from 'react';
+import { FC, createElement, useMemo } from 'react';
 import { IDataColumn } from './interfaces';
 import { get } from 'lodash';
 
@@ -10,13 +10,7 @@ export interface ITableRowCellProps extends ICenterProps {
   rowIndex: number;
 }
 
-export const TableRowCell: FunctionComponent<ITableRowCellProps> = ({
-  column,
-  columnIndex,
-  rowData,
-  rowIndex,
-  ...props
-}) => {
+export const TableRowCell: FC<ITableRowCellProps> = ({ column, columnIndex, rowData, rowIndex, ...props }) => {
   const { _text, alignItems, ...themeProps } = usePropsResolution('TableRowCell', props);
 
   const children = useMemo(() => {

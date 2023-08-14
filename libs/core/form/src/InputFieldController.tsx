@@ -1,13 +1,13 @@
 import { IInputFieldProps, InputField } from '@frontend/ui/fields';
-import { FunctionComponent } from 'react';
-import { Controller, Control, FieldValues } from 'react-hook-form';
+import { FC } from 'react';
+import { Controller, Control } from 'react-hook-form';
 
 export interface IInputFieldController extends IInputFieldProps {
   name: string;
-  control: Control<FieldValues>;
+  control: Control<any>;
 }
 
-export const InputFieldController: FunctionComponent<IInputFieldController> = ({ name, control, ...props }) => {
+export const InputFieldController: FC<IInputFieldController> = ({ name, control, ...props }) => {
   return (
     <Controller
       name={name}

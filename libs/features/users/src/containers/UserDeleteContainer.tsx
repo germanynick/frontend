@@ -1,6 +1,6 @@
 import { Button } from 'native-base';
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 
-export const UserDeleteContainer: FunctionComponent = () => {
+export const UserDeleteContainer: FC = () => {
   return <Button>UserDeleteContainer</Button>;
 };

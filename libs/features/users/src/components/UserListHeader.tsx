@@ -1,6 +1,6 @@
 import i18n from '@frontend/core/i18n';
 import { AddIcon, Button, Center, HStack, Input, SearchIcon } from 'native-base';
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { GestureResponderEvent } from 'react-native';
 
 export interface IUserListHeaderProps {
@@ -8,7 +8,7 @@ export interface IUserListHeaderProps {
   onSearchChange: (text: string) => void;
 }
 
-export const UserListHeader: FunctionComponent<IUserListHeaderProps> = ({ onClickCreate, onSearchChange }) => {
+export const UserListHeader: FC<IUserListHeaderProps> = ({ onClickCreate, onSearchChange }) => {
   return (
     <HStack direction={{ base: 'column', sm: 'row' }} space={2}>
       <Center>

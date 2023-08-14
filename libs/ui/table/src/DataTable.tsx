@@ -1,4 +1,4 @@
-import { FunctionComponent, useMemo, useCallback } from 'react';
+import { FC, useMemo, useCallback } from 'react';
 import { Table } from './Table';
 import { TableHeader } from './TableHeader';
 import { TableHeaderCell } from './TableHeaderCell';
@@ -22,7 +22,7 @@ export interface IDataTableProps {
   onScrollToEnd?: (event: NativeSyntheticEvent<NativeScrollEvent>) => void;
 }
 
-export const DataTable: FunctionComponent<IDataTableProps> = ({
+export const DataTable: FC<IDataTableProps> = ({
   columns,
   data,
   loading,

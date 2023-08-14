@@ -1,13 +1,13 @@
 import { CheckboxField, ICheckboxFieldProps } from '@frontend/ui/fields';
-import { FunctionComponent } from 'react';
-import { Controller, Control, FieldValues } from 'react-hook-form';
+import { FC } from 'react';
+import { Controller, Control } from 'react-hook-form';
 
 export interface ICheckboxFieldController extends ICheckboxFieldProps {
   name: string;
-  control: Control<FieldValues>;
+  control: Control<any>;
 }
 
-export const CheckboxFieldController: FunctionComponent<ICheckboxFieldController> = ({ name, control, ...props }) => {
+export const CheckboxFieldController: FC<ICheckboxFieldController> = ({ name, control, ...props }) => {
   return (
     <Controller
       name={name}

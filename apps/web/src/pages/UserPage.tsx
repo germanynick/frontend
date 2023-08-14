@@ -5,10 +5,10 @@ import {
   UserListContainer,
   UserUpdateContainer,
 } from '@frontend/features/users';
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-export const UserPage: FunctionComponent = () => {
+export const UserPage: FC = () => {
   return (
     <Routes>
       <Route index={true} Component={UserListContainer} />

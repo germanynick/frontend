@@ -1,13 +1,13 @@
 import { SelectField, ISelectFieldProps } from '@frontend/ui/fields';
-import { FunctionComponent } from 'react';
-import { Controller, Control, FieldValues } from 'react-hook-form';
+import { FC } from 'react';
+import { Controller, Control } from 'react-hook-form';
 
 export interface ISelectFieldController extends ISelectFieldProps {
   name: string;
-  control: Control<FieldValues>;
+  control: Control<any>;
 }
 
-export const SelectFieldController: FunctionComponent<ISelectFieldController> = ({ name, control, ...props }) => {
+export const SelectFieldController: FC<ISelectFieldController> = ({ name, control, ...props }) => {
   return (
     <Controller
       name={name}

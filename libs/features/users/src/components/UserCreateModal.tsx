@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import i18n from '@frontend/core/i18n';
 import { GestureResponderEvent } from 'react-native';
 import { Modal, HStack, Center, Button, useBreakpointValue, VStack } from 'native-base';
@@ -18,7 +18,7 @@ export interface IUserCreateModalProps {
   onSubmit: (formData: any) => void;
 }
 
-export const UserCreateModal: FunctionComponent<IUserCreateModalProps> = ({ isOpen, onClose, onSubmit }) => {
+export const UserCreateModal: FC<IUserCreateModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const size = useBreakpointValue({ base: 'full', xl: 'lg' });
   const { control, handleSubmit } = useForm({ schema: UserCreateSchema });
 

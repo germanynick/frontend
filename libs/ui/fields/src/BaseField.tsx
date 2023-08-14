@@ -1,5 +1,5 @@
 import { FormControl } from 'native-base';
-import { FunctionComponent, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 export interface IBaseFieldProps {
   label?: string;
@@ -8,7 +8,7 @@ export interface IBaseFieldProps {
   isRequired?: boolean;
 }
 
-export const BaseField: FunctionComponent<IBaseFieldProps> = ({ label, error, children, isRequired }) => {
+export const BaseField: FC<IBaseFieldProps> = ({ label, error, children, isRequired }) => {
   return (
     <FormControl isRequired={isRequired} isInvalid={!!error}>
       {label && <FormControl.Label>{label}</FormControl.Label>}

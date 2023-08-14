@@ -1,6 +1,6 @@
 import { Button } from 'native-base';
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 
-export const UserUpdateContainer: FunctionComponent = () => {
+export const UserUpdateContainer: FC = () => {
   return <Button>UserUpdateContainer</Button>;
 };

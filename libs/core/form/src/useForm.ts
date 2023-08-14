@@ -2,6 +2,7 @@ import { useForm as useBaseForm, UseFormProps, UseFormReturn, FieldValues } from
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ObjectSchema, setLocale } from 'yup';
 import i18n from '@frontend/core/i18n';
+import { useMemo } from 'react';
 
 setLocale({
   mixed: {
@@ -12,12 +13,16 @@ setLocale({
   },
 });
 
-export interface IUseFormProps extends UseFormProps {
-  schema?: ObjectSchema<FieldValues>;
+export interface IUseFormProps<T extends FieldValues> extends UseFormProps<T> {
+  schema?: ObjectSchema<T>;
 }
 
-export const useForm = ({ schema, ...props }: IUseFormProps): UseFormReturn => {
-  const resolver = schema ? yupResolver(schema) : props.resolver;
+export const useForm = <T extends FieldValues = FieldValues>({
+  schema,
+  resolver,
+  ...props
+}: IUseFormProps<T>): UseFormReturn<T> => {
+  const newResolver = useMemo(() => (schema ? yupResolver<T>(schema) : resolver), [schema, resolver]);
 
-  return useBaseForm({ ...props, resolver });
+  return useBaseForm<T>({ ...props, resolver: newResolver });
 };

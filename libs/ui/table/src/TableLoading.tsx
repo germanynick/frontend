@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { Spinner, ISpinnerProps, usePropsResolution, HStack, Text, IStackProps, ITextProps, Center } from 'native-base';
 
 export interface ITableLoadingProps extends IStackProps {
@@ -9,7 +9,7 @@ export interface ITableLoadingProps extends IStackProps {
   _text?: ITextProps;
 }
 
-export const TableLoading: FunctionComponent<ITableLoadingProps> = ({ loading, loadingText, ...props }) => {
+export const TableLoading: FC<ITableLoadingProps> = ({ loading, loadingText, ...props }) => {
   const { _text, _spinner, ...themeProps } = usePropsResolution('TableLoading', props);
 
   if (!loading) {

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import { UserList } from '../components/UserList';
 import { VStack } from 'native-base';
@@ -6,7 +6,7 @@ import { UserCreateContainer } from './UserCreateContainer';
 import { UserListHeader } from '../components/UserListHeader';
 import { useUserCreateStore, useUserListStore } from '../stores';
 
-export const UserListContainer: FunctionComponent = observer(() => {
+export const UserListContainer: FC = observer(() => {
   const { handleKeywordChange, handleScrollToEnd, items, loading } = useUserListStore();
   const { handleClickCreate } = useUserCreateStore();
 

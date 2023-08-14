@@ -1,13 +1,13 @@
 import { RadioField, IRadioFieldProps } from '@frontend/ui/fields';
-import { FunctionComponent } from 'react';
-import { Controller, Control, FieldValues } from 'react-hook-form';
+import { FC } from 'react';
+import { Controller, Control } from 'react-hook-form';
 
 export interface IRadioFieldController extends IRadioFieldProps {
   name: string;
-  control: Control<FieldValues>;
+  control: Control<any>;
 }
 
-export const RadioFieldController: FunctionComponent<IRadioFieldController> = ({ name, control, ...props }) => {
+export const RadioFieldController: FC<IRadioFieldController> = ({ name, control, ...props }) => {
   return (
     <Controller
       name={name}

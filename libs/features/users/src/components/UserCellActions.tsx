@@ -1,10 +1,10 @@
 import { IRenderCellProps } from '@frontend/ui/table';
 import { IconButton, ThreeDotsIcon } from 'native-base';
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 
 export interface IUserCellActionsProps extends IRenderCellProps {}
 
-export const UserCellActions: FunctionComponent<IUserCellActionsProps> = (props) => {
+export const UserCellActions: FC<IUserCellActionsProps> = (props) => {
   return (
     <IconButton
       size="sm"

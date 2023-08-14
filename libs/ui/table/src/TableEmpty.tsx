@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FC } from 'react';
 import { usePropsResolution, HStack, Text, IStackProps, ITextProps, Center } from 'native-base';
 
 export interface ITableEmptyProps extends IStackProps {
@@ -6,7 +6,7 @@ export interface ITableEmptyProps extends IStackProps {
   _text?: ITextProps;
 }
 
-export const TableEmpty: FunctionComponent<ITableEmptyProps> = ({ emptyText, ...props }) => {
+export const TableEmpty: FC<ITableEmptyProps> = ({ emptyText, ...props }) => {
   const { _text, ...themeProps } = usePropsResolution('TableEmpty', props);
 
   return (
