@@ -1,3 +1,4 @@
+import { useScrollToEnd } from '@frontend/core/hooks';
 import { JobSearchQueryVariables, useInfiniteJobSearchQuery } from '@frontend/core/services';
 import { debounce } from 'lodash';
 import { useMemo } from 'react';
@@ -39,13 +40,13 @@ export const useUserListStore = () => {
     [isLoading, isFetching, isFetchingNextPage]
   );
 
-  const handleScrollToEnd = debounce(() => fetchNextPage(), 300, { leading: true });
+  const { handleScroll } = useScrollToEnd({ triggerFn: fetchNextPage });
   const handleKeywordChange = debounce(setKeyword, 500);
 
   return {
     items,
     loading,
     handleKeywordChange,
-    handleScrollToEnd,
+    handleScroll,
   };
 };
