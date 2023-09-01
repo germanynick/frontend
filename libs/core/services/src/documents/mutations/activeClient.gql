@@ -1,5 +1,0 @@
-mutation activeClient($id: String!){
-    activeClient(id: $id){
-        success
-    }
-}

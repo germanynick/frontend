@@ -1,21 +1,7 @@
-query worker($size: [String!]!, $jobId: String!, $size1: [String!]!, $id: String!){
+query worker($id: String){
     worker(id: $id){
         agreedToTerms
         availableStartDate
-        avatar{
-            blobId
-            contentType
-            fileUrl
-            filename
-            id
-            imageUrls(size: $size)
-            thumbnails
-        }
-        avatarUrl
-        blocked
-        blockedClient{
-            note
-        }
         changePasswordRequired
         company{
             address
@@ -32,23 +18,11 @@ query worker($size: [String!]!, $jobId: String!, $size1: [String!]!, $id: String
             zip
         }
         completedJobsNumber
-        dateOfBirth
         email
-        emergencyContact{
-            contactName
-            contactPhone
-            contactRelationship
-            id
-            workerId
-        }
-        employmentType
         facilityTypes
         firstName
-        hasActiveAssignment
         id
-        isFavorited
         jobCategoriesWorkedNumber
-        jobMatchingScore(jobId: $jobId)
         lastName
         lastOtpExpiredAt
         lastSignInAt
@@ -56,16 +30,13 @@ query worker($size: [String!]!, $jobId: String!, $size1: [String!]!, $id: String
         maidenName
         noCall
         noEmail
-        noJobMatches
         noNotification
         noSms
-        noTalentMatches
         notificationSetting{
             assignmentEndingReminder
             completeOnboarding
             documentExpired
             id
-            interviewInvitationExpired
             jobAlert
             jobsRecommendation
             licenseExpired
@@ -76,7 +47,6 @@ query worker($size: [String!]!, $jobId: String!, $size1: [String!]!, $id: String
         overallRating
         phone
         phoneVerifiedAt
-        profilePercentageCompleted
         recruiter{
             companyId
             email
@@ -88,24 +58,8 @@ query worker($size: [String!]!, $jobId: String!, $size1: [String!]!, $id: String
         referralCode
         referralMethod
         referrerCode
-        remainingExpirationTime
-        resumes{
-            blobId
-            contentType
-            fileUrl
-            filename
-            id
-            imageUrls(size: $size1)
-            thumbnails
-        }
         shiftRequested
-        socialSecurityNumber
-        supportDocuments{
-            documentType
-            id
-        }
         timeOffRequested
-        totalUnreadMessage
         workAuthorized
         workExperienceOverview{
             discipline
@@ -160,80 +114,6 @@ query worker($size: [String!]!, $jobId: String!, $size1: [String!]!, $id: String
             street
             workerId
             zipcode
-        }
-        workerCertifications{
-            certificationType
-            compactLicense
-            createdAt
-            expirationDate
-            id
-            licenseDiscipline
-            licenseNumber
-            licenseState
-            title
-        }
-        workerEducations{
-            city
-            country
-            createdAt
-            degreeDate
-            degreeName
-            id
-            major
-            schoolName
-            state
-        }
-        workerNotes{
-            id
-            note
-            noteType
-        }
-        workerOnboardings{
-            companyOnboardingId
-            currentPartIndex
-            id
-            message
-            numOfCompletedSteps
-            percentageCompleted
-            permittedEvents
-            state
-        }
-        workerReferences{
-            city
-            contactEmail
-            contactFirstName
-            contactFullName
-            contactLastName
-            contactPhone
-            createdAt
-            facilityName
-            id
-            jobTitle
-            refType
-            relationship
-            salutation
-            state
-            workedFrom
-            workedTo
-        }
-        workerSpecialties{
-            category
-            completedChecklist
-            id
-            isExpired
-            isPrimary
-            specialty
-            specialtyId
-            specialtyLongName
-            status
-        }
-        workingAuthorization{
-            dateOfBirth
-            id
-            idPhotoUrl
-            legalRightToWork
-            socialSecurityNumber
-            workerId
         }
         workingPreferredLocations{
             id

@@ -1,9 +1,0 @@
-mutation exportBillingSubscription($clientName: String, $description: String, $exportAll: Boolean, $fileType: String!, $ids: [String!]!, $latestPaymentStatus: String, $nextPaymentAt: String, $paymentMethodType: String, $status: String){
-    exportBillingSubscription(clientName: $clientName, description: $description, exportAll: $exportAll, fileType: $fileType, ids: $ids, latestPaymentStatus: $latestPaymentStatus, nextPaymentAt: $nextPaymentAt, paymentMethodType: $paymentMethodType, status: $status){
-        companyId
-        fileType
-        fileUrl
-        id
-        status
-    }
-}

@@ -1,7 +1,0 @@
-mutation updateWorkingPreferredLocations($workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
-    updateWorkingPreferredLocations(workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
-        id
-        preferredWorkingCity
-        preferredWorkingState
-    }
-}

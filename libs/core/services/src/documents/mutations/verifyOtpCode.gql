@@ -1,5 +1,0 @@
-mutation verifyOtpCode($otpCode: String!, $phoneNumber: String!){
-    verifyOtpCode(otpCode: $otpCode, phoneNumber: $phoneNumber){
-        success
-    }
-}

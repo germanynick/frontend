@@ -1,20 +1,6 @@
-mutation updateWorkerEducation($jobId: String!, $_destroy: Boolean, $city: String, $country: String, $degreeDate: ISO8601Date, $degreeName: String, $id: String, $major: String, $schoolName: String, $state: String){
+mutation updateWorkerEducation($_destroy: Boolean, $city: String, $country: String, $degreeDate: ISO8601Date, $degreeName: String, $id: String!, $major: String, $schoolName: String, $state: String){
     updateWorkerEducation(_destroy: $_destroy, city: $city, country: $country, degreeDate: $degreeDate, degreeName: $degreeName, id: $id, major: $major, schoolName: $schoolName, state: $state){
         city
-        company{
-            address
-            addressState
-            city
-            country
-            description
-            id
-            logoUrl
-            mainContactEmail
-            mainContactName
-            name
-            phone
-            zip
-        }
         country
         createdAt
         degreeDate
@@ -26,20 +12,13 @@ mutation updateWorkerEducation($jobId: String!, $_destroy: Boolean, $city: Strin
         worker{
             agreedToTerms
             availableStartDate
-            avatarUrl
-            blocked
             changePasswordRequired
             completedJobsNumber
-            dateOfBirth
             email
-            employmentType
             facilityTypes
             firstName
-            hasActiveAssignment
             id
-            isFavorited
             jobCategoriesWorkedNumber
-            jobMatchingScore(jobId: $jobId)
             lastName
             lastOtpExpiredAt
             lastSignInAt
@@ -47,22 +26,16 @@ mutation updateWorkerEducation($jobId: String!, $_destroy: Boolean, $city: Strin
             maidenName
             noCall
             noEmail
-            noJobMatches
             noNotification
             noSms
-            noTalentMatches
             overallRating
             phone
             phoneVerifiedAt
-            profilePercentageCompleted
             referralCode
             referralMethod
             referrerCode
-            remainingExpirationTime
             shiftRequested
-            socialSecurityNumber
             timeOffRequested
-            totalUnreadMessage
             workAuthorized
         }
     }

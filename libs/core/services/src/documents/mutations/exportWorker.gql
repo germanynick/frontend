@@ -1,9 +1,0 @@
-mutation exportWorker($clientName: String, $email: String, $exportAll: Boolean, $fileType: String!, $firstName: String, $fullName: String, $ids: [String!]!, $lastName: String, $lastSignInAt: String, $phone: String, $profileCompletion: String, $specialty: String, $workerAddressZipcode: String){
-    exportWorker(clientName: $clientName, email: $email, exportAll: $exportAll, fileType: $fileType, firstName: $firstName, fullName: $fullName, ids: $ids, lastName: $lastName, lastSignInAt: $lastSignInAt, phone: $phone, profileCompletion: $profileCompletion, specialty: $specialty, workerAddressZipcode: $workerAddressZipcode){
-        companyId
-        fileType
-        fileUrl
-        id
-        status
-    }
-}

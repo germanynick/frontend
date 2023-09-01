@@ -1,5 +1,0 @@
-mutation signOutEmployer{
-    signOutEmployer{
-        success
-    }
-}

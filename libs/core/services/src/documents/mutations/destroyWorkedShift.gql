@@ -1,6 +1,0 @@
-mutation destroyWorkedShift($id: String!){
-    destroyWorkedShift(id: $id){
-        id
-        success
-    }
-}

@@ -1,5 +1,12 @@
 import { QueryFunctionContext } from '@tanstack/react-query';
-import { client } from './client';
+import { GraphQLClient } from 'graphql-request';
+
+const client = new GraphQLClient(process.env['NX_APP_GRAPHQL_URL'] || '', {
+  headers: () => ({
+    GraphiQL_Authorization: process.env['NX_APP_GRAPHQL_TOKEN'] || '',
+    'AUTH-TOKEN': localStorage.getItem('AUTH-TOKEN') || '',
+  }),
+});
 
 export const fetcher =
   <TData, TVariables extends { [key: string]: any }>(
@@ -7,9 +14,10 @@ export const fetcher =
     variables?: TVariables,
     requestHeaders?: RequestInit['headers']
   ) =>
-  (_context?: QueryFunctionContext) =>
-    client.request<TData>({
+  (_context?: QueryFunctionContext) => {
+    return client.request<TData>({
       document,
       variables,
       requestHeaders,
     });
+  };

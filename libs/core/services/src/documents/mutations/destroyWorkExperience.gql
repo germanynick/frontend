@@ -1,6 +1,0 @@
-mutation destroyWorkExperience($id: String!){
-    destroyWorkExperience(id: $id){
-        id
-        success
-    }
-}

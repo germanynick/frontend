@@ -1,5 +1,5 @@
-query appInit($jobId: String!, $workerId: String){
-    appInit(workerId: $workerId){
+query appInit{
+    appInit{
         chatIntegrationSetting{
             active
             configuration
@@ -54,20 +54,13 @@ query appInit($jobId: String!, $workerId: String){
         worker{
             agreedToTerms
             availableStartDate
-            avatarUrl
-            blocked
             changePasswordRequired
             completedJobsNumber
-            dateOfBirth
             email
-            employmentType
             facilityTypes
             firstName
-            hasActiveAssignment
             id
-            isFavorited
             jobCategoriesWorkedNumber
-            jobMatchingScore(jobId: $jobId)
             lastName
             lastOtpExpiredAt
             lastSignInAt
@@ -75,22 +68,16 @@ query appInit($jobId: String!, $workerId: String){
             maidenName
             noCall
             noEmail
-            noJobMatches
             noNotification
             noSms
-            noTalentMatches
             overallRating
             phone
             phoneVerifiedAt
-            profilePercentageCompleted
             referralCode
             referralMethod
             referrerCode
-            remainingExpirationTime
             shiftRequested
-            socialSecurityNumber
             timeOffRequested
-            totalUnreadMessage
             workAuthorized
         }
         workerOnboarding{
@@ -98,7 +85,6 @@ query appInit($jobId: String!, $workerId: String){
             currentPartIndex
             id
             message
-            numOfCompletedSteps
             percentageCompleted
             permittedEvents
             state

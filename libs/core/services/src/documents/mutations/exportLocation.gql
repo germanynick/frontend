@@ -1,9 +1,0 @@
-mutation exportLocation($address: String, $addressState: String, $city: String, $clientName: String, $exportAll: Boolean, $fileType: String!, $ids: [String!]!, $name: String, $phone: String, $status: String, $zipcode: String){
-    exportLocation(address: $address, addressState: $addressState, city: $city, clientName: $clientName, exportAll: $exportAll, fileType: $fileType, ids: $ids, name: $name, phone: $phone, status: $status, zipcode: $zipcode){
-        companyId
-        fileType
-        fileUrl
-        id
-        status
-    }
-}

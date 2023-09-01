@@ -1,5 +1,0 @@
-mutation destroyDraftJob($id: String!){
-    destroyDraftJob(id: $id){
-        success
-    }
-}

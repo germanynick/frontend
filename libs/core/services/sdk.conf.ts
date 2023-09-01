@@ -1,16 +1,13 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
 import path from 'path';
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { CONFIGS } from '../../core/config/src/configs'; // HACKY: MUST DIRECT IMPORT, DONT UPDATE THIS
-
 const config: CodegenConfig = {
   overwrite: true,
   schema: [
     {
-      [CONFIGS.graphql.endpointUrl]: {
+      [process.env['NX_APP_GRAPHQL_URL'] as string]: {
         headers: {
-          GraphiQL_Authorization: CONFIGS.graphql.endpointToken,
+          GraphiQL_Authorization: process.env['NX_APP_GRAPHQL_TOKEN'] || '',
         },
       },
     },
@@ -44,18 +41,18 @@ const config: CodegenConfig = {
         },
       },
     },
-    [path.resolve(__dirname, './src/generated/sdk.ts')]: {
-      preset: 'import-types',
-      presetConfig: { typesPath: './types' },
-      plugins: ['typescript-graphql-request'],
-      config: {
-        preResolveTypes: true,
-        skipDocumentsValidation: true,
-        noExport: true,
-        documentMode: 'external',
-        importDocumentNodeExternallyFrom: './hooks',
-      },
-    },
+    // [path.resolve(__dirname, './src/generated/sdk.ts')]: {
+    //   preset: 'import-types',
+    //   presetConfig: { typesPath: './types' },
+    //   plugins: ['typescript-graphql-request'],
+    //   config: {
+    //     preResolveTypes: true,
+    //     skipDocumentsValidation: true,
+    //     noExport: true,
+    //     documentMode: 'external',
+    //     importDocumentNodeExternallyFrom: './hooks',
+    //   },
+    // },
   },
 };
 

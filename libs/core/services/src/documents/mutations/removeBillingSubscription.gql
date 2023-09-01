@@ -1,5 +1,0 @@
-mutation removeBillingSubscription($clientId: String){
-    removeBillingSubscription(clientId: $clientId){
-        success
-    }
-}
