@@ -4,10 +4,8 @@
   "license": "MIT",
   "scripts": {
     "gen:lib": "nx g @nx/react-native:library",
-    "serve:web": "nx run web:serve --port=4100",
-    "serve:next": "nx run next:serve --port=4200",
-    "serve:expo": "nx run expo:start",
-    "serve:mobile": "nx run mobile:start"
+    "serve:web": "nx run web:serve",
+    "serve:mobile": "nx run expo:start"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +13,8 @@
     "@expo/next-adapter": "5.0.2",
     "@expo/vector-icons": "13.0.0",
     "@expo/webpack-config": "18.1.2",
+    "@gluestack-ui/themed": "^0.1.15",
+    "@gluestack/ui-next-adapter": "^2.1.9",
     "@graphql-codegen/typescript-react-query": "4.1.0",
     "@hookform/resolvers": "3.1.1",
     "@native-base/next-adapter": "2.3.0",
@@ -42,8 +42,8 @@
     "react-native": "0.71.11",
     "react-native-multiple-select": "0.5.12",
     "react-native-safe-area-context": "3.3.2",
-    "react-native-svg": "12.5.1",
-    "react-native-web": "0.17.7",
+    "react-native-svg": "^13.4.0",
+    "react-native-web": "^0.17.7",
     "react-router-dom": "6.11.2",
     "reflect-metadata": "0.1.13",
     "tslib": "2.3.0",
