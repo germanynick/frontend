@@ -1,6 +1,8 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
 import path from 'path';
 
+///IMPORTANT: THIS code only run with graphql@15.x.x, Please dont update graphql@16
+
 const config: CodegenConfig = {
   overwrite: true,
   schema: [
