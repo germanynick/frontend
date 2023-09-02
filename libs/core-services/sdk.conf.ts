@@ -41,18 +41,6 @@ const config: CodegenConfig = {
         },
       },
     },
-    // [path.resolve(__dirname, './src/generated/sdk.ts')]: {
-    //   preset: 'import-types',
-    //   presetConfig: { typesPath: './types' },
-    //   plugins: ['typescript-graphql-request'],
-    //   config: {
-    //     preResolveTypes: true,
-    //     skipDocumentsValidation: true,
-    //     noExport: true,
-    //     documentMode: 'external',
-    //     importDocumentNodeExternallyFrom: './hooks',
-    //   },
-    // },
   },
 };
 

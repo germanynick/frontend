@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "gen:sdk": "nx run core-services:gen:sdk",
     "serve:web": "nx run web:serve",
     "serve:mobile": "nx run mobile:start"
   },
@@ -28,8 +29,8 @@
     "expo-router": "2.0.5",
     "expo-splash-screen": "0.20.5",
     "expo-status-bar": "1.6.0",
-    "expo-updates": "~0.18.12",
-    "graphql": "16.8.0",
+    "expo-updates": "0.18.12",
+    "graphql": "15.8.0",
     "graphql-request": "6.1.0",
     "i18next": "23.4.6",
     "lodash": "4.17.21",

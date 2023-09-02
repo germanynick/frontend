@@ -10,16 +10,28 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "useDefineForClassFields": true,
     "baseUrl": ".",
     "paths": {
-      "@frontend/core/services": ["libs/core/services/src/index.ts"],
-      "@mylong.frontend/core-i18n": ["libs/core-i18n/src/index.ts"],
-      "@mylong.frontend/core-styles": ["libs/core-styles/src/index.ts"]
+      "@mylong.frontend/core-i18n": [
+        "libs/core-i18n/src/index.ts"
+      ],
+      "@mylong.frontend/core-services": [
+        "libs/core-services/src/index.ts"
+      ],
+      "@mylong.frontend/core-styles": [
+        "libs/core-styles/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
