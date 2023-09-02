@@ -1,4 +1,4 @@
-import { t } from '@frontend/core/i18n';
+import { t } from '@mylong.frontend/core-i18n';
 import { Button, ButtonText } from '@gluestack-ui/themed';
 
 export default function Page() {

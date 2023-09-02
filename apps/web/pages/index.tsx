@@ -1,4 +1,4 @@
-import { t } from '@frontend/core/i18n';
+import { t } from '@mylong.frontend/core-i18n';
 import { Box, Button, ButtonText } from '@gluestack-ui/themed';
 
 export function Index() {
