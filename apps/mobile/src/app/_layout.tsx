@@ -1,9 +1,10 @@
-import { GluestackUIProvider, config } from '@gluestack-ui/themed';
+import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { Stack } from 'expo-router';
+import { theme } from '@frontend/core/styles';
 
 const AppLayout = () => {
   return (
-    <GluestackUIProvider config={config.theme}>
+    <GluestackUIProvider config={theme}>
       <Stack screenOptions={{ headerShown: false }} />
     </GluestackUIProvider>
   );

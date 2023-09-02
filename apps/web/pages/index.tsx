@@ -1,11 +1,13 @@
 import { t } from '@frontend/core/i18n';
-import { Button, ButtonText } from '@gluestack-ui/themed';
+import { Box, Button, ButtonText } from '@gluestack-ui/themed';
 
 export function Index() {
   return (
-    <Button>
-      <ButtonText>{t('FIRST_NAME')}</ButtonText>
-    </Button>
+    <Box justifyContent="center" display="flex" alignItems="center">
+      <Button>
+        <ButtonText>{t('FIRST_NAME')}</ButtonText>
+      </Button>
+    </Box>
   );
 }
 

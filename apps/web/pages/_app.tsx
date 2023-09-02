@@ -1,9 +1,10 @@
 import { AppProps } from 'next/app';
-import { config, GluestackUIProvider } from '@gluestack-ui/themed';
+import { GluestackUIProvider } from '@gluestack-ui/themed';
+import { theme } from '@frontend/core/styles';
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <GluestackUIProvider config={config.theme}>
+    <GluestackUIProvider config={theme}>
       <Component {...pageProps} />
     </GluestackUIProvider>
   );
