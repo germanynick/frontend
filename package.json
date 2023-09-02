@@ -1,5 +1,5 @@
 {
-  "name": "@frontend/source",
+  "name": "@mylong.frontend/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -83,6 +83,8 @@
     "@react-native-community/cli-platform-android": "11.3.7",
     "@react-native-community/cli-platform-ios": "11.3.7",
     "@react-native/metro-config": "0.72.9",
+    "@rollup/plugin-url": "^7.0.0",
+    "@svgr/rollup": "^8.0.1",
     "@svgr/webpack": "8.1.0",
     "@swc/cli": "0.1.62",
     "@swc/core": "1.3.82",

@@ -1,6 +1,6 @@
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { Stack } from 'expo-router';
-import { theme } from '@frontend/core/styles';
+import { theme } from '@mylong.frontend/core-styles';
 
 const AppLayout = () => {
   return (

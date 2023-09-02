@@ -7,5 +7,5 @@ module.exports = {
   moduleNameMapper: {
     '\\.svg$': '@nx/react-native/plugins/jest/svg-mock'
   },
-  coverageDirectory: '../../../coverage/libs/core/styles'
+  coverageDirectory: '../../coverage/libs/core-styles'
 };

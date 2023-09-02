@@ -1,7 +1,7 @@
 {
   "extends": [
     "plugin:@nx/react",
-    "../../../.eslintrc.json"
+    "../../.eslintrc.json"
   ],
   "ignorePatterns": [
     "!**/*",
@@ -32,6 +32,15 @@
         "*.jsx"
       ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.json"
+      ],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": "error"
+      }
     }
   ]
 }

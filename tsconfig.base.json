@@ -18,7 +18,7 @@
     "paths": {
       "@frontend/core/i18n": ["libs/core/i18n/src/index.ts"],
       "@frontend/core/services": ["libs/core/services/src/index.ts"],
-      "@frontend/core/styles": ["libs/core/styles/src/index.ts"]
+      "@mylong.frontend/core-styles": ["libs/core-styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

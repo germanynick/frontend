@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { GluestackUIProvider } from '@gluestack-ui/themed';
-import { theme } from '@frontend/core/styles';
+import { theme } from '@mylong.frontend/core-styles';
 
 function App({ Component, pageProps }: AppProps) {
   return (
