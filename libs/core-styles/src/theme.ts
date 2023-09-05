@@ -2,9 +2,9 @@
 import { createConfig, config } from '@gluestack-ui/themed';
 import { defaultsDeep } from 'lodash';
 import { colors } from './colors';
-import { components } from './components';
+import * as components from './components';
 
-export const theme = createConfig(
+export const theme = createConfig<typeof config.theme>(
   defaultsDeep(
     {
       tokens: {
