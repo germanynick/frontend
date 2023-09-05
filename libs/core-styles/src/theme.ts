@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { createConfig, config } from '@gluestack-ui/themed';
 import { defaultsDeep } from 'lodash';
 import { colors } from './colors';

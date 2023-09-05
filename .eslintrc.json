@@ -29,7 +29,18 @@
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/adjacent-overload-signatures": "off",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@gluestack-ui/themed",
+                "message": "Please use `@mylong.frontend/core-styles` instead."
+              }
+            ]
+          }
+        ]
       }
     },
     {

@@ -1,12 +1,11 @@
-import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { Stack } from 'expo-router';
-import { theme } from '@mylong.frontend/core-styles';
+import { ThemeProvider } from '@mylong.frontend/core-styles';
 
 const AppLayout = () => {
   return (
-    <GluestackUIProvider config={theme}>
+    <ThemeProvider>
       <Stack screenOptions={{ headerShown: false }} />
-    </GluestackUIProvider>
+    </ThemeProvider>
   );
 };
 
