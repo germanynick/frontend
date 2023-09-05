@@ -27,6 +27,9 @@
       ],
       "@mylong.frontend/core-styles": [
         "libs/core-styles/src/index.ts"
+      ],
+      "@mylong.frontend/core-validtos": [
+        "libs/core-validators/src/index.ts"
       ]
     }
   },

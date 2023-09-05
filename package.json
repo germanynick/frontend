@@ -33,6 +33,7 @@
     "graphql": "15.8.0",
     "graphql-request": "6.1.0",
     "i18next": "23.4.6",
+    "libphonenumber-js": "^1.10.44",
     "lodash": "4.17.21",
     "next": "13.4.19",
     "normalize-css-color": "1.0.2",
@@ -52,6 +53,7 @@
     "reflect-metadata": "0.1.13",
     "tslib": "2.6.2",
     "yup": "1.2.0",
+    "yup-password": "^0.2.2",
     "zustand": "4.4.1"
   },
   "devDependencies": {
