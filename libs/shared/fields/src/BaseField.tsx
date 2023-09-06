@@ -4,7 +4,7 @@ import {
   FormControlError,
   FormControlErrorText,
   FormControlLabelText,
-} from '@mylong.frontend/core-styles';
+} from '@mylong.frontend/core-ui';
 import React from 'react';
 
 export interface IBaseFieldProps {

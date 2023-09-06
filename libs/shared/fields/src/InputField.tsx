@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseField, IBaseFieldProps } from './BaseField';
-import { Input, InputField as BaseInputField } from '@mylong.frontend/core-styles';
+import { Input, InputField as BaseInputField } from '@mylong.frontend/core-ui';
 import { FieldState } from '@mylong.frontend/core-form';
 
 export interface IInputFieldProps extends IBaseFieldProps {

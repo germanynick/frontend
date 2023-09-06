@@ -1,5 +1,5 @@
 import { createGlobalForm, useFieldState } from '@mylong.frontend/core-form';
-import { Box, Button, ButtonText, Text } from '@mylong.frontend/core-styles';
+import { Box, Button, ButtonText, Text } from '@mylong.frontend/core-ui';
 import { InputField } from '@mylong.frontend/shared-fields';
 import * as yup from '@mylong.frontend/core-validators';
 import { t } from '@mylong.frontend/core-i18n';

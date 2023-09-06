@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { ThemeProvider } from '@mylong.frontend/core-styles';
+import { ThemeProvider } from '@mylong.frontend/core-ui';
 
 const AppLayout = () => {
   return (

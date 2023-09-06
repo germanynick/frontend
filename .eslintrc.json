@@ -36,7 +36,7 @@
             "paths": [
               {
                 "name": "@gluestack-ui/themed",
-                "message": "Please use `@mylong.frontend/core-styles` instead."
+                "message": "Please use `@mylong.frontend/core-ui` instead."
               },
               {
                 "name": "yup",
