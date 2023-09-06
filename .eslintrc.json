@@ -37,6 +37,14 @@
               {
                 "name": "@gluestack-ui/themed",
                 "message": "Please use `@mylong.frontend/core-styles` instead."
+              },
+              {
+                "name": "yup",
+                "message": "Please use `@mylong.frontend/core-validators` instead."
+              },
+              {
+                "name": "final-form",
+                "message": "Please use `@mylong.frontend/core-form` instead."
               }
             ]
           }
