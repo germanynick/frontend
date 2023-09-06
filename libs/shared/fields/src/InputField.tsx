@@ -10,7 +10,7 @@ export interface IInputFieldProps extends IBaseFieldProps {
 export const InputField: React.FC<IInputFieldProps> = ({ label, error, field }) => {
   return (
     <BaseField label={label} error={error || field?.error}>
-      <Input>
+      <Input size="sm">
         <BaseInputField
           value={field?.value || ''}
           onBlur={field?.blur}

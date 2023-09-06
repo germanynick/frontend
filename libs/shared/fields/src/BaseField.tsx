@@ -15,7 +15,7 @@ export interface IBaseFieldProps {
 
 export const BaseField: React.FC<IBaseFieldProps> = ({ label, error, children }) => {
   return (
-    <FormControl width="$full" isInvalid={!!error}>
+    <FormControl width="$full" isInvalid={!!error} size="sm">
       {typeof label === 'string' ? (
         <FormControlLabel>
           <FormControlLabelText>{label}</FormControlLabelText>
