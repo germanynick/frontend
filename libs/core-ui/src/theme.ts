@@ -15,3 +15,11 @@ export const theme = createConfig<typeof config.theme>(
     config.theme,
   ),
 );
+
+// Get the type of Config
+type ConfigType = typeof theme;
+
+// Extend the internal styled config
+declare module '@gluestack-style/react' {
+  interface ICustomConfig extends ConfigType {}
+}

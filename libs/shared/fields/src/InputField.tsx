@@ -5,17 +5,19 @@ import { FieldState } from '@mylong.frontend/core-form';
 
 export interface IInputFieldProps extends IBaseFieldProps {
   field?: FieldState<any>;
+  placeholder?: string;
 }
 
-export const InputField: React.FC<IInputFieldProps> = ({ label, error, field }) => {
+export const InputField: React.FC<IInputFieldProps> = ({ label, error, placeholder, field }) => {
   return (
     <BaseField label={label} error={error || field?.error}>
-      <Input size="sm">
+      <Input>
         <BaseInputField
           value={field?.value || ''}
           onBlur={field?.blur}
           onFocus={field?.focus}
           onChangeText={field?.change}
+          placeholder={placeholder}
         />
       </Input>
     </BaseField>

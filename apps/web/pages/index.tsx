@@ -33,7 +33,7 @@ const Step1 = ({ onClick }) => {
         B: {emailField?.value} {emailField?.error}
       </Text>
 
-      <InputField label={t('NAME')} field={nameField} />
+      <InputField label={t('NAME')} placeholder="Hello world" field={nameField} />
       <InputField label={t('EMAIL')} field={emailField} />
       <PasswordField label={t('PASSWORD')} field={passwordField} />
 

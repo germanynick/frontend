@@ -5,23 +5,25 @@ import { FieldState } from '@mylong.frontend/core-form';
 
 export interface IPasswordFieldProps extends IBaseFieldProps {
   field?: FieldState<any>;
+  placeholder?: string;
 }
 
-export const PasswordField: React.FC<IPasswordFieldProps> = ({ label, error, field }) => {
+export const PasswordField: React.FC<IPasswordFieldProps> = ({ label, placeholder, error, field }) => {
   const [show, setShow] = useState(false);
 
   return (
     <BaseField label={label} error={error || field?.error}>
-      <Input size="sm">
+      <Input>
         <InputField
           type={!show ? 'password' : 'text'}
           value={field?.value || ''}
           onBlur={field?.blur}
           onFocus={field?.focus}
           onChangeText={field?.change}
+          placeholder={placeholder}
         />
-        <InputIcon pr="$3" onPress={() => setShow(!show)}>
-          <Icon as={show ? EyeIcon : EyeOffIcon} color="$darkBlue500" />
+        <InputIcon onPress={() => setShow(!show)}>
+          <Icon as={show ? EyeIcon : EyeOffIcon} />
         </InputIcon>
       </Input>
     </BaseField>

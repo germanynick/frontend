@@ -1,5 +1,8 @@
 export const Button = {
   theme: {
-    borderRadius: '$full',
+    defaultProps: {
+      width: '$full',
+      borderRadius: '$full',
+    },
   },
 };
