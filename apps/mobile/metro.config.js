@@ -1,13 +1,17 @@
 const { withNxMetro } = require('@nx/expo');
 const { getDefaultConfig } = require('@expo/metro-config');
+// const { withNativeWind } = require('nativewind/metro');
 
-const defaultConfig = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname, { isCSSEnabled: true });
 
 module.exports = (async () => {
   defaultConfig.transformer.babelTransformerPath = require.resolve('react-native-svg-transformer');
   defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter((ext) => ext !== 'svg');
   defaultConfig.resolver.sourceExts.push('svg');
-  return withNxMetro(defaultConfig, {
+
+  // const nativeWindConfig = withNativeWind(defaultConfig, { input: './global.css' });
+
+  const nxConfig = withNxMetro(defaultConfig, {
     // Change this to true to see debugging info.
     // Useful if you have issues resolving modules
     debug: false,
@@ -18,4 +22,5 @@ module.exports = (async () => {
     // Specify any additional (to projectRoot) watch folders, this is used to know which files to watch
     watchFolders: [],
   });
+  return nxConfig;
 })();

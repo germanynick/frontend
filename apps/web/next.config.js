@@ -3,7 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 const { withGluestackUI } = require('@gluestack/ui-next-adapter');
-// const { withExpo } = require('@expo/next-adapter');
+const { withExpo } = require('@expo/next-adapter');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -25,12 +25,13 @@ const nextConfig = {
     '@gluestack-ui/themed',
     '@gluestack-style',
     'expo-linear-gradient',
+    'nativewind',
   ],
 };
 
 const plugins = [
   withGluestackUI,
-  // withExpo,
+  withExpo,
   // Add more Next.js plugins to this list if needed.
   withNx,
 ];
