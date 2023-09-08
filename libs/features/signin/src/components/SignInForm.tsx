@@ -5,8 +5,8 @@ import { InputField, PasswordField } from '@mylong.frontend/shared-fields';
 import { FieldState } from '@mylong.frontend/core-form';
 
 export interface ISignInFormProps {
-  emailField?: FieldState<any>;
-  passwordField?: FieldState<any>;
+  emailField: FieldState<any>;
+  passwordField: FieldState<any>;
   onSubmit: () => void;
   onSubmit2: () => void;
 }
