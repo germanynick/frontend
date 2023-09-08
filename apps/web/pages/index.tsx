@@ -1,4 +1,4 @@
-import { SignInContainer } from '@mylong.frontend/features-sign';
+import { SignInContainer } from '@mylong.frontend/features-signin';
 export function Index() {
   return (
     <>
