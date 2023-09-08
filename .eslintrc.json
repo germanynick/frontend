@@ -45,7 +45,7 @@
               {
                 "name": "final-form",
                 "message": "Please use `@mylong.frontend/core-form` instead."
-              }
+              },
               {
                 "name": "localforage",
                 "message": "Please use `@mylong.frontend/core-storage` instead."

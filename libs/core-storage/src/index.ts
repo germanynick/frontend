@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import * as localforage from 'localforage';
 
 export const storage = {

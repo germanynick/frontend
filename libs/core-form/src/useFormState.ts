@@ -15,6 +15,7 @@ export const useFormState = <TFormValues extends object>(
       },
       { active: true, pristine: true, submitting: true, values: true, ...subscription },
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return formState;

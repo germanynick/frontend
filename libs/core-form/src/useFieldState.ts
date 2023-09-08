@@ -21,6 +21,7 @@ export const useFieldState = <TFormValues extends object>(
       },
       { value: true, error: true, ...subscription },
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return fieldState;
