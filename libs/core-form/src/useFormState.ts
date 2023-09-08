@@ -15,7 +15,7 @@ export const useFormState = <TFormValues extends object>(
       },
       { active: true, pristine: true, submitting: true, values: true, ...subscription },
     );
-  }, [form, subscription]);
+  }, []);
 
   return formState;
 };

@@ -7,7 +7,11 @@ export const useFieldState = <TFormValues extends object>(
   form: FormApi<TFormValues>,
   subscription?: FieldSubscription,
 ) => {
-  const [fieldState, setFieldState] = useState<FieldState<TFormValues[keyof TFormValues]>>();
+  const [fieldState, setFieldState] = useState<FieldState<TFormValues[keyof TFormValues]> | undefined>(() => {
+    const initialState = form.getFieldState(name);
+
+    return initialState;
+  });
 
   useEffect(() => {
     return form.registerField(
@@ -17,7 +21,7 @@ export const useFieldState = <TFormValues extends object>(
       },
       { value: true, error: true, ...subscription },
     );
-  }, [name, form, subscription]);
+  }, []);
 
   return fieldState;
 };

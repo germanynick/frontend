@@ -3,6 +3,7 @@ import { Box, Button, ButtonText, Text } from '@mylong.frontend/core-ui';
 import { InputField, PasswordField } from '@mylong.frontend/shared-fields';
 import * as yup from '@mylong.frontend/core-validators';
 import { t } from '@mylong.frontend/core-i18n';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { useState } from 'react';
 
 const schema = yup.object({
