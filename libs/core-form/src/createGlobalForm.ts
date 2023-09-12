@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import { Config, FormApi, SubmissionErrors, createForm } from 'final-form';
 import { create } from 'zustand';
-import * as yup from '@mylong.frontend/core-validators';
+import { yup, yupResolver } from '@mylong.frontend/core-validators';
 
 type ISubmitFunction = <TFormValues>(
   values?: TFormValues,
@@ -22,7 +22,7 @@ export const createGlobalForm = <TFormValues extends object>(
     submitFunc: () => Promise.resolve(undefined),
     setSubmitFunc: (submitFunc) => set({ submitFunc }),
     formApi: createForm<TFormValues>({
-      validate: schema ? yup.yupResolver(schema) : undefined,
+      validate: schema ? yupResolver(schema) : undefined,
       onSubmit: (values, formApi) => {
         const { submitFunc } = get();
 

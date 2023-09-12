@@ -5,7 +5,5 @@ import { extendYupPhone } from './extendYupPhone';
 
 extendYupPassword(yup);
 extendYupPhone(yup);
-
-// eslint-disable-next-line no-restricted-imports
-export * from 'yup';
 export * from './yupResolver';
+export { yup };
