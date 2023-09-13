@@ -8,7 +8,7 @@
     "gen:sdk": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "graphql-codegen --config libs/core-services/sdk.conf.ts"
+        "command": "graphql-codegen --config libs/core/services/sdk.conf.ts"
       }
     },
     "lint": {
