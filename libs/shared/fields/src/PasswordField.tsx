@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { BaseField, IBaseFieldProps } from './BaseField';
 import { Input, InputField, InputIcon, EyeIcon, EyeOffIcon, Icon } from '@mylong.frontend/core-ui';
-import { useFieldError } from '@mylong.frontend/core-form';
+import { FieldState, useFieldError } from '@mylong.frontend/core-form';
 
 export interface IPasswordFieldProps extends IBaseFieldProps {
   placeholder?: string;
+  field: FieldState<any>;
 }
 
 export const PasswordField: React.FC<IPasswordFieldProps> = ({ label, placeholder, error, field }) => {
