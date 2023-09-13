@@ -22,7 +22,7 @@
       "@mylong.frontend/core-services": ["libs/core/services/src/index.ts"],
       "@mylong.frontend/core-storage": ["libs/core/storage/src/index.ts"],
       "@mylong.frontend/core-ui": ["libs/core/ui/src/index.ts"],
-      "@mylong.frontend/core-validators": ["libs/core-validators/src/index.ts"],
+      "@mylong.frontend/core-validators": ["libs/core/validators/src/index.ts"],
       "@mylong.frontend/features-signin": ["libs/features/signin/src/index.ts"],
       "@mylong.frontend/shared-fields": ["libs/shared/fields/src/index.ts"],
       "@mylong.frontend/shared-hooks": ["libs/shared/hooks/src/index.ts"],
