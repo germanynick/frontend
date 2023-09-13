@@ -8,10 +8,5 @@
       }
     ]
   ],
-  "plugins": [],
-  "env": {
-    "test": {
-      "presets": ["module:metro-react-native-babel-preset"]
-    }
-  }
+  "plugins": []
 }
