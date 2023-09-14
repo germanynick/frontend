@@ -19,7 +19,6 @@
     "expo-router": "*",
     "i18next": "*",
     "react-i18next": "*",
-    "nativewind": "*",
     "lodash": "*",
     "final-form": "*",
     "zustand": "*",
@@ -31,8 +30,7 @@
     "@vitejs/plugin-react": "*",
     "@nx/vite": "*",
     "vite-plugin-dts": "*",
-    "vite-plugin-babel": "*",
-    "tailwindcss": "*"
+    "vite-plugin-babel": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp package-lock.json apps/mobile",

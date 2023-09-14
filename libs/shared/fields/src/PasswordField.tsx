@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BaseField, IBaseFieldProps } from './BaseField';
-import { Input, InputField, InputIcon, EyeIcon, EyeOffIcon, Icon } from '@mylong.frontend/core-ui';
+import { Input, InputField, InputIcon, EyeIcon, EyeOffIcon, InputSlot } from '@mylong.frontend/core-ui';
 import { FieldState, useFieldError } from '@mylong.frontend/core-form';
 
 export interface IPasswordFieldProps extends IBaseFieldProps {
@@ -23,9 +23,9 @@ export const PasswordField: React.FC<IPasswordFieldProps> = ({ label, placeholde
           onChangeText={field?.change}
           placeholder={placeholder}
         />
-        <InputIcon onPress={() => setShow(!show)}>
-          <Icon as={show ? EyeIcon : EyeOffIcon} />
-        </InputIcon>
+        <InputSlot onPress={() => setShow(!show)}>
+          <InputIcon as={show ? EyeIcon : EyeOffIcon} />
+        </InputSlot>
       </Input>
     </BaseField>
   );

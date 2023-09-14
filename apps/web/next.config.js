@@ -25,8 +25,6 @@ const nextConfig = {
     '@gluestack-ui/themed',
     '@gluestack-style',
     'expo-linear-gradient',
-    'nativewind',
-    'react-native-css-interop',
   ],
 };
 
