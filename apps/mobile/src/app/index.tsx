@@ -6,7 +6,7 @@ export function Index() {
     <>
       <SignInContainer />
 
-      <View className="border-2 p-1.5 border-red-600">
+      <View className="border-2 p-1.5 border-blue-600">
         <Text className="text-cyan-500 underline">BBB</Text>
       </View>
     </>

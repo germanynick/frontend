@@ -1,6 +1,7 @@
 const { withNxMetro } = require('@nx/expo');
 const { getDefaultConfig } = require('@expo/metro-config');
-// const { withNativeWind } = require('nativewind/metro');
+const { withNativeWind } = require('nativewind/metro');
+const path = require('path');
 
 const defaultConfig = getDefaultConfig(__dirname, { isCSSEnabled: true });
 
@@ -9,9 +10,9 @@ module.exports = (async () => {
   defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter((ext) => ext !== 'svg');
   defaultConfig.resolver.sourceExts.push('svg');
 
-  // const nativeWindConfig = withNativeWind(defaultConfig, { input: './global.css' });
+  const nativeWindConfig = withNativeWind(defaultConfig, { input: path.join(__dirname, './src/global.css') });
 
-  const nxConfig = withNxMetro(defaultConfig, {
+  const nxConfig = withNxMetro(nativeWindConfig, {
     // Change this to true to see debugging info.
     // Useful if you have issues resolving modules
     debug: false,

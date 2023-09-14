@@ -1,4 +1,3 @@
 module.exports = {
-  presets: ['next/babel'],
-  plugins: ['nativewind/babel'],
+  presets: ['next/babel', 'nativewind/babel'],
 };

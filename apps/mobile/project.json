@@ -32,6 +32,7 @@
       "executor": "@nx/expo:build",
       "options": {}
     },
+
     "submit": {
       "executor": "@nx/expo:submit",
       "options": {}

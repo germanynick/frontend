@@ -11,6 +11,5 @@ module.exports = {
     extend: {},
   },
   important: 'html',
-  plugins: [require('nativewind/tailwind/css')],
-  // presets: [require('nativewind/preset')],
+  presets: [require('nativewind/preset')],
 };

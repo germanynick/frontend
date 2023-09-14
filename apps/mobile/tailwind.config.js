@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  important: 'html',
-  plugins: [require('nativewind/tailwind/css')],
-  // presets: [require('nativewind/preset')],
+  // important: 'html',
+  // plugins: [require('nativewind/tailwind/css')],
+  presets: [require('nativewind/preset')],
 };
