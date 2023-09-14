@@ -24,6 +24,7 @@ const nextConfig = {
     '@gluestack-ui',
     '@gluestack-ui/themed',
     '@gluestack-style',
+    '@gluestack-style/react',
     'expo-linear-gradient',
   ],
 };
