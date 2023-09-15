@@ -27,6 +27,12 @@ const nextConfig = {
     '@gluestack-style/react',
     'expo-linear-gradient',
   ],
+  webpack: (config) => {
+    config.resolve ??= {};
+    config.resolve.extensions = ['.next.ts', '.next.tsx', 'next.js', 'next.jsx', ...(config.resolve.extensions ?? [])];
+
+    return config;
+  },
 };
 
 const plugins = [
