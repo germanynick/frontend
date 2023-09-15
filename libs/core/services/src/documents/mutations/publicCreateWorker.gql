@@ -1,5 +1,0 @@
-mutation publicCreateWorker($email: String!, $employmentType: String, $facilityTypes: [String!], $firstName: String!, $jobId: String, $lastName: String!, $password: String, $passwordConfirmation: String, $phone: String!, $recaptchaToken: String, $referrerCode: String, $socialAuthenticationId: String, $source: SignupSourceEnum, $workerSpecialtiesAttributes: [WorkerSpecialtyArgument!], $workingPreferredLocationsAttributes: [WorkingPreferredLocationArgument!]){
-    publicCreateWorker(email: $email, employmentType: $employmentType, facilityTypes: $facilityTypes, firstName: $firstName, jobId: $jobId, lastName: $lastName, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone, recaptchaToken: $recaptchaToken, referrerCode: $referrerCode, socialAuthenticationId: $socialAuthenticationId, source: $source, workerSpecialtiesAttributes: $workerSpecialtiesAttributes, workingPreferredLocationsAttributes: $workingPreferredLocationsAttributes){
-        success
-    }
-}

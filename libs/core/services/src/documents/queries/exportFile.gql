@@ -1,9 +1,0 @@
-query exportFile($id: String!){
-    exportFile(id: $id){
-        companyId
-        fileType
-        fileUrl
-        id
-        status
-    }
-}

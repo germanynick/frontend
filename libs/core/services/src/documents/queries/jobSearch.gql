@@ -1,33 +1,33 @@
-query jobSearch($filter: JobFilter, $limit: Int, $offset: Int, $sortBy: JobManagementSort, $summaryRequire: Boolean) {
-  jobSearch(filter: $filter, limit: $limit, offset: $offset, sortBy: $sortBy, summaryRequire: $summaryRequire) {
-    jobs {
-      location {
-        region
-        city
-        zipcode
-        addressState
-        latitude
-        longitude
-        zipcode
-        region
-        distanceToCurrentUserSearchLocation
-        country
-        address
-        name
-      }
-      slug
-      benefitContent
-      requirementNotes
-      hoursPerWeek
-      id
-      externalCreatedAt
-      minWeeklyPayAmount
-      title
-      updatedAt
-      weeklyPayAmount
-      createdAt
+query jobSearch($filter: JobFilter, $limit: Int, $offset: Int, $sortBy: JobManagementSort){
+    jobSearch(filter: $filter, limit: $limit, offset: $offset, sortBy: $sortBy){
+        jobs{
+            createdAt
+            createdDate
+            customStartDate
+            distance
+            duration
+            exclusiveJob
+            externalCreatedAt
+            externalUpdatedAt
+            facilityType
+            favoriteCount
+            frequency
+            hoursPerWeek
+            id
+            images
+            jobType
+            matchingPercentage
+            minWeeklyPayAmount
+            shifts
+            slotsNumber
+            slug
+            startDate
+            status
+            title
+            updatedAt
+            viewCount
+            weeklyPayAmount
+        }
+        totalCount
     }
-
-    totalCount
-  }
 }

@@ -1,5 +1,0 @@
-mutation createReferredTraveler($deviceId: String, $discipline: String, $email: String!, $firstName: String!, $jobId: String, $lastName: String!, $phone: String, $recruiterId: String, $referralPath: String, $referrerEmail: String, $referrerFirstName: String, $referrerLastName: String, $referrerPhone: String, $relationship: ReferredTravelerRelationshipEnum, $source: SignupSourceEnum){
-    createReferredTraveler(deviceId: $deviceId, discipline: $discipline, email: $email, firstName: $firstName, jobId: $jobId, lastName: $lastName, phone: $phone, recruiterId: $recruiterId, referralPath: $referralPath, referrerEmail: $referrerEmail, referrerFirstName: $referrerFirstName, referrerLastName: $referrerLastName, referrerPhone: $referrerPhone, relationship: $relationship, source: $source){
-        success
-    }
-}

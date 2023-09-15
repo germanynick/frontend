@@ -3,48 +3,51 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/core/services/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/core/services",
-        "main": "libs/core/services/src/index.ts",
-        "tsConfig": "libs/core/services/tsconfig.lib.json",
-        "assets": ["libs/core/services/*.md"]
-      }
-    },
-    "init": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["nx run core-services:gen:schema", "nx run core-services:gen:doc", "nx run core-services:gen:sdk"],
-        "parallel": false
-      }
-    },
-    "gen:schema": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "graphql-codegen --config libs/core/services/schema.conf.ts"
-      }
-    },
-    "gen:doc": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "gqlg --schemaFilePath libs/core/services/src/generated/schema.graphql --destDirPath libs/core/services/src/documents --depthLimit 2",
-          "rm libs/core/services/src/documents/index.js",
-          "rm libs/core/services/src/documents/mutations/index.js",
-          "rm libs/core/services/src/documents/queries/index.js"
-        ],
-        "parallel": false
-      }
-    },
     "gen:sdk": {
       "executor": "nx:run-commands",
       "options": {
         "command": "graphql-codegen --config libs/core/services/sdk.conf.ts"
       }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/core/services/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/libs/core/services",
+        "generatePackageJson": true
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/core/services/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
     }
-  },
-  "tags": []
+  }
 }

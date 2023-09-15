@@ -1,5 +1,0 @@
-mutation verifyClient($id: String!){
-    verifyClient(id: $id){
-        success
-    }
-}

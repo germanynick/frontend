@@ -29,7 +29,30 @@
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/adjacent-overload-signatures": "off",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@gluestack-ui/themed",
+                "message": "Please use `@mylong.frontend/core-ui` instead."
+              },
+              {
+                "name": "yup",
+                "message": "Please use `@mylong.frontend/core-validators` instead."
+              },
+              {
+                "name": "final-form",
+                "message": "Please use `@mylong.frontend/core-form` instead."
+              },
+              {
+                "name": "localforage",
+                "message": "Please use `@mylong.frontend/core-storage` instead."
+              }
+            ]
+          }
+        ]
       }
     },
     {

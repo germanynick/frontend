@@ -1,9 +1,0 @@
-mutation markCompleteComponent($id: String!){
-    markCompleteComponent(id: $id){
-        completed
-        description
-        id
-        target
-        title
-    }
-}

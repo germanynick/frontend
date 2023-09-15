@@ -1,6 +1,0 @@
-mutation destroyFile($id: String!){
-    destroyFile(id: $id){
-        id
-        success
-    }
-}

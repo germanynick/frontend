@@ -1,9 +1,0 @@
-mutation exportClient($description: String, $exportAll: Boolean, $fileType: String!, $ids: [String!]!, $name: String, $verifyStatus: String){
-    exportClient(description: $description, exportAll: $exportAll, fileType: $fileType, ids: $ids, name: $name, verifyStatus: $verifyStatus){
-        companyId
-        fileType
-        fileUrl
-        id
-        status
-    }
-}

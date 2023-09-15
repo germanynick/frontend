@@ -1,9 +1,0 @@
-mutation exportEmployer($clientName: String, $email: String, $exportAll: Boolean, $fileType: String!, $fullName: String, $ids: [String!]!, $lastSignInAt: String, $phone: String, $title: String){
-    exportEmployer(clientName: $clientName, email: $email, exportAll: $exportAll, fileType: $fileType, fullName: $fullName, ids: $ids, lastSignInAt: $lastSignInAt, phone: $phone, title: $title){
-        companyId
-        fileType
-        fileUrl
-        id
-        status
-    }
-}

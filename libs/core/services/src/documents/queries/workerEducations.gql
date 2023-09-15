@@ -1,20 +1,6 @@
-query workerEducations($jobId: String!){
-    workerEducations{
+query workerEducations($workerId: String){
+    workerEducations(workerId: $workerId){
         city
-        company{
-            address
-            addressState
-            city
-            country
-            description
-            id
-            logoUrl
-            mainContactEmail
-            mainContactName
-            name
-            phone
-            zip
-        }
         country
         createdAt
         degreeDate
@@ -26,20 +12,13 @@ query workerEducations($jobId: String!){
         worker{
             agreedToTerms
             availableStartDate
-            avatarUrl
-            blocked
             changePasswordRequired
             completedJobsNumber
-            dateOfBirth
             email
-            employmentType
             facilityTypes
             firstName
-            hasActiveAssignment
             id
-            isFavorited
             jobCategoriesWorkedNumber
-            jobMatchingScore(jobId: $jobId)
             lastName
             lastOtpExpiredAt
             lastSignInAt
@@ -47,22 +26,16 @@ query workerEducations($jobId: String!){
             maidenName
             noCall
             noEmail
-            noJobMatches
             noNotification
             noSms
-            noTalentMatches
             overallRating
             phone
             phoneVerifiedAt
-            profilePercentageCompleted
             referralCode
             referralMethod
             referrerCode
-            remainingExpirationTime
             shiftRequested
-            socialSecurityNumber
             timeOffRequested
-            totalUnreadMessage
             workAuthorized
         }
     }

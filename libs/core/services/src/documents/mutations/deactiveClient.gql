@@ -1,5 +1,0 @@
-mutation deactiveClient($deactiveReason: String!, $id: String!){
-    deactiveClient(deactiveReason: $deactiveReason, id: $id){
-        success
-    }
-}

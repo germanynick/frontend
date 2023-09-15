@@ -2,6 +2,6 @@
 
 This library was generated with [Nx](https://nx.dev).
 
-## Building
+## Running unit tests
 
-Run `nx build core-services` to build the library.
+Run `nx test core-services` to execute the unit tests via [Vitest](https://vitest.dev/).

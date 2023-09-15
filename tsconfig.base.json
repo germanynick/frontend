@@ -10,24 +10,55 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "useDefineForClassFields": true,
     "baseUrl": ".",
     "paths": {
-      "@frontend/core/config": ["libs/core/config/src/index.ts"],
-      "@frontend/core/form": ["libs/core/form/src/index.ts"],
-      "@frontend/core/hooks": ["libs/core/hooks/src/index.ts"],
-      "@frontend/core/i18n": ["libs/core/i18n/src/index.ts"],
-      "@frontend/core/services": ["libs/core/services/src/index.ts"],
-      "@frontend/core/styles": ["libs/core/styles/src/index.ts"],
-      "@frontend/features/locations/stores": ["libs/features/locations/stores/src/index.ts"],
-      "@frontend/features/locations/views": ["libs/features/locations/views/src/index.ts"],
-      "@frontend/features/users": ["libs/features/users/src/index.ts"],
-      "@frontend/ui/fields": ["libs/ui/fields/src/index.ts"],
-      "@frontend/ui/table": ["libs/ui/table/src/index.ts"]
+      "@mylong.frontend/core-auth": [
+        "libs/core/auth/src/index.ts"
+      ],
+      "@mylong.frontend/core-form": [
+        "libs/core/form/src/index.ts"
+      ],
+      "@mylong.frontend/core-i18n": [
+        "libs/core/i18n/src/index.ts"
+      ],
+      "@mylong.frontend/core-router": [
+        "libs/core/router/src/index.ts"
+      ],
+      "@mylong.frontend/core-services": [
+        "libs/core/services/src/index.ts"
+      ],
+      "@mylong.frontend/core-storage": [
+        "libs/core/storage/src/index.ts"
+      ],
+      "@mylong.frontend/core-ui": [
+        "libs/core/ui/src/index.ts"
+      ],
+      "@mylong.frontend/core-validators": [
+        "libs/core/validators/src/index.ts"
+      ],
+      "@mylong.frontend/features-signin": [
+        "libs/features/signin/src/index.ts"
+      ],
+      "@mylong.frontend/shared-fields": [
+        "libs/shared/fields/src/index.ts"
+      ],
+      "@mylong.frontend/shared-hooks": [
+        "libs/shared/hooks/src/index.ts"
+      ],
+      "@mylong.frontend/shared-layouts": [
+        "libs/shared/layouts/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

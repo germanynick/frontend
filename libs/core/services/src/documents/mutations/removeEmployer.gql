@@ -1,6 +1,0 @@
-mutation removeEmployer($id: String!){
-    removeEmployer(id: $id){
-        id
-        success
-    }
-}

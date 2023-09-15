@@ -1,15 +1,43 @@
-query job($id: String!) {
-  job(id: $id) {
-    address
-    address2
-    applicantCount
-    benefitContent
-    canApply
-    city
-    topWorkerMatchingScores
-    updatedAt
-    viewCount
-    weeklyPayAmount
-    zipcode
-  }
+query job($id: String!){
+    job(id: $id){
+        createdAt
+        createdDate
+        customStartDate
+        distance
+        duration
+        exclusiveJob
+        externalCreatedAt
+        externalUpdatedAt
+        facilityType
+        favoriteCount
+        frequency
+        hoursPerWeek
+        id
+        images
+        jobGeneral{
+            companyId
+            description
+            hotJob
+            payCurrency
+            requirements
+            setting
+        }
+        jobType
+        locationImage{
+            city
+            id
+            state
+        }
+        matchingPercentage
+        minWeeklyPayAmount
+        shifts
+        slotsNumber
+        slug
+        startDate
+        status
+        title
+        updatedAt
+        viewCount
+        weeklyPayAmount
+    }
 }

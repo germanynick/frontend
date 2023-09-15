@@ -1,5 +1,0 @@
-mutation disconnectSocialAuthentication($socialAuthenticationId: String!){
-    disconnectSocialAuthentication(socialAuthenticationId: $socialAuthenticationId){
-        success
-    }
-}

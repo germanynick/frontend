@@ -1,5 +1,0 @@
-mutation rejectClient($id: String!, $rejectedReason: String!){
-    rejectClient(id: $id, rejectedReason: $rejectedReason){
-        success
-    }
-}

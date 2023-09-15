@@ -1,5 +1,0 @@
-mutation verifyExistedEmail($email: String!, $recaptchaToken: String){
-    verifyExistedEmail(email: $email, recaptchaToken: $recaptchaToken){
-        existed
-    }
-}

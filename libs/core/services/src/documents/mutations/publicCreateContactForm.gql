@@ -1,5 +1,0 @@
-mutation publicCreateContactForm($description: String, $email: String, $fullName: String, $phone: String, $recaptchaToken: String, $subject: String){
-    publicCreateContactForm(description: $description, email: $email, fullName: $fullName, phone: $phone, recaptchaToken: $recaptchaToken, subject: $subject){
-        success
-    }
-}

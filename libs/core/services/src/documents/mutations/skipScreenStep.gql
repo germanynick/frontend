@@ -1,9 +1,0 @@
-mutation skipScreenStep($visibleIds: [String!]){
-    skipScreenStep(visibleIds: $visibleIds){
-        completed
-        description
-        id
-        target
-        title
-    }
-}

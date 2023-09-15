@@ -1,7 +1,0 @@
-query paymentMethods($clientId: String){
-    paymentMethods(clientId: $clientId){
-        cardInfo
-        id
-        isDefault
-    }
-}

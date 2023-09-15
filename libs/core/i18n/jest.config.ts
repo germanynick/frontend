@@ -1,10 +1,11 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'core-i18n',
-  preset: 'react-native',
-  resolver: '@nx/jest/plugins/resolver',
-  moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
-  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
-  moduleNameMapper: {
-    '\\.svg$': '@nx/react-native/plugins/jest/svg-mock',
+  preset: '../../../jest.preset.js',
+  transform: {
+    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
+    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/react/babel'] }]
   },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  coverageDirectory: '../../../coverage/libs/core/i18n'
 };

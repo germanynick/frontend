@@ -1,5 +1,0 @@
-query downloadTemplate($objectType: ImportBatchObjectEnum!){
-    downloadTemplate(objectType: $objectType){
-        fileUrl
-    }
-}
