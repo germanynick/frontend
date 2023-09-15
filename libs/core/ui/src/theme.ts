@@ -4,17 +4,14 @@ import { defaultsDeep } from 'lodash';
 import { colors } from './colors';
 import * as components from './components';
 
-export const theme = createConfig<typeof config.theme>(
-  defaultsDeep(
-    {
-      tokens: {
-        colors,
-      },
-      components,
-    },
-    config.theme,
-  ),
-);
+const customTheme = {
+  tokens: {
+    colors,
+  },
+  components,
+};
+
+export const theme = createConfig<typeof config.theme & typeof customTheme>(defaultsDeep(customTheme, config.theme));
 
 // Get the type of Config
 type ConfigType = typeof theme;
