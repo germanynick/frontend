@@ -46,6 +46,9 @@
       "@mylong.frontend/features-signin": [
         "libs/features/signin/src/index.ts"
       ],
+      "@mylong.frontend/shared-components": [
+        "libs/shared/components/src/index.ts"
+      ],
       "@mylong.frontend/shared-fields": [
         "libs/shared/fields/src/index.ts"
       ],
