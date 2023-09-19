@@ -9,10 +9,30 @@ const UserPage = () => {
 
   return (
     <>
-      <Text>USER PAGE</Text>
-      <Button onPress={() => router.back()}>
-        <ButtonText>Go Back</ButtonText>
-      </Button>
+      <button className="btn">Hello</button>
+      <input type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
+
+      <div className="drawer">
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content">
+          {/* Page content here */}
+          <label htmlFor="my-drawer" className="btn btn-primary drawer-button">
+            Open drawer
+          </label>
+        </div>
+        <div className="drawer-side">
+          <label htmlFor="my-drawer" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+            {/* Sidebar content here */}
+            <li>
+              <a>Sidebar Item 1</a>
+            </li>
+            <li>
+              <a>Sidebar Item 2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 };

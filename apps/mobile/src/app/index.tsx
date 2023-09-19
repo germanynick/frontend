@@ -13,7 +13,7 @@ import {
 
 export function Index() {
   return (
-    <SideBar>
+    <SideBar className="bg-red-500">
       <SideBarMenu>
         <SideBarItem states={{ active: true }}>
           <SideBarSlot>
