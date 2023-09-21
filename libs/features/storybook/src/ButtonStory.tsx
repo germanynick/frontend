@@ -1,4 +1,5 @@
-import { Button, HStack, ButtonText, VStack, ButtonIcon, AddIcon, ButtonSpinner } from '@mylong.frontend/core-ui';
+import { Button, HStack, ButtonText, VStack, ButtonIcon, ButtonSpinner } from '@mylong.frontend/core-ui';
+import { Plus } from '@mylong.frontend/core-icons';
 
 const BaseButton = ({ ...props }: any) => {
   return (
@@ -7,27 +8,27 @@ const BaseButton = ({ ...props }: any) => {
         <ButtonText>action={props.action}</ButtonText>
       </Button>
       <Button size="xl" variant="solid" {...props}>
-        <ButtonIcon as={AddIcon} />
+        <ButtonIcon as={Plus} />
         <ButtonText>variant=solid</ButtonText>
         <ButtonSpinner />
       </Button>
       <Button size="lg" variant="outline" {...props}>
-        <ButtonIcon as={AddIcon} />
+        <ButtonIcon as={Plus} />
         <ButtonText>variant=outline</ButtonText>
         <ButtonSpinner />
       </Button>
       <Button size="md" isDisabled={true} {...props}>
-        <ButtonIcon as={AddIcon} />
+        <ButtonIcon as={Plus} />
         <ButtonText>isDisabled=true</ButtonText>
         <ButtonSpinner />
       </Button>
       <Button size="sm" borderRadius="$full" {...props}>
-        <ButtonIcon as={AddIcon} />
+        <ButtonIcon as={Plus} />
         <ButtonText>borderRadius=$full</ButtonText>
         <ButtonSpinner />
       </Button>
       <Button size="xs" variant="link" {...props}>
-        <ButtonIcon as={AddIcon} />
+        <ButtonIcon as={Plus} />
         <ButtonText>variant=link</ButtonText>
         <ButtonSpinner />
       </Button>
