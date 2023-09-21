@@ -39,6 +39,10 @@
                 "message": "Please use `@mylong.frontend/core-ui` instead."
               },
               {
+                "name": "lucide-react-native",
+                "message": "Please use `@mylong.frontend/core-icons` instead."
+              },
+              {
                 "name": "yup",
                 "message": "Please use `@mylong.frontend/core-validators` instead."
               },
