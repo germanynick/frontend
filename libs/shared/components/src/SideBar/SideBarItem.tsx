@@ -13,17 +13,17 @@ export const SideBarItem = styled(
 
     ':active': {
       _text: {
-        color: '$primary_medium',
+        color: '$primaryMedium',
       },
       _icon: {
-        color: '$primary_medium',
+        color: '$primaryMedium',
       },
       _indicator: {
-        backgroundColor: '$primary_medium',
+        backgroundColor: '$primaryMedium',
       },
       _dot: {
         display: 'flex',
-        backgroundColor: '$primary_medium',
+        backgroundColor: '$primaryMedium',
       },
     },
   },

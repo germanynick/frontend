@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Html, Head, Main, NextScript } from 'next/document';
 import { AppRegistry } from 'react-native';
-import { flush } from '@gluestack-style/react';
+import { flush } from '@mylong.frontend/core-ui';
 
 function Document() {
   return (

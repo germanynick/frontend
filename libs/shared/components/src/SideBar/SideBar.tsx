@@ -8,7 +8,7 @@ export const SideBar = styled(
     height: '$full',
     backgroundColor: '$white',
     borderRightWidth: '$1',
-    borderColor: '$content_light',
+    borderColor: '$contentLight',
   },
   { componentName: 'SideBar', descendantStyle: ['_item'] },
 );

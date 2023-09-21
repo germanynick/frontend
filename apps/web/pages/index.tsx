@@ -9,6 +9,8 @@ import {
   SideBarMenu,
   SideBarSlot,
   SideBarText,
+  Layout,
+  LayoutHeader,
 } from '@mylong.frontend/shared-components';
 
 export function Index() {
@@ -81,5 +83,14 @@ export function Index() {
     </SideBar>
   );
 }
+
+Index.getLayout = (children: any) => {
+  return (
+    <Layout>
+      <LayoutHeader />
+      {children}
+    </Layout>
+  );
+};
 
 export default Index;

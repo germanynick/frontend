@@ -5,7 +5,7 @@ export const SideBarText = styled(
   {
     fontSize: '$md',
     fontStyle: 'normal',
-    color: '$content_dark',
+    color: '$contentDark',
     flexGrow: 1,
     flexShrink: 1,
     defaultProps: {

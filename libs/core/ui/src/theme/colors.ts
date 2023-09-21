@@ -1,6 +1,6 @@
 //Please use this website to generate colors pallete
 // https://smart-swatch.netlify.app/
-import { Dictionary, List, get, mapKeys, mapValues } from 'lodash';
+import { Dictionary, get, mapKeys, mapValues } from 'lodash';
 
 const PRIMARY_COLORS = {
   50: '#eceaff',
@@ -94,11 +94,11 @@ const INFO_COLORS = {
 };
 
 const MYLONG_TOKENS = {
-  veryLight: 100, // Ex: $primary_veryLight = $primary100
-  light: 300, // Ex: $primary_light = $primary300
-  medium: 500, // Ex: $primary_medium = $primary500
-  dark: 700, // Ex: $primary_dark = $primary700
-  veryDark: 900, // Ex: $primary_veryDark = $primary900
+  VeryLight: 100, // Ex: $primaryVeryLight = $primary100
+  Light: 300, // Ex: $primaryLight = $primary300
+  Medium: 500, // Ex: $primaryMedium = $primary500
+  Dark: 700, // Ex: $primaryDark = $primary700
+  VeryDark: 900, // Ex: $primaryVeryDark = $primary900
 };
 
 const addKeyPrefix = <T>(colors: Dictionary<T>, prefix: string) => mapKeys(colors, (_, key) => `${prefix}${key}`);
@@ -121,13 +121,13 @@ export const colors = {
   ...addKeyPrefix(TEXT_COLORS, 'textLight'),
 
   // EXTRA MYLONG TOKENS
-  ...addMylongTokens(PRIMARY_COLORS, 'primary_'),
-  ...addMylongTokens(SECONDARY_COLORS, 'secondary_'),
-  ...addMylongTokens(TEXT_COLORS, 'content_'),
-  ...addMylongTokens(SUCCESS_COLORS, 'success_'),
-  ...addMylongTokens(WARNING_COLORS, 'warning_'),
-  ...addMylongTokens(ERROR_COLORS, 'error_'),
-  ...addMylongTokens(INFO_COLORS, 'link_'),
+  ...addMylongTokens(PRIMARY_COLORS, 'primary'),
+  ...addMylongTokens(SECONDARY_COLORS, 'secondary'),
+  ...addMylongTokens(TEXT_COLORS, 'content'),
+  ...addMylongTokens(SUCCESS_COLORS, 'success'),
+  ...addMylongTokens(WARNING_COLORS, 'warning'),
+  ...addMylongTokens(ERROR_COLORS, 'error'),
+  ...addMylongTokens(INFO_COLORS, 'link'),
 
   backgroundPrimary: '#EEFBFF',
   backgroundSecondary: '#FFF9EF',
