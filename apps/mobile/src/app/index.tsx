@@ -21,7 +21,7 @@ export function Index() {
     <Layout>
       <LayoutHeader />
       <View>
-        <Button onPress={() => push('/buttons')}>
+        <Button onPress={() => push('/button')}>
           <ButtonText>Button</ButtonText>
         </Button>
 

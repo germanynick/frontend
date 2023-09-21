@@ -1,5 +1,5 @@
 import { Overlay } from '@gluestack-ui/overlay';
-import { ComponentType } from 'react';
+import { ComponentType, forwardRef } from 'react';
 
 export interface ICreateDrawerProps<DrawerProps, DrawerContentProps, DrawerBackdropProps> {
   Drawer: ComponentType<DrawerProps>;
@@ -12,17 +12,17 @@ export const createDrawer = <DrawerProps, DrawerContentProps, DrawerBackdropProp
   DrawerBackdrop,
   DrawerContent,
 }: ICreateDrawerProps<DrawerProps, DrawerContentProps, DrawerBackdropProps>) => {
-  const Base: ComponentType<DrawerProps> = ({ isOpen, ...props }: any) => {
+  const Base: ComponentType<DrawerProps> = forwardRef<DrawerProps, any>(({ isOpen, ...props }: any, ref: any) => {
     if (!isOpen) {
       return null;
     }
 
     return (
       <Overlay isOpen={true}>
-        <Drawer isOpen={true} {...props} />
+        <Drawer ref={ref} isOpen={true} {...props} />
       </Overlay>
     );
-  };
+  }) as any;
 
   return {
     Drawer: Base,
