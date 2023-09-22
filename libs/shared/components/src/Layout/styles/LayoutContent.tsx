@@ -4,14 +4,9 @@ export const LayoutContent = styled(
   ScrollView,
   {
     height: '$full',
-    paddingHorizontal: '$4',
     alignSelf: 'center',
     width: '$full',
     maxWidth: '$full',
-
-    '@lg': {
-      maxWidth: '$2/3',
-    },
   },
   { componentName: 'LayoutContent' },
 );

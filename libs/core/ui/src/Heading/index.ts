@@ -1,1 +1,1 @@
-export { Root as Heading } from './styles/Root';
+export * from './styles/Heading';

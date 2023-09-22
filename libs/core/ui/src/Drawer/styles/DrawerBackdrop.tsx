@@ -1,7 +1,7 @@
 import { styled } from '@gluestack-style/react';
 import { Pressable } from 'react-native';
 
-export const Backdrop = styled(
+export const DrawerBackdrop = styled(
   Pressable,
   {
     position: 'absolute',

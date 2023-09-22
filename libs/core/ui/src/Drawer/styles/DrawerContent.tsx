@@ -3,7 +3,7 @@ import { styled } from '@gluestack-style/react';
 import { AnimationResolver } from '@gluestack-style/animation-plugin';
 import { Motion } from '@legendapp/motion';
 
-export const Content = styled(
+export const DrawerContent = styled(
   Motion.View,
   {
     position: 'absolute',
@@ -25,10 +25,10 @@ export const Content = styled(
           height: '$full',
           maxWidth: '$full',
           ':initial': {
-            x: -10,
+            x: -60,
           },
           ':exit': {
-            x: -10,
+            x: -60,
           },
         },
         right: {
@@ -37,10 +37,10 @@ export const Content = styled(
           height: '$full',
           maxWidth: '$full',
           ':initial': {
-            x: 10,
+            x: 60,
           },
           ':exit': {
-            x: 10,
+            x: 60,
           },
         },
         top: {
@@ -49,10 +49,10 @@ export const Content = styled(
           maxHeight: '$full',
           width: '$full',
           ':initial': {
-            y: -10,
+            y: -60,
           },
           ':exit': {
-            y: -10,
+            y: -60,
           },
         },
         bottom: {
@@ -61,10 +61,10 @@ export const Content = styled(
           maxHeight: '$full',
           width: '$full',
           ':initial': {
-            y: 10,
+            y: 60,
           },
           ':exit': {
-            y: 10,
+            y: 60,
           },
         },
       },

@@ -1,7 +1,7 @@
 import { styled } from '@gluestack-style/react';
 import { View } from 'react-native';
 
-export const Root = styled(
+export const Drawer = styled(
   View,
   {
     width: '$full',

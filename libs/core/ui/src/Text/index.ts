@@ -1,1 +1,1 @@
-export { Root as Text } from './styles/Root';
+export * from './styles/Text';

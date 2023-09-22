@@ -1,7 +1,7 @@
 import { createDrawer } from './createDrawer';
-import { Root } from './styles/Root';
-import { Backdrop } from './styles/Backdrop';
-import { Content } from './styles/Content';
+import { Drawer as Root } from './styles/Drawer';
+import { DrawerBackdrop as Backdrop } from './styles/DrawerBackdrop';
+import { DrawerContent as Content } from './styles/DrawerContent';
 
 const Base = createDrawer({
   Drawer: Root,

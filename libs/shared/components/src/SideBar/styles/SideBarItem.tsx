@@ -10,6 +10,8 @@ export const SideBarItem = styled(
     alignItems: 'center',
     alignContent: 'center',
     minHeight: '$12',
+    //@ts-ignore Overwrite Link styles
+    textDecorationLine: 'none',
 
     ':active': {
       _text: {

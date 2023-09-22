@@ -1,8 +1,8 @@
-import { Text } from 'react-native';
+import { Text as BaseText } from 'react-native';
 import { styled } from '@gluestack-style/react';
 
-export const Root = styled(
-  Text,
+export const Text = styled(
+  BaseText,
   {
     color: '$textLight900',
     _dark: {

@@ -9,6 +9,18 @@ export const SideBar = styled(
     backgroundColor: '$white',
     borderRightWidth: '$1',
     borderColor: '$contentLight',
+    variants: {
+      autoHide: {
+        true: {
+          '@base': {
+            display: 'none',
+          },
+          '@md': {
+            display: 'flex',
+          },
+        },
+      },
+    },
   },
   { componentName: 'SideBar', descendantStyle: ['_item'] },
 );

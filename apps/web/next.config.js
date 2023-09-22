@@ -30,6 +30,7 @@ const nextConfig = {
     '@gluestack-style/animation-plugin',
     'expo-linear-gradient',
     'lucide-react-native',
+    'react-native-safe-area-context',
   ],
   webpack: (config) => {
     config.resolve ??= {};
