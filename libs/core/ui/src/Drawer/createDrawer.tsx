@@ -13,13 +13,9 @@ export const createDrawer = <DrawerProps, DrawerContentProps, DrawerBackdropProp
   DrawerContent,
 }: ICreateDrawerProps<DrawerProps, DrawerContentProps, DrawerBackdropProps>) => {
   const Base: ComponentType<DrawerProps> = forwardRef<DrawerProps, any>(({ isOpen, ...props }: any, ref: any) => {
-    if (!isOpen) {
-      return null;
-    }
-
     return (
-      <Overlay isOpen={true}>
-        <Drawer ref={ref} isOpen={true} {...props} />
+      <Overlay isOpen={isOpen}>
+        <Drawer ref={ref} isOpen={isOpen} {...props} />
       </Overlay>
     );
   }) as any;

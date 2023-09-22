@@ -5,3 +5,4 @@ export * from './theme';
 export * from './Drawer';
 export { Heading } from './Heading';
 export { Text } from './Text';
+export * from './Collapse';

@@ -4,6 +4,7 @@ export const SideBarItem = styled(
   Pressable,
   {
     maxWidth: '$full',
+    width: '$full',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',

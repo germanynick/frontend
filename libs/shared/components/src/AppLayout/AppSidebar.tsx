@@ -1,6 +1,6 @@
-import { ChevronRightIcon, Drawer, DrawerBackdrop, DrawerContent } from '@mylong.frontend/core-ui';
+import { ChevronRightIcon, Collapse, Drawer, DrawerBackdrop, DrawerContent } from '@mylong.frontend/core-ui';
 import { Home } from '@mylong.frontend/core-icons';
-import { Link, usePathname, Href } from '@mylong.frontend/core-router';
+import { Link, usePathname, Href, useRouter } from '@mylong.frontend/core-router';
 import { ComponentType, FC, useMemo, useState } from 'react';
 import { usePressed } from '@gluestack-ui/react-native-aria';
 import { useLayoutState } from './useLayoutState';
@@ -54,11 +54,20 @@ const MENU: IItem[] = [
 
 export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
   const pathname = usePathname();
+  const { push } = useRouter();
   const active = useMemo(() => items?.some(({ path }) => path === pathname), [items, pathname]);
   const [expanded, setExpanded] = useState(active);
+  const toggleSidebar = useLayoutState((state) => state.toggleSidebar);
 
   const { pressEvents } = usePressed(
-    () => setExpanded(!expanded),
+    () => {
+      if (path) {
+        push(path);
+        toggleSidebar(false);
+      } else {
+        setExpanded(!expanded);
+      }
+    },
     () => {},
   );
 
@@ -69,7 +78,7 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
           <SideBarIcon as={icon} />
         </SideBarSlot>
 
-        <SideBarText as={path ? Link : undefined} href={path}>
+        <SideBarText as={path ? Link : undefined} href={path} {...pressEvents}>
           {label}
         </SideBarText>
         {items?.length ? (
@@ -80,20 +89,23 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
           <SideBarIndicator />
         )}
       </SideBarItem>
-      {expanded &&
-        items?.map(({ label, path }, index) => (
-          <SideBarItem key={index} states={{ active: path === pathname }}>
-            <SideBarSlot>
-              <SideBarDivider />
-              <SideBarDot />
-            </SideBarSlot>
+      {items?.length && (
+        <Collapse isOpen={expanded}>
+          {items?.map(({ label, path }, index) => (
+            <SideBarItem key={index} states={{ active: path === pathname }}>
+              <SideBarSlot>
+                <SideBarDivider />
+                <SideBarDot />
+              </SideBarSlot>
 
-            <SideBarText as={Link} href={path}>
-              {label}
-            </SideBarText>
-            <SideBarIndicator />
-          </SideBarItem>
-        ))}
+              <SideBarText as={Link} href={path} onPress={() => toggleSidebar(false)}>
+                {label}
+              </SideBarText>
+              <SideBarIndicator />
+            </SideBarItem>
+          ))}
+        </Collapse>
+      )}
     </>
   );
 };

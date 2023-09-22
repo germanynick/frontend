@@ -1,8 +1,8 @@
-// eslint-disable-next-line no-restricted-imports
 import { styled } from '@gluestack-style/react';
 import { AnimationResolver } from '@gluestack-style/animation-plugin';
 import { Motion } from '@legendapp/motion';
 
+const POSITION = 100;
 export const DrawerContent = styled(
   Motion.View,
   {
@@ -17,6 +17,7 @@ export const DrawerContent = styled(
             y: 0,
           },
         },
+        false: {},
       },
       anchor: {
         left: {
@@ -25,10 +26,10 @@ export const DrawerContent = styled(
           height: '$full',
           maxWidth: '$full',
           ':initial': {
-            x: -60,
+            x: -POSITION,
           },
           ':exit': {
-            x: -60,
+            x: -POSITION,
           },
         },
         right: {
@@ -37,10 +38,10 @@ export const DrawerContent = styled(
           height: '$full',
           maxWidth: '$full',
           ':initial': {
-            x: 60,
+            x: POSITION,
           },
           ':exit': {
-            x: 60,
+            x: POSITION,
           },
         },
         top: {
@@ -49,10 +50,10 @@ export const DrawerContent = styled(
           maxHeight: '$full',
           width: '$full',
           ':initial': {
-            y: -60,
+            y: -POSITION,
           },
           ':exit': {
-            y: -60,
+            y: -POSITION,
           },
         },
         bottom: {
@@ -61,16 +62,56 @@ export const DrawerContent = styled(
           maxHeight: '$full',
           width: '$full',
           ':initial': {
-            y: 60,
+            y: POSITION,
           },
           ':exit': {
-            y: 60,
+            y: POSITION,
           },
         },
       },
     },
+    compoundVariants: [
+      {
+        anchor: 'left',
+        isOpen: false,
+        value: {
+          ':animate': {
+            x: -POSITION,
+          },
+        },
+      },
+      {
+        anchor: 'right',
+        isOpen: false,
+        value: {
+          ':animate': {
+            x: POSITION,
+          },
+        },
+      },
+      {
+        anchor: 'top',
+        isOpen: false,
+        value: {
+          ':animate': {
+            y: -POSITION,
+          },
+        },
+      },
+      {
+        anchor: 'bottom',
+        isOpen: false,
+        value: {
+          ':animate': {
+            y: POSITION,
+          },
+        },
+      },
+    ],
+
     defaultProps: {
       anchor: 'left',
+      isOpen: false,
     },
   },
   {
