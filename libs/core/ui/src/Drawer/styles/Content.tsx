@@ -25,10 +25,10 @@ export const Content = styled(
           height: '$full',
           maxWidth: '$full',
           ':initial': {
-            x: -1000,
+            x: -10,
           },
           ':exit': {
-            x: -1000,
+            x: -10,
           },
         },
         right: {
@@ -37,10 +37,10 @@ export const Content = styled(
           height: '$full',
           maxWidth: '$full',
           ':initial': {
-            x: 1000,
+            x: 10,
           },
           ':exit': {
-            x: 1000,
+            x: 10,
           },
         },
         top: {
@@ -49,10 +49,10 @@ export const Content = styled(
           maxHeight: '$full',
           width: '$full',
           ':initial': {
-            y: -1000,
+            y: -10,
           },
           ':exit': {
-            y: -1000,
+            y: -10,
           },
         },
         bottom: {
@@ -61,10 +61,10 @@ export const Content = styled(
           maxHeight: '$full',
           width: '$full',
           ':initial': {
-            y: 1000,
+            y: 10,
           },
           ':exit': {
-            y: 1000,
+            y: 10,
           },
         },
       },

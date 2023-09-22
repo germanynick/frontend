@@ -5,6 +5,9 @@ export const Layout = styled(
   {
     height: '$full',
     backgroundColor: '$backgroundPrimary',
+    _web: {
+      height: '100vh',
+    },
   },
   { componentName: 'Layout' },
 );
