@@ -7,8 +7,9 @@ export const LayoutContent = styled(
     paddingHorizontal: '$4',
     alignSelf: 'center',
     width: '$full',
+    maxWidth: '$full',
 
-    '@md': {
+    '@lg': {
       maxWidth: '$2/3',
     },
   },
