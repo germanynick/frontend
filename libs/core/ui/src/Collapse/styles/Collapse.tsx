@@ -32,6 +32,6 @@ export const Collapse = styled(
       },
     },
   },
-  { componentName: 'CollapseContent' },
+  { componentName: 'Collapse' },
   { plugins: [new AnimationResolver({})] },
 );

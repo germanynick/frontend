@@ -15,6 +15,7 @@ export const DrawerContent = styled(
           ':animate': {
             x: 0,
             y: 0,
+            opacity: 1,
           },
         },
         false: {},
@@ -77,6 +78,7 @@ export const DrawerContent = styled(
         value: {
           ':animate': {
             x: -POSITION,
+            opacity: 0,
           },
         },
       },
@@ -86,6 +88,7 @@ export const DrawerContent = styled(
         value: {
           ':animate': {
             x: POSITION,
+            opacity: 0,
           },
         },
       },
@@ -95,6 +98,7 @@ export const DrawerContent = styled(
         value: {
           ':animate': {
             y: -POSITION,
+            opacity: 0,
           },
         },
       },
@@ -104,6 +108,7 @@ export const DrawerContent = styled(
         value: {
           ':animate': {
             y: POSITION,
+            opacity: 0,
           },
         },
       },

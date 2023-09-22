@@ -31,6 +31,7 @@ const nextConfig = {
     'expo-linear-gradient',
     'lucide-react-native',
     'react-native-safe-area-context',
+    'ahooks',
   ],
   webpack: (config) => {
     config.resolve ??= {};
