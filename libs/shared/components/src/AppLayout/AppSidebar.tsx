@@ -38,7 +38,7 @@ const MENU: IItem[] = [
   },
   {
     icon: Home,
-    label: 'Atomic',
+    label: 'Atoms',
     items: [
       { label: 'Button', path: '/button' },
       { label: 'Input', path: '/input' },
@@ -47,7 +47,7 @@ const MENU: IItem[] = [
   },
   {
     icon: Home,
-    label: 'Moleculer',
+    label: 'Molecules',
     items: [{ label: 'Job Card', path: '/job-card' }],
   },
 ];
@@ -78,7 +78,12 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
           <SideBarIcon as={icon} />
         </SideBarSlot>
 
-        <SideBarText as={path ? Link : undefined} href={path} {...pressEvents}>
+        <SideBarText
+          as={path ? Link : undefined}
+          //@ts-ignore
+          href={path}
+          {...pressEvents}
+        >
           {label}
         </SideBarText>
         {items?.length ? (
@@ -98,7 +103,12 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
                 <SideBarDot />
               </SideBarSlot>
 
-              <SideBarText as={Link} href={path} onPress={() => toggleSidebar(false)}>
+              <SideBarText
+                as={Link}
+                //@ts-ignore
+                href={path}
+                onPress={() => toggleSidebar(false)}
+              >
                 {label}
               </SideBarText>
               <SideBarIndicator />
@@ -113,10 +123,15 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
 export const AppSidebarDrawer = () => {
   const isSidebarOpen = useLayoutState((state) => state.isSidebarOpen);
   const toggleSidebar = useLayoutState((state) => state.toggleSidebar);
+  const { pressEvents } = usePressed(
+    () => toggleSidebar(false),
+    () => {},
+  );
 
   return (
     <Drawer sx={{ '@base': { display: 'flex' }, '@md': { display: 'none' } }} isOpen={isSidebarOpen}>
-      <DrawerBackdrop onPress={toggleSidebar} />
+      <DrawerBackdrop {...pressEvents} />
+
       <DrawerContent>
         <SideBar>
           <SideBarMenu>

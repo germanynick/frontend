@@ -4,7 +4,7 @@ import { FC, ReactNode } from 'react';
 import { AppBottomNav } from './AppBottomNav';
 import { AppSideBar } from './AppSidebar';
 import { AppHeader } from './AppHeader';
-import { useDebounce, usePrevious } from 'ahooks';
+import { useDebounce } from 'ahooks';
 import { usePathname } from '@mylong.frontend/core-router';
 
 export interface IAppLayoutProps {

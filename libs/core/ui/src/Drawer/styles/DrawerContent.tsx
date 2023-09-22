@@ -2,7 +2,36 @@ import { styled } from '@gluestack-style/react';
 import { AnimationResolver } from '@gluestack-style/animation-plugin';
 import { Motion } from '@legendapp/motion';
 
-const POSITION = 100;
+const TOP = {
+  opacity: 0,
+  x: 0,
+  y: -100,
+};
+
+const BOTTOM = {
+  opacity: 0,
+  x: 0,
+  y: 100,
+};
+
+const LEFT = {
+  opacity: 0,
+  x: -100,
+  y: 0,
+};
+
+const RIGHT = {
+  opacity: 0,
+  x: 100,
+  y: 0,
+};
+
+const CENTER = {
+  opacity: 1,
+  x: 0,
+  y: 0,
+};
+
 export const DrawerContent = styled(
   Motion.View,
   {
@@ -12,11 +41,8 @@ export const DrawerContent = styled(
     variants: {
       isOpen: {
         true: {
-          ':animate': {
-            x: 0,
-            y: 0,
-            opacity: 1,
-          },
+          //@ts-ignore
+          ':animate': CENTER,
         },
         false: {},
       },
@@ -26,48 +52,36 @@ export const DrawerContent = styled(
           top: 0,
           height: '$full',
           maxWidth: '$full',
-          ':initial': {
-            x: -POSITION,
-          },
-          ':exit': {
-            x: -POSITION,
-          },
+          //@ts-ignore
+          ':initial': LEFT,
+          ':exit': LEFT,
         },
         right: {
           right: 0,
           top: 0,
           height: '$full',
           maxWidth: '$full',
-          ':initial': {
-            x: POSITION,
-          },
-          ':exit': {
-            x: POSITION,
-          },
+          //@ts-ignore
+          ':initial': RIGHT,
+          ':exit': RIGHT,
         },
         top: {
           top: 0,
           left: 0,
           maxHeight: '$full',
           width: '$full',
-          ':initial': {
-            y: -POSITION,
-          },
-          ':exit': {
-            y: -POSITION,
-          },
+          //@ts-ignore
+          ':initial': TOP,
+          ':exit': TOP,
         },
         bottom: {
           bottom: 0,
           left: 0,
           maxHeight: '$full',
           width: '$full',
-          ':initial': {
-            y: POSITION,
-          },
-          ':exit': {
-            y: POSITION,
-          },
+          //@ts-ignore
+          ':initial': BOTTOM,
+          ':exit': BOTTOM,
         },
       },
     },
@@ -76,46 +90,39 @@ export const DrawerContent = styled(
         anchor: 'left',
         isOpen: false,
         value: {
-          ':animate': {
-            x: -POSITION,
-            opacity: 0,
-          },
+          //@ts-ignore
+          ':animate': LEFT,
         },
       },
       {
         anchor: 'right',
         isOpen: false,
         value: {
-          ':animate': {
-            x: POSITION,
-            opacity: 0,
-          },
+          //@ts-ignore
+          ':animate': RIGHT,
         },
       },
       {
         anchor: 'top',
         isOpen: false,
         value: {
-          ':animate': {
-            y: -POSITION,
-            opacity: 0,
-          },
+          //@ts-ignore
+          ':animate': TOP,
         },
       },
       {
         anchor: 'bottom',
         isOpen: false,
         value: {
-          ':animate': {
-            y: POSITION,
-            opacity: 0,
-          },
+          //@ts-ignore
+          ':animate': BOTTOM,
         },
       },
     ],
 
     defaultProps: {
       anchor: 'left',
+      //@ts-ignore
       isOpen: false,
     },
   },

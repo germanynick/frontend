@@ -5,7 +5,7 @@ import { AppLayout } from './_layout';
 import '../styles/index.css';
 
 function App({ Component, pageProps }: AppProps) {
-  const getLayout = Component.getLayout ?? ((page: any) => <AppLayout>{page}</AppLayout>);
+  const getLayout = (Component as any).getLayout ?? ((page: any) => <AppLayout>{page}</AppLayout>);
 
   return <ThemeProvider>{getLayout(<Component {...pageProps} />)}</ThemeProvider>;
 }

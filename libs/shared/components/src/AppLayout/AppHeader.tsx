@@ -5,8 +5,8 @@ export const AppHeader = () => {
   const toggleSidebar = useLayoutState((state) => state.toggleSidebar);
 
   return (
-    <Button onPress={toggleSidebar}>
-      <ButtonText>Trigger</ButtonText>
+    <Button onPress={() => toggleSidebar()}>
+      <ButtonText>Show Nav</ButtonText>
     </Button>
   );
 };

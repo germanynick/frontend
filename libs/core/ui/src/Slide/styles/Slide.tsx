@@ -35,32 +35,32 @@ const CENTER = {
 export const Slide = styled(
   Motion.View,
   {
-    ':initial': RIGHT,
-    ':exit': RIGHT,
-
     variants: {
       isOpen: {
         true: {
+          //@ts-ignore
           ':animate': CENTER,
         },
-        false: {
-          ':animate': RIGHT,
-        },
+        false: {},
       },
       anchor: {
         left: {
+          //@ts-ignore
           ':initial': LEFT,
           ':exit': LEFT,
         },
         right: {
+          //@ts-ignore
           ':initial': RIGHT,
           ':exit': RIGHT,
         },
         top: {
+          //@ts-ignore
           ':initial': TOP,
           ':exit': TOP,
         },
         bottom: {
+          //@ts-ignore
           ':initial': BOTTOM,
           ':exit': BOTTOM,
         },
@@ -71,6 +71,7 @@ export const Slide = styled(
         isOpen: false,
         anchor: 'left',
         value: {
+          //@ts-ignore
           ':animate': LEFT,
         },
       },
@@ -78,6 +79,7 @@ export const Slide = styled(
         isOpen: false,
         anchor: 'right',
         value: {
+          //@ts-ignore
           ':animate': RIGHT,
         },
       },
@@ -85,6 +87,7 @@ export const Slide = styled(
         isOpen: false,
         anchor: 'top',
         value: {
+          //@ts-ignore
           ':animate': TOP,
         },
       },
@@ -92,10 +95,16 @@ export const Slide = styled(
         isOpen: false,
         anchor: 'bottom',
         value: {
+          //@ts-ignore
           ':animate': BOTTOM,
         },
       },
     ],
+    defaultProps: {
+      anchor: 'right',
+      //@ts-ignore
+      isOpen: false,
+    },
   },
   { componentName: 'Slide' },
   { plugins: [new AnimationResolver({})] },

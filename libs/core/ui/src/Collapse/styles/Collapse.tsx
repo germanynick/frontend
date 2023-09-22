@@ -17,6 +17,7 @@ export const Collapse = styled(
     variants: {
       isOpen: {
         true: {
+          //@ts-ignore
           ':animate': {
             y: 0,
             opacity: 1,
@@ -24,6 +25,7 @@ export const Collapse = styled(
         },
         false: {
           display: 'none',
+          //@ts-ignore
           ':animate': {
             y: -10,
             opacity: 0,
