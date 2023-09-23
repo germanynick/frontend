@@ -44,6 +44,10 @@
                 "message": "Please use `@mylong.frontend/core-icons` instead."
               },
               {
+                "name": "ahooks",
+                "message": "Please use `@mylong.frontend/core-hooks` instead."
+              },
+              {
                 "name": "yup",
                 "message": "Please use `@mylong.frontend/core-validators` instead."
               },

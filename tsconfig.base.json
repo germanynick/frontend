@@ -25,6 +25,9 @@
       "@mylong.frontend/core-form": [
         "libs/core/form/src/index.ts"
       ],
+      "@mylong.frontend/core-hooks": [
+        "libs/core/hooks/src/index.ts"
+      ],
       "@mylong.frontend/core-i18n": [
         "libs/core/i18n/src/index.ts"
       ],

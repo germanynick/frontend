@@ -1,6 +1,6 @@
 import { Overlay } from '@gluestack-ui/overlay';
 import { ComponentType, forwardRef } from 'react';
-import { useDebounce } from 'ahooks';
+import { useDebounce } from '@mylong.frontend/core-hooks';
 
 export interface ICreateDrawerProps<DrawerProps, DrawerContentProps, DrawerBackdropProps> {
   Drawer: ComponentType<DrawerProps>;
