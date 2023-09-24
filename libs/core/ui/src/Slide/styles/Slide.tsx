@@ -36,6 +36,12 @@ export const Slide = styled(
   Motion.View,
   {
     variants: {
+      disabledAnimation: {
+        true: {
+          ':initial': CENTER,
+          ':exit': CENTER,
+        },
+      },
       isOpen: {
         true: {
           //@ts-ignore
@@ -102,8 +108,12 @@ export const Slide = styled(
     ],
     defaultProps: {
       anchor: 'right',
+
       //@ts-ignore
       isOpen: false,
+
+      //@ts-ignore
+      disabledAnimation: typeof window === 'undefined',
     },
   },
   { componentName: 'Slide' },
