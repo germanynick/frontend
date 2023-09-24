@@ -2,7 +2,7 @@
 import { createConfig, config } from '@gluestack-ui/themed';
 import { defaultsDeep } from 'lodash';
 import { colors } from './colors';
-import { fontSizes, fonts, lineHeights, letterSpacings } from './typography';
+import { fontSizes, fonts, lineHeights, letterSpacings, fontWeights } from './typography';
 import { space } from './space';
 import * as components from './overrides';
 
@@ -13,6 +13,7 @@ const customTheme = {
     fontSizes,
     lineHeights,
     letterSpacings,
+    fontWeights,
     space,
   },
   components,
