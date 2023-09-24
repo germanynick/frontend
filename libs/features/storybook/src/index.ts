@@ -5,3 +5,4 @@ export * from './TextStory';
 export * from './InputStory';
 export * from './AvatarStory';
 export * from './SignInStory';
+export * from './IconStory';

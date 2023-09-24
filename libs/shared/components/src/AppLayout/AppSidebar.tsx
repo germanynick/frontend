@@ -39,6 +39,7 @@ const MENU: IItem[] = [
       { label: 'Input', path: '/input' },
       { label: 'Drawer', path: '/drawer' },
       { label: 'Avatar', path: '/avatar' },
+      { label: 'Icon', path: '/icon' },
     ],
   },
   {
