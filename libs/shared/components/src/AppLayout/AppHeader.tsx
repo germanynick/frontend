@@ -1,5 +1,5 @@
 import { Button, ButtonText } from '@mylong.frontend/core-ui';
-import { useLayoutState } from './useLayoutState';
+import { useLayoutState } from '@mylong.frontend/shared-store';
 
 export const AppHeader = () => {
   const toggleSidebar = useLayoutState((state) => state.toggleSidebar);

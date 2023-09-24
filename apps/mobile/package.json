@@ -32,8 +32,7 @@
     "vite-plugin-dts": "*",
     "vite-plugin-babel": "*",
     "graphql": "*",
-    "graphql-request": "*",
-    "react-helmet": "*"
+    "graphql-request": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp package-lock.json apps/mobile",

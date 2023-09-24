@@ -3,7 +3,7 @@ import { Home } from '@mylong.frontend/core-icons';
 import { Link, usePathname, Href, useRouter } from '@mylong.frontend/core-router';
 import { ComponentType, FC, useMemo, useState } from 'react';
 import { usePressed } from '@gluestack-ui/react-native-aria';
-import { useLayoutState } from './useLayoutState';
+import { useLayoutState } from '@mylong.frontend/shared-store';
 import {
   SideBar,
   SideBarDivider,

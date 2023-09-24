@@ -1,14 +1,14 @@
 import { useBreadcrumbMeta, useBreadcrumbTitle } from '@mylong.frontend/shared-store';
-import { Helmet } from 'react-helmet';
+import { Head } from '@mylong.frontend/core-router';
 
 export const SeoMeta = () => {
   const title = useBreadcrumbTitle();
   const meta = useBreadcrumbMeta();
 
   return (
-    <Helmet>
+    <Head>
       <title>Hello</title>
       <meta name="description" content={meta} />
-    </Helmet>
+    </Head>
   );
 };
