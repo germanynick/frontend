@@ -113,7 +113,7 @@ export const Slide = styled(
       isOpen: false,
 
       //@ts-ignore
-      disabledAnimation: typeof window === 'undefined',
+      disabledAnimation: false,
     },
   },
   { componentName: 'Slide' },

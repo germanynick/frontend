@@ -38,7 +38,7 @@ export const Collapse = styled(
       //@ts-ignore
       isOpen: false,
       //@ts-ignore
-      disabledAnimation: typeof window === 'undefined',
+      disabledAnimation: false,
     },
   },
   { componentName: 'Collapse' },
