@@ -18,6 +18,7 @@ export const Collapse = styled(
     variants: {
       disabledAnimation: {
         true: {
+          //@ts-ignore
           ':initial': CENTER,
           ':exit': CENTER,
         },

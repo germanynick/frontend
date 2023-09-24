@@ -4,3 +4,4 @@ export * from './HeadingStory';
 export * from './TextStory';
 export * from './InputStory';
 export * from './AvatarStory';
+export * from './SignInStory';

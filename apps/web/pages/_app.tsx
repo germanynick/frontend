@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mylong.frontend/core-ui';
-import { AppLayout } from './_layout';
+import { AppLayout } from '@mylong.frontend/shared-components';
 
 import '../styles/index.css';
 

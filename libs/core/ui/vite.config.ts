@@ -36,7 +36,19 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'react-native', 'react-native-web', '@gluestack-ui/themed'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'react-native',
+        'react-native-web',
+        '@gluestack-ui/themed',
+        '@legendapp/motion',
+        '@gluestack-style/react',
+        '@gluestack-style/animation-plugin',
+        '@gluestack-ui/overlay',
+        '@expo/html-elements',
+      ],
     },
   },
   resolve: {

@@ -38,6 +38,7 @@ export const Slide = styled(
     variants: {
       disabledAnimation: {
         true: {
+          //@ts-ignore
           ':initial': CENTER,
           ':exit': CENTER,
         },
