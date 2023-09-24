@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "gen:sdk": "nx run core-services:gen:sdk",
+    "gen:sdk": "nx run shared-services:gen:sdk",
     "serve:web": "nx run web:serve",
     "serve:mobile": "nx run mobile:start"
   },

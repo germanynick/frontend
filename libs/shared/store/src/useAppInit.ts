@@ -1,5 +1,5 @@
-import { useTokenState } from '@mylong.frontend/core-auth';
-import { useAppInitQuery } from '@mylong.frontend/core-services';
+import { useAppInitQuery } from '@mylong.frontend/shared-services';
+import { useTokenState } from './useTokenState';
 
 export const useAppInit = () => {
   const token = useTokenState((state) => state.token);

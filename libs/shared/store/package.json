@@ -1,5 +1,5 @@
 {
-  "name": "@mylong.frontend/core-services",
+  "name": "@mylong.frontend/shared-store",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",

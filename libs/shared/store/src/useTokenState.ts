@@ -16,7 +16,7 @@ export const useTokenState = create<ITokenState>()(
       },
     }),
     {
-      name: 'AUTH_TOKEN',
+      name: 'AUTH-TOKEN',
       storage: createJSONStorage(() => storage),
     },
   ),

@@ -1,5 +1,5 @@
 {
-  "name": "@mylong.frontend/shared-hooks",
+  "name": "@mylong.frontend/shared-services",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
