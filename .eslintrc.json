@@ -48,6 +48,10 @@
                 "message": "Please use `@mylong.frontend/core-hooks` instead."
               },
               {
+                "name": "zustand",
+                "message": "Please use `@mylong.frontend/core-zustand` instead."
+              },
+              {
                 "name": "yup",
                 "message": "Please use `@mylong.frontend/core-validators` instead."
               },

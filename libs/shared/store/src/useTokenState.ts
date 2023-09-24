@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from '@mylong.frontend/core-zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { storage } from '@mylong.frontend/core-storage';
 

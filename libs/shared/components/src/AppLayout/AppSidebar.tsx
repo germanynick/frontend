@@ -28,18 +28,13 @@ const MENU: IItem[] = [
     label: 'Home',
     path: '/',
   },
-  {
-    icon: Home,
-    label: 'Typography',
-    items: [
-      { label: 'Heading', path: '/heading' },
-      { label: 'Text', path: '/text' },
-    ],
-  },
+
   {
     icon: Home,
     label: 'Atoms',
     items: [
+      { label: 'Heading', path: '/heading' },
+      { label: 'Text', path: '/text' },
       { label: 'Button', path: '/button' },
       { label: 'Input', path: '/input' },
       { label: 'Drawer', path: '/drawer' },
@@ -51,6 +46,7 @@ const MENU: IItem[] = [
     label: 'Molecules',
     items: [{ label: 'Job Card', path: '/job-card' }],
   },
+  { icon: Home, label: 'Features', items: [{ label: 'Sign In', path: '/signin' }] },
 ];
 
 export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {

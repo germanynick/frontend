@@ -1,14 +1,11 @@
 import { QueryFunctionContext } from '@tanstack/react-query';
 import { GraphQLClient } from 'graphql-request';
-import { storage } from '@mylong.frontend/core-storage';
 
 const client = new GraphQLClient(process.env['NX_APP_GRAPHQL_URL'] || '', {
-  headers: async () => {
-    const token = await storage.getItem('AUTH-TOKEN');
-
+  headers: () => {
     return {
       GraphiQL_Authorization: process.env['NX_APP_GRAPHQL_TOKEN'] || '',
-      'AUTH-TOKEN': token || '',
+      'AUTH-TOKEN': '',
     };
   },
 });

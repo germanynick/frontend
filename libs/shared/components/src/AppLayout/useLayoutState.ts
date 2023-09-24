@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from '@mylong.frontend/core-zustand';
 
 export interface ILayoutState {
   isSidebarOpen: boolean;
