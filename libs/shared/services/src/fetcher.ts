@@ -16,29 +16,27 @@ export const fetcher =
     variables?: TVariables,
     requestHeaders?: RequestInit['headers'],
   ) =>
-  (_context?: QueryFunctionContext) => {
-    return async () => {
-      const res = await fetch(process.env['NX_APP_GRAPHQL_URL'] || '', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...requestHeaders,
-        },
-        body: JSON.stringify({
-          query,
-          variables,
-        }),
-      });
+  async (_context?: QueryFunctionContext) => {
+    const res = await fetch(process.env['NX_APP_GRAPHQL_URL'] || '', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...requestHeaders,
+      },
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+    });
 
-      const json = await res.json();
+    const json = await res.json();
 
-      if (json.errors) {
-        const { message } = json.errors[0] || {};
-        throw new Error(message || 'Fetcher: Error');
-      }
+    if (json.errors) {
+      const { message } = json.errors[0] || {};
+      throw new Error(message || 'Fetcher: Error');
+    }
 
-      return json.data as TData;
-    };
+    return json.data as TData;
 
     // return client.request<TData>({
     //   document,
