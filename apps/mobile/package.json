@@ -30,7 +30,10 @@
     "@vitejs/plugin-react": "*",
     "@nx/vite": "*",
     "vite-plugin-dts": "*",
-    "vite-plugin-babel": "*"
+    "vite-plugin-babel": "*",
+    "graphql": "*",
+    "graphql-request": "*",
+    "react-helmet": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp package-lock.json apps/mobile",
