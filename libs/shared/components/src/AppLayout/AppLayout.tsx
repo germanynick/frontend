@@ -6,7 +6,6 @@ import { AppSideBar } from './AppSidebar';
 import { AppHeader } from './AppHeader';
 import { useDebounce } from '@mylong.frontend/core-hooks';
 import { usePathname } from '@mylong.frontend/core-router';
-import { SeoMeta } from '../SeoMeta';
 
 export interface IAppLayoutProps {
   children: ReactNode;
@@ -19,7 +18,6 @@ export const AppLayout: FC<IAppLayoutProps> = ({ children }) => {
 
   return (
     <Layout>
-      <SeoMeta />
       <HStack height="$full">
         <AppSideBar />
 

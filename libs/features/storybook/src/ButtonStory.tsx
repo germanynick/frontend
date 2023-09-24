@@ -1,5 +1,6 @@
 import { Button, HStack, ButtonText, VStack, ButtonIcon, ButtonSpinner } from '@mylong.frontend/core-ui';
 import { Plus } from '@mylong.frontend/core-icons';
+import { Meta, Title } from '@mylong.frontend/core-router';
 
 const BaseButton = ({ ...props }: any) => {
   return (
@@ -66,11 +67,15 @@ const ACTIONS = ['primary', 'secondary', 'positive', 'negative'];
 
 export const ButtonStory = () => {
   return (
-    <HStack space="md" sx={{ '@base': { flexDirection: 'column' }, '@md': { flexDirection: 'row' } }}>
-      <ButtonSize />
-      {ACTIONS.map((action) => (
-        <BaseButton key={action} action={action} />
-      ))}
-    </HStack>
+    <>
+      <Title>Button</Title>
+      <Meta name="description" content="Button Meta" />
+      <HStack space="md" sx={{ '@base': { flexDirection: 'column' }, '@md': { flexDirection: 'row' } }}>
+        <ButtonSize />
+        {ACTIONS.map((action) => (
+          <BaseButton key={action} action={action} />
+        ))}
+      </HStack>
+    </>
   );
 };
