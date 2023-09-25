@@ -38,12 +38,7 @@ export const Input = {
           },
         },
         rounded: {
-          _web: {
-            _input: {
-              outlineWidth: 0,
-              outline: 'none',
-            },
-          },
+          borderRadius: 999,
           _input: {
             px: '$1',
           },
@@ -120,6 +115,15 @@ export const InputField = {
         xl: {
           fontSize: '$xl',
           lineHeight: 24,
+        },
+      },
+    },
+
+    defaultProps: {
+      sx: {
+        _web: {
+          outlineWidth: 0,
+          outline: 'none',
         },
       },
     },
