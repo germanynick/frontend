@@ -3,11 +3,21 @@ export const Input = {
     defaultProps: {
       size: 'lg',
     },
-
+    px: '$2',
+    _input: {
+      outline: 'none',
+      px: '$1',
+    },
     variants: {
       variant: {
-        outline: {
-          borderRadius: '$lg',
+        underlined: {
+          px: '$0',
+          _input: {
+            px: '$0',
+          },
+          borderWidth: 0,
+          borderBottomWidth: '$1',
+          borderRadius: 0,
           ':focus': {
             borderColor: '$primary500',
             ':hover': {
@@ -16,9 +26,7 @@ export const Input = {
           },
           ':invalid': {
             borderColor: '$error700',
-            _web: {
-              boxShadow: 'none',
-            },
+
             ':hover': {
               borderColor: '$error700',
             },
@@ -26,9 +34,53 @@ export const Input = {
               borderColor: '$error700',
               ':hover': {
                 borderColor: '$error700',
-                _web: {
-                  boxShadow: 'none',
-                },
+              },
+            },
+          },
+        },
+        rounded: {
+          _input: {
+            px: '$1',
+          },
+          ':focus': {
+            borderColor: '$primary500',
+            ':hover': {
+              borderColor: '$primary500',
+            },
+          },
+          ':invalid': {
+            borderColor: '$error700',
+
+            ':hover': {
+              borderColor: '$error700',
+            },
+            ':focus': {
+              borderColor: '$error700',
+              ':hover': {
+                borderColor: '$error700',
+              },
+            },
+          },
+        },
+        outline: {
+          borderRadius: '$lg',
+          ':focus': {
+            borderColor: '$primary500',
+
+            ':hover': {
+              borderColor: '$primary500',
+            },
+          },
+          ':invalid': {
+            borderColor: '$error700',
+
+            ':hover': {
+              borderColor: '$error700',
+            },
+            ':focus': {
+              borderColor: '$error700',
+              ':hover': {
+                borderColor: '$error700',
               },
             },
           },
@@ -69,9 +121,14 @@ export const InputField = {
 
 export const InputSlot = {
   theme: {
-    paddingHorizontal: '$2',
+    outline: 'none',
+
     _icon: {
       color: '$textDark900',
+    },
+
+    props: {
+      tabIndex: -1,
     },
   },
   componentConfig: {
