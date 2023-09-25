@@ -7,3 +7,4 @@ export * from './AvatarStory';
 export * from './SignInStory';
 export * from './IconStory';
 export * from './FormStory';
+export * from './SelectStory';
