@@ -5,7 +5,6 @@ export const Input = {
     },
     px: '$2',
     _input: {
-      outline: 'none',
       px: '$1',
     },
     variants: {
@@ -39,6 +38,12 @@ export const Input = {
           },
         },
         rounded: {
+          _web: {
+            _input: {
+              outlineWidth: 0,
+              outline: 'none',
+            },
+          },
           _input: {
             px: '$1',
           },
@@ -89,6 +94,7 @@ export const Input = {
     },
   },
   componentConfig: {
+    componentName: 'Input',
     descendantStyle: ['_input', '_slot'],
   },
 };
@@ -96,23 +102,24 @@ export const Input = {
 export const InputField = {
   theme: {
     fontFamily: '$body',
+
     variants: {
       size: {
         sm: {
           fontSize: '$sm',
-          lineHeight: '$2xs',
+          lineHeight: 17,
         },
         md: {
           fontSize: '$md',
-          lineHeight: '$xs',
+          lineHeight: 19,
         },
         lg: {
           fontSize: '$lg',
-          lineHeight: '$sm',
+          lineHeight: 21,
         },
         xl: {
           fontSize: '$xl',
-          lineHeight: '$md',
+          lineHeight: 24,
         },
       },
     },
@@ -121,8 +128,6 @@ export const InputField = {
 
 export const InputSlot = {
   theme: {
-    outline: 'none',
-
     _icon: {
       color: '$textDark900',
     },
