@@ -23,6 +23,7 @@ export const en: ResourceLanguage = {
     MAJOR: 'Major',
     TITLE: 'Title',
     UPDATED_AT: 'Updated At',
+    PASSWORD: 'Password',
 
     $PLACEHOLDERS: {
       FIRST_NAME: 'Lily',

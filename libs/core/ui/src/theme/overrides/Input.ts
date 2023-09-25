@@ -1,12 +1,13 @@
 export const Input = {
   theme: {
     defaultProps: {
-      size: 'sm',
+      size: 'lg',
     },
 
     variants: {
       variant: {
         outline: {
+          borderRadius: '$lg',
           ':focus': {
             borderColor: '$primary500',
             ':hover': {
@@ -34,6 +35,15 @@ export const Input = {
         },
       },
     },
+  },
+  componentConfig: {
+    descendantStyle: ['_input'],
+  },
+};
+
+export const InputField = {
+  theme: {
+    fontFamily: '$body',
   },
 };
 

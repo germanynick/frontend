@@ -11,6 +11,8 @@ export const FormControlLabelText = {
   theme: {
     defaultProps: {
       color: '$primary500',
+      fontWeight: '$normal',
+      lineHeight: '$md',
     },
   },
 };
@@ -18,7 +20,7 @@ export const FormControlLabelText = {
 export const FormControlErrorText = {
   theme: {
     defaultProps: {
-      color: '$error700',
+      color: '$error500',
     },
   },
 };
