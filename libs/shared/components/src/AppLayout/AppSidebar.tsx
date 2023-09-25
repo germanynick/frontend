@@ -45,7 +45,10 @@ const MENU: IItem[] = [
   {
     icon: Home,
     label: 'Molecules',
-    items: [{ label: 'Job Card', path: '/job-card' }],
+    items: [
+      { label: 'Form Field', path: '/form' },
+      { label: 'Job Card', path: '/job-card' },
+    ],
   },
   { icon: Home, label: 'Features', items: [{ label: 'Sign In', path: '/signin' }] },
 ];
