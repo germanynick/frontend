@@ -25,7 +25,7 @@ import {
   ScrollView,
 } from '@mylong.frontend/core-ui';
 import { ChevronDown, Search } from '@mylong.frontend/core-icons';
-import { useThrottle, useDebounce } from '@mylong.frontend/core-hooks';
+import { useDebounce } from '@mylong.frontend/core-hooks';
 import { useState } from 'react';
 export const SelectStory = () => {
   const [width, setWidth] = useState<number>();
@@ -51,13 +51,7 @@ export const SelectStory = () => {
         }}
       >
         <PopoverBackdrop backgroundColor="transparent" />
-        <PopoverContent
-          width={throttleWidth}
-          maxWidth={throttleWidth}
-          backgroundColor="$white"
-          hardShadow="$3"
-          softShadow="$3"
-        >
+        <PopoverContent width={throttleWidth} maxWidth={throttleWidth} backgroundColor="$white">
           <Box padding="$3">
             <Input size="sm">
               <InputSlot>
