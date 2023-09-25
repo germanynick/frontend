@@ -14,7 +14,7 @@ export const createDrawer = <DrawerProps, DrawerContentProps, DrawerBackdropProp
   DrawerContent,
 }: ICreateDrawerProps<DrawerProps, DrawerContentProps, DrawerBackdropProps>) => {
   const Base: ComponentType<DrawerProps> = forwardRef<DrawerProps, any>(({ isOpen, ...props }: any, ref: any) => {
-    const debounceValue = useDebounce(isOpen, { wait: 500, leading: false, trailing: true });
+    const debounceValue = useDebounce(isOpen, { wait: 300, leading: false, trailing: true });
 
     return (
       <Overlay isOpen={isOpen ? isOpen : debounceValue}>

@@ -89,7 +89,7 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
           {label}
         </SideBarText>
         {items?.length ? (
-          <SideBarSlot rotate={expanded}>
+          <SideBarSlot rotate={expanded ? 0 : 90}>
             <SideBarIcon as={ChevronRightIcon} />
           </SideBarSlot>
         ) : (
@@ -131,7 +131,11 @@ export const AppSidebarDrawer = () => {
   );
 
   return (
-    <Drawer sx={{ '@base': { display: 'flex' }, '@md': { display: 'none' } }} isOpen={isSidebarOpen}>
+    <Drawer
+      sx={{ '@base': { display: 'flex' }, '@md': { display: 'none' } }}
+      //@ts-ignore
+      isOpen={isSidebarOpen}
+    >
       <DrawerBackdrop {...pressEvents} />
 
       <DrawerContent>
@@ -149,7 +153,10 @@ export const AppSidebarDrawer = () => {
 
 export const AppSidebarFixed = () => {
   return (
-    <SideBar autoHide={true}>
+    <SideBar
+      //@ts-ignore
+      autoHide={true}
+    >
       <SideBarMenu>
         {MENU.map((props, index) => (
           <MenuItem key={index} {...props} />

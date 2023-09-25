@@ -19,7 +19,7 @@ const customTheme = {
   components,
 };
 
-export const theme = createConfig<typeof config.theme & typeof customTheme>(defaultsDeep(customTheme, config.theme));
+export const theme = createConfig(defaultsDeep(customTheme, config.theme));
 
 // Get the type of Config
 type ConfigType = typeof theme;

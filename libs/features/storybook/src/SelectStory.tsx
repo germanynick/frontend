@@ -27,19 +27,19 @@ import {
 import { ChevronDown, Search } from '@mylong.frontend/core-icons';
 import { useDebounce } from '@mylong.frontend/core-hooks';
 import { useState } from 'react';
+
 export const SelectStory = () => {
   const [width, setWidth] = useState<number>();
-
   const throttleWidth = useDebounce(width, { wait: 500, leading: true, trailing: true });
 
   return (
     <VStack>
       <Popover
         placement="bottom"
-        trigger={(triggerProps) => {
+        trigger={(triggerProps, { open }) => {
           return (
             <Box position="relative" onLayout={(event) => setWidth(event.nativeEvent.layout.width)}>
-              <Input isReadOnly={true}>
+              <Input isReadOnly={true} states={{ focus: open }}>
                 <InputField placeholder="Select Option" />
                 <InputSlot>
                   <InputIcon as={ChevronDown} />

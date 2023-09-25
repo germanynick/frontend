@@ -5,24 +5,24 @@ import { Motion } from '@legendapp/motion';
 const TOP = {
   opacity: 0,
   x: 0,
-  y: -100,
+  y: -30,
 };
 
 const BOTTOM = {
   opacity: 0,
   x: 0,
-  y: 100,
+  y: 30,
 };
 
 const LEFT = {
   opacity: 0,
-  x: -100,
+  x: -30,
   y: 0,
 };
 
 const RIGHT = {
   opacity: 0,
-  x: 100,
+  x: 30,
   y: 0,
 };
 

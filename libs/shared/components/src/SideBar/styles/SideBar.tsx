@@ -19,6 +19,7 @@ export const SideBar = styled(
             display: 'flex',
           },
         },
+        false: {},
       },
     },
   },

@@ -8,7 +8,10 @@ export const SideBarSlot = styled(
     height: '$10',
     variants: {
       rotate: {
-        true: {
+        0: {
+          transform: 'rotate(0deg)',
+        },
+        90: {
           transform: 'rotate(90deg)',
         },
       },
