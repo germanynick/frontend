@@ -1,7 +1,5 @@
-import { Input, InputField, VStack } from '@mylong.frontend/core-ui';
-import { ComponentProps } from 'react';
-
-const SIZES: ComponentProps<typeof Input>['size'][] = ['sm', 'md', 'lg', 'xl'];
+import { Input, InputField, InputIcon, InputSlot, VStack } from '@mylong.frontend/core-ui';
+import { Home } from '@mylong.frontend/core-icons';
 
 const BaseInput = ({ variant }: any) => {
   return (
@@ -14,9 +12,18 @@ const BaseInput = ({ variant }: any) => {
       </Input>
       <Input variant={variant} size="lg">
         <InputField placeholder={`${variant} Size==lg`} />
+        <InputSlot>
+          <InputIcon as={Home} />
+        </InputSlot>
       </Input>
       <Input variant={variant} size="xl">
+        <InputSlot>
+          <InputIcon as={Home} />
+        </InputSlot>
         <InputField placeholder={`${variant} Size=xl`} />
+        <InputSlot>
+          <InputIcon as={Home} />
+        </InputSlot>
       </Input>
     </VStack>
   );

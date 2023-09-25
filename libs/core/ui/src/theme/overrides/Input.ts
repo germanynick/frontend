@@ -37,21 +37,46 @@ export const Input = {
     },
   },
   componentConfig: {
-    descendantStyle: ['_input'],
+    descendantStyle: ['_input', '_slot'],
   },
 };
 
 export const InputField = {
   theme: {
     fontFamily: '$body',
+    variants: {
+      size: {
+        sm: {
+          fontSize: '$sm',
+          lineHeight: '$2xs',
+        },
+        md: {
+          fontSize: '$md',
+          lineHeight: '$xs',
+        },
+        lg: {
+          fontSize: '$lg',
+          lineHeight: '$sm',
+        },
+        xl: {
+          fontSize: '$xl',
+          lineHeight: '$md',
+        },
+      },
+    },
   },
 };
 
-export const InputIcon = {
+export const InputSlot = {
   theme: {
-    pr: '$3',
+    paddingHorizontal: '$2',
     _icon: {
       color: '$textDark900',
     },
+  },
+  componentConfig: {
+    componentName: 'InputSlot',
+    ancestorStyle: ['_slot'],
+    descendantStyle: ['_icon'],
   },
 };
