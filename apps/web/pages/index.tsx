@@ -1,7 +1,7 @@
-import { SignInContainer } from '@mylong.frontend/features-signin';
+import { Text } from '@mylong.frontend/core-ui';
 
 export function Index() {
-  return <SignInContainer />;
+  return <Text>Home</Text>;
 }
 
 export default Index;

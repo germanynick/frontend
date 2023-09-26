@@ -21,11 +21,17 @@ const nextConfig = {
     '@react-native-aria',
     '@expo',
     '@legendapp',
+    '@legendapp/motion',
     '@gluestack-ui',
     '@gluestack-ui/themed',
-    '@gluestack-style',
+    '@gluestack-style/*',
     '@gluestack-style/react',
+    '@gluestack-style/provider',
+    '@gluestack-style/animation-plugin',
     'expo-linear-gradient',
+    'lucide-react-native',
+    'react-native-safe-area-context',
+    'ahooks',
   ],
   webpack: (config) => {
     config.resolve ??= {};

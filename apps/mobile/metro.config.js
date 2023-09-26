@@ -9,8 +9,6 @@ module.exports = (async () => {
   defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter((ext) => ext !== 'svg');
   defaultConfig.resolver.sourceExts = [...EXTENSIONS, ...defaultConfig.resolver.sourceExts];
 
-  console.log(defaultConfig.resolver.sourceExts);
-
   const nxConfig = await withNxMetro(defaultConfig, {
     // Change this to true to see debugging info.
     // Useful if you have issues resolving modules
@@ -23,6 +21,5 @@ module.exports = (async () => {
     watchFolders: [],
   });
 
-  console.log(nxConfig.resolver.sourceExts);
   return nxConfig;
 })();

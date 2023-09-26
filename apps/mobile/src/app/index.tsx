@@ -1,7 +1,8 @@
-import { SignInContainer } from '@mylong.frontend/features-signin';
+import React from 'react';
+import { Link } from '@mylong.frontend/core-router';
 
 export function Index() {
-  return <SignInContainer />;
+  return <Link href="/button">Link Button</Link>;
 }
 
 export default Index;
