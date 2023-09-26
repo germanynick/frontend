@@ -1,4 +1,4 @@
-import { Button, HStack, ButtonText, VStack, ButtonIcon, ButtonSpinner } from '@mylong.frontend/core-ui';
+import { Button, HStack, ButtonText, VStack, ButtonIcon, ButtonSpinner, Slide } from '@mylong.frontend/core-ui';
 import { Plus } from '@mylong.frontend/core-icons';
 import { Meta, Title } from '@mylong.frontend/core-router';
 
@@ -70,12 +70,14 @@ export const ButtonStory = () => {
     <>
       <Title>Button</Title>
       <Meta name="description" content="Button Meta" />
-      <HStack space="md" sx={{ '@base': { flexDirection: 'column' }, '@md': { flexDirection: 'row' } }}>
-        <ButtonSize />
-        {ACTIONS.map((action) => (
-          <BaseButton key={action} action={action} />
-        ))}
-      </HStack>
+      <Slide isOpen={true}>
+        <HStack space="md" sx={{ '@base': { flexDirection: 'column' }, '@md': { flexDirection: 'row' } }}>
+          <ButtonSize />
+          {ACTIONS.map((action) => (
+            <BaseButton key={action} action={action} />
+          ))}
+        </HStack>
+      </Slide>
     </>
   );
 };
