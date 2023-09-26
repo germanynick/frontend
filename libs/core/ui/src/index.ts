@@ -7,3 +7,4 @@ export { Heading } from './Heading';
 export { Text } from './Text';
 export * from './Collapse';
 export * from './Slide';
+export * from './Stepper';

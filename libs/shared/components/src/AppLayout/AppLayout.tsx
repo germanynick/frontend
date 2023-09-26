@@ -18,7 +18,9 @@ export const AppLayout: FC<IAppLayoutProps> = ({ children }) => {
           <LayoutHeader sx={{ '@base': { display: 'flex' }, '@md': { display: 'none' } }}>
             <AppHeader />
           </LayoutHeader>
-          <LayoutContent sx={{ '@base': { padding: '$4' }, '@lg': { maxWidth: '$3/4' } }}>{children}</LayoutContent>
+          <LayoutContent sx={{ '@base': { padding: '$4' }, '@lg': { paddingHorizontal: '15%' } }}>
+            {children}
+          </LayoutContent>
           <LayoutFooter sx={{ '@base': { display: 'flex' }, '@md': { display: 'none' } }}>
             <AppBottomNav />
           </LayoutFooter>
