@@ -5,24 +5,24 @@ import { Motion } from '@legendapp/motion';
 const TOP = {
   opacity: 0,
   x: 0,
-  y: -100,
+  y: -200,
 };
 
 const BOTTOM = {
   opacity: 0,
   x: 0,
-  y: 100,
+  y: 200,
 };
 
 const LEFT = {
   opacity: 0,
-  x: -100,
+  x: -200,
   y: 0,
 };
 
 const RIGHT = {
   opacity: 0,
-  x: 100,
+  x: 200,
   y: 0,
 };
 
@@ -37,6 +37,9 @@ export const DrawerContent = styled(
   {
     position: 'absolute',
     backgroundColor: '$white',
+    ':transition': {
+      duration: 300,
+    },
 
     variants: {
       isOpen: {

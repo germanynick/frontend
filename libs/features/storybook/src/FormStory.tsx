@@ -1,4 +1,4 @@
-import { Button, ButtonText, VStack } from '@mylong.frontend/core-ui';
+import { Button, ButtonText, Slide, VStack } from '@mylong.frontend/core-ui';
 import { InputField, PasswordField } from '@mylong.frontend/shared-fields';
 import { createGlobalForm, useFieldController } from '@mylong.frontend/core-form';
 import { yup } from '@mylong.frontend/core-validators';
@@ -20,12 +20,14 @@ export const FormStory = () => {
   const passwordController = useFieldController('password', form);
 
   return (
-    <VStack space="md">
-      <InputField label="Input Field" placeholder="Placeholder" controller={emailController} />
-      <PasswordField label="Password Field" placeholder="Placeholder" controller={passwordController} />
-      <Button onPress={onSubmit}>
-        <ButtonText>Submit </ButtonText>
-      </Button>
-    </VStack>
+    <Slide isOpen={true}>
+      <VStack space="md">
+        <InputField label="Input Field" placeholder="Placeholder" controller={emailController} />
+        <PasswordField label="Password Field" placeholder="Placeholder" controller={passwordController} />
+        <Button onPress={onSubmit}>
+          <ButtonText>Submit </ButtonText>
+        </Button>
+      </VStack>
+    </Slide>
   );
 };

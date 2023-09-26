@@ -10,6 +10,7 @@ import {
   HStack,
   Center,
   Text,
+  Slide,
 } from '@mylong.frontend/core-ui';
 
 const ANCHORS = ['left', 'right', 'top', 'bottom'];
@@ -45,10 +46,12 @@ const BaseDrawer = ({ anchor }: any) => {
 
 export const DrawerStory = () => {
   return (
-    <HStack space="md">
-      {ANCHORS.map((anchor) => {
-        return <BaseDrawer key={anchor} anchor={anchor} />;
-      })}
-    </HStack>
+    <Slide isOpen={true}>
+      <HStack space="md">
+        {ANCHORS.map((anchor) => {
+          return <BaseDrawer key={anchor} anchor={anchor} />;
+        })}
+      </HStack>
+    </Slide>
   );
 };

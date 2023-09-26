@@ -1,4 +1,4 @@
-import { HStack, Text, VStack } from '@mylong.frontend/core-ui';
+import { HStack, Slide, Text, VStack } from '@mylong.frontend/core-ui';
 import { ComponentProps } from 'react';
 
 const TYPES: ComponentProps<typeof Text>['size'][] = [
@@ -15,12 +15,14 @@ const TYPES: ComponentProps<typeof Text>['size'][] = [
 
 export const TextStory = () => {
   return (
-    <VStack space="md">
-      {TYPES.map((size) => (
-        <HStack key={size} space="md">
-          <Text size={size}>{size} For Example</Text>
-        </HStack>
-      ))}
-    </VStack>
+    <Slide isOpen={true}>
+      <VStack space="md">
+        {TYPES.map((size) => (
+          <HStack key={size} space="md">
+            <Text size={size}>{size} For Example</Text>
+          </HStack>
+        ))}
+      </VStack>
+    </Slide>
   );
 };
