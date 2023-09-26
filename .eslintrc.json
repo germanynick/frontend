@@ -30,6 +30,7 @@
         "@typescript-eslint/adjacent-overload-signatures": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "@typescript-eslint/ban-ts-comment": "off",
         "no-restricted-imports": [
           "error",
           {
@@ -37,6 +38,18 @@
               {
                 "name": "@gluestack-ui/themed",
                 "message": "Please use `@mylong.frontend/core-ui` instead."
+              },
+              {
+                "name": "lucide-react-native",
+                "message": "Please use `@mylong.frontend/core-icons` instead."
+              },
+              {
+                "name": "ahooks",
+                "message": "Please use `@mylong.frontend/core-hooks` instead."
+              },
+              {
+                "name": "zustand",
+                "message": "Please use `@mylong.frontend/core-zustand` instead."
               },
               {
                 "name": "yup",

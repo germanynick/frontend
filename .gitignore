@@ -130,6 +130,8 @@ npm-debug.*
 *.orig.*
 web-build/
 cache/
+apps/**/ios
+apps/**/android
 
 
 

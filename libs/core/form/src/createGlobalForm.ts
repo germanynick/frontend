@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-restricted-imports
 import { Config, FormApi, SubmissionErrors, createForm } from 'final-form';
-import { create } from 'zustand';
+import { create } from '@mylong.frontend/core-zustand';
 import { yup, yupResolver } from '@mylong.frontend/core-validators';
 
 type ISubmitFunction = <TFormValues>(

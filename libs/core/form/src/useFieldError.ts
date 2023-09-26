@@ -2,7 +2,7 @@
 import { FieldState } from 'final-form';
 import { useMemo } from 'react';
 
-export const useFieldError = ({
+export const useFieldError = <TFormValues extends object>({
   invalid,
   submitFailed,
   submitSucceeded,
@@ -10,7 +10,7 @@ export const useFieldError = ({
   visited,
   error,
   submitError,
-}: FieldState<any>) => {
+}: FieldState<TFormValues[keyof TFormValues]>) => {
   const finalError = useMemo(() => {
     const show = invalid && (touched || visited || submitFailed || submitSucceeded);
 

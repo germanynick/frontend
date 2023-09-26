@@ -1,14 +1,14 @@
 import React from 'react';
 import { SignInForm } from '../components/SignInForm';
 import { useSignInForm } from '../hooks/useSignInForm';
-import { useFieldState } from '@mylong.frontend/core-form';
+import { useFieldController } from '@mylong.frontend/core-form';
 import { useSignInFormSubmit } from '../hooks/useSignInFormSubmit';
 
 export const SignInContainer: React.FC = () => {
   const form = useSignInForm();
-  const emailField = useFieldState('email', form);
-  const passwordField = useFieldState('password', form);
+  const emailController = useFieldController('email', form);
+  const passwordController = useFieldController('password', form);
   const onSubmit = useSignInFormSubmit();
 
-  return <SignInForm emailField={emailField} passwordField={passwordField} onSubmit={onSubmit} />;
+  return <SignInForm emailController={emailController} passwordController={passwordController} onSubmit={onSubmit} />;
 };

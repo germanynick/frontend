@@ -10,58 +10,28 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "useDefineForClassFields": true,
     "baseUrl": ".",
     "paths": {
-      "@mylong.frontend/core-auth": [
-        "libs/core/auth/src/index.ts"
-      ],
-      "@mylong.frontend/core-form": [
-        "libs/core/form/src/index.ts"
-      ],
-      "@mylong.frontend/core-i18n": [
-        "libs/core/i18n/src/index.ts"
-      ],
-      "@mylong.frontend/core-router": [
-        "libs/core/router/src/index.ts"
-      ],
-      "@mylong.frontend/core-services": [
-        "libs/core/services/src/index.ts"
-      ],
-      "@mylong.frontend/core-storage": [
-        "libs/core/storage/src/index.ts"
-      ],
-      "@mylong.frontend/core-ui": [
-        "libs/core/ui/src/index.ts"
-      ],
-      "@mylong.frontend/core-validators": [
-        "libs/core/validators/src/index.ts"
-      ],
-      "@mylong.frontend/features-signin": [
-        "libs/features/signin/src/index.ts"
-      ],
-      "@mylong.frontend/shared-components": [
-        "libs/shared/components/src/index.ts"
-      ],
-      "@mylong.frontend/shared-fields": [
-        "libs/shared/fields/src/index.ts"
-      ],
-      "@mylong.frontend/shared-hooks": [
-        "libs/shared/hooks/src/index.ts"
-      ],
-      "@mylong.frontend/shared-layouts": [
-        "libs/shared/layouts/src/index.ts"
-      ]
+      "@mylong.frontend/core-form": ["libs/core/form/src/index.ts"],
+      "@mylong.frontend/core-hooks": ["libs/core/hooks/src/index.ts"],
+      "@mylong.frontend/core-i18n": ["libs/core/i18n/src/index.ts"],
+      "@mylong.frontend/core-icons": ["libs/core/icons/src/index.ts"],
+      "@mylong.frontend/core-router": ["libs/core/router/src/index.ts"],
+      "@mylong.frontend/core-storage": ["libs/core/storage/src/index.ts"],
+      "@mylong.frontend/core-ui": ["libs/core/ui/src/index.ts"],
+      "@mylong.frontend/core-validators": ["libs/core/validators/src/index.ts"],
+      "@mylong.frontend/core-zustand": ["libs/core/zustand/src/index.ts"],
+      "@mylong.frontend/features-signin": ["libs/features/signin/src/index.ts"],
+      "@mylong.frontend/features-storybook": ["libs/features/storybook/src/index.ts"],
+      "@mylong.frontend/shared-components": ["libs/shared/components/src/index.ts"],
+      "@mylong.frontend/shared-fields": ["libs/shared/fields/src/index.ts"],
+      "@mylong.frontend/shared-services": ["libs/shared/services/src/index.ts"],
+      "@mylong.frontend/shared-store": ["libs/shared/store/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

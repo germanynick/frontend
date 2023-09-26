@@ -21,7 +21,10 @@
           "react-dom",
           "expo-router",
           "next/link",
-          "next/router"
+          "next/router",
+          "next/navigation",
+          "expo-router/head",
+          "next/head"
         ],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "assets": [
