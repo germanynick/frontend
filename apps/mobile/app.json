@@ -15,18 +15,17 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/cb1c6f2a-cf2a-4fab-aced-3487493125f9"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.germanynick.mobile"
+      "bundleIdentifier": "com.mylong.mobile"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.mylong.mobile"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -34,13 +33,16 @@
     },
     "plugins": [
       [
+        "expo-router",
+        {
+          "origin": "https://mylong.frontend"
+        }
+      ],
+      [
         "@config-plugins/detox",
         {
           "skipProguard": false,
-          "subdomains": [
-            "10.0.2.2",
-            "localhost"
-          ]
+          "subdomains": ["10.0.2.2", "localhost"]
         }
       ]
     ],
