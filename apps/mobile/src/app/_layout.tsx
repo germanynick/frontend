@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import { Slot } from 'expo-router';
-import { ThemeProvider } from '@mylong.frontend/core-ui';
+import { Slot, Stack } from 'expo-router';
+import { Slide, ThemeProvider } from '@mylong.frontend/core-ui';
 import { Inter_500Medium, useFonts } from '@expo-google-fonts/inter';
 import { AppLayout as BaseAppLayout } from '@mylong.frontend/shared-components';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
@@ -24,13 +24,15 @@ const AppLayout = () => {
   }
 
   return (
-    <ThemeProvider>
-      <SafeAreaView onLayout={onLayoutRootView}>
-        <BaseAppLayout>
-          <Slot />
-        </BaseAppLayout>
-      </SafeAreaView>
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <SafeAreaView onLayout={onLayoutRootView}>
+          <BaseAppLayout>
+            <Slot />
+          </BaseAppLayout>
+        </SafeAreaView>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 };
 

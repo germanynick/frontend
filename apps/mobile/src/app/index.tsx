@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text } from '@mylong.frontend/core-ui';
+import { Link } from '@mylong.frontend/core-router';
 
 export function Index() {
-  return <Text>Home</Text>;
+  return <Link href="/button">Link Button</Link>;
 }
 
 export default Index;

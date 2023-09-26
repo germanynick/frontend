@@ -20,7 +20,6 @@ export const AppLayout: FC<IAppLayoutProps> = ({ children }) => {
     <Layout>
       <HStack height="$full">
         <AppSideBar />
-
         <VStack width="$full" flexShrink={1}>
           <LayoutHeader sx={{ '@base': { display: 'flex' }, '@md': { display: 'none' } }}>
             <AppHeader />
