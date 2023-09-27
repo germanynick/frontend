@@ -5,6 +5,7 @@ import { Inter_500Medium, useFonts } from '@expo-google-fonts/inter';
 import { AppLayout as BaseAppLayout } from '@mylong.frontend/shared-components';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
+
 import '../styles/index.css';
 
 SplashScreen.preventAutoHideAsync();

@@ -1,20 +1,10 @@
 import { FC, createContext, useContext } from 'react';
-import { View as BaseView, Text as BaseText } from 'react-native';
+import { View as BaseView, Text as BaseText, Platform } from 'react-native';
 import { tv } from 'tailwind-variants';
 import { enableCSSInterop } from 'react-native-css-interop';
 
-const View = enableCSSInterop(BaseView, {
-  className: {
-    target: 'style',
-    nativeStyleToProp: {},
-  },
-});
-const Text = enableCSSInterop(BaseText, {
-  className: {
-    target: 'style',
-    nativeStyleToProp: {},
-  },
-});
+const View = enableCSSInterop(BaseView, { className: 'style' });
+const Text = enableCSSInterop(BaseText, { className: 'style' });
 
 const createStyles = tv({
   slots: {
@@ -25,7 +15,7 @@ const createStyles = tv({
     title: 'text-sm text-center font-body font-bold text-content-very-dark leading-5 self-center truncate w-full ',
     description:
       'text-sm text-center font-body font-normal text-content-very-dark leading-5 self-center truncate w-full ',
-    text: 'text-base  font-body font-semibold text-content-very-dark',
+    text: 'text-base font-body font-semibold text-content-very-dark',
     icon: '',
     connector: 'absolute h-[1px] w-3/5 bg-content-light top-[24px] left-[70%] z-[-1]',
   },
@@ -33,7 +23,7 @@ const createStyles = tv({
     anchor: {
       vertical: {
         root: 'flex-col',
-        item: 'w-full items-start py-[16px]',
+        item: 'relative w-full h-[80px] items-start py-[16px]',
         title: 'absolute text-start top-[20px] left-0 pl-[64px] w-full',
         description: 'absolute text-start top-[42px] left-0 pl-[64px] w-full',
         connector: 'top-[68px] left-[24px] h-[24px] w-[1px]',

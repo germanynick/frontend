@@ -24,5 +24,5 @@ module.exports = {
     },
   },
   important: 'html',
-  presets: [require('nativewind/preset').default],
+  presets: [require('nativewind/preset')],
 };
