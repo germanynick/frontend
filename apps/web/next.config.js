@@ -15,6 +15,8 @@ const nextConfig = {
     svgr: false,
   },
   transpilePackages: [
+    'nativewind',
+    'react-native-css-interop',
     'react-native',
     'react-native-web',
     'react-native-svg',

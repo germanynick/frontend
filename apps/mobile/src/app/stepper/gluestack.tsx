@@ -12,6 +12,7 @@ import {
 } from '@mylong.frontend/core-ui';
 
 import { Calendar, Check } from '@mylong.frontend/core-icons';
+import { Meta, Title } from '@mylong.frontend/core-router';
 
 const STEPS = [
   { icon: Check, title: 'Completed', states: { active: true } },
@@ -27,35 +28,40 @@ const STEPS = [
 
 export const Stepper = () => {
   return (
-    <VStack space="md">
-      <GStepper>
-        {STEPS.map(({ icon, title, states }, index) => (
-          <GStepperItem key={index} states={states}>
-            {index !== STEPS.length - 1 && <GStepperConnector />}
-            <GStepperCircle>
-              <GStepperSlot>{icon ? <GStepperIcon as={icon} /> : <GStepperText>{index}</GStepperText>}</GStepperSlot>
-            </GStepperCircle>
+    <>
+      <Title>Stepper</Title>
+      <Meta name="description" content="Stepper"></Meta>
 
-            <GStepperTitle>{title}</GStepperTitle>
-            <GStepperDescription>{title} Description</GStepperDescription>
-          </GStepperItem>
-        ))}
-      </GStepper>
+      <VStack space="md">
+        <GStepper>
+          {STEPS.map(({ icon, title, states }, index) => (
+            <GStepperItem key={index} states={states}>
+              {index !== STEPS.length - 1 && <GStepperConnector />}
+              <GStepperCircle>
+                <GStepperSlot>{icon ? <GStepperIcon as={icon} /> : <GStepperText>{index}</GStepperText>}</GStepperSlot>
+              </GStepperCircle>
 
-      <GStepper anchor="vertical">
-        {STEPS.map(({ icon, title, states }, index) => (
-          <GStepperItem key={index} states={states}>
-            {index !== STEPS.length - 1 && <GStepperConnector />}
-            <GStepperCircle>
-              <GStepperSlot>{icon ? <GStepperIcon as={icon} /> : <GStepperText>{index}</GStepperText>}</GStepperSlot>
-            </GStepperCircle>
+              <GStepperTitle>{title}</GStepperTitle>
+              <GStepperDescription>{title} Description</GStepperDescription>
+            </GStepperItem>
+          ))}
+        </GStepper>
 
-            <GStepperTitle>{title}</GStepperTitle>
-            <GStepperDescription>{title} Description</GStepperDescription>
-          </GStepperItem>
-        ))}
-      </GStepper>
-    </VStack>
+        <GStepper anchor="vertical">
+          {STEPS.map(({ icon, title, states }, index) => (
+            <GStepperItem key={index} states={states}>
+              {index !== STEPS.length - 1 && <GStepperConnector />}
+              <GStepperCircle>
+                <GStepperSlot>{icon ? <GStepperIcon as={icon} /> : <GStepperText>{index}</GStepperText>}</GStepperSlot>
+              </GStepperCircle>
+
+              <GStepperTitle>{title}</GStepperTitle>
+              <GStepperDescription>{title} Description</GStepperDescription>
+            </GStepperItem>
+          ))}
+        </GStepper>
+      </VStack>
+    </>
   );
 };
 

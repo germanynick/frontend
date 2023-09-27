@@ -14,18 +14,21 @@ const SIZES: ComponentProps<typeof Avatar>['size'][] = ['xs', 'sm', 'md', 'lg', 
 
 export const AvatarStory = () => {
   return (
-    <Slide isOpen={true}>
+    <Slide
+      //@ts-ignore
+      isOpen={true}
+    >
       <VStack space="md">
         <HStack space="md">
-          {SIZES.map((size) => (
-            <Avatar key={size} size={size}>
+          {SIZES.map((size, index) => (
+            <Avatar key={index} size={size}>
               <AvatarFallbackText>Sandeep Srivastava</AvatarFallbackText>
             </Avatar>
           ))}
         </HStack>
         <HStack space="md">
-          {SIZES.map((size) => (
-            <Avatar key={size} size={size}>
+          {SIZES.map((size, index) => (
+            <Avatar key={index} size={size}>
               <AvatarFallbackText>Sandeep Srivastava</AvatarFallbackText>
               <AvatarBadge />
             </Avatar>
@@ -33,8 +36,8 @@ export const AvatarStory = () => {
         </HStack>
 
         <HStack space="md">
-          {SIZES.map((size) => (
-            <Avatar key={size} size={size}>
+          {SIZES.map((size, index) => (
+            <Avatar key={index} size={size}>
               <AvatarFallbackText>Sandeep Srivastava</AvatarFallbackText>
               <AvatarImage
                 source={{
@@ -46,8 +49,8 @@ export const AvatarStory = () => {
           ))}
         </HStack>
 
-        {SIZES.map((size) => (
-          <AvatarGroup flexDirection="row" key={size}>
+        {SIZES.map((size, index) => (
+          <AvatarGroup flexDirection="row" key={index}>
             <Avatar size={size}>
               <AvatarFallbackText>+ 3</AvatarFallbackText>
             </Avatar>

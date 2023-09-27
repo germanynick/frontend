@@ -32,7 +32,10 @@ const BaseDrawer = ({ anchor }: any) => {
       <Button {...buttonEvents}>
         <ButtonText>{anchor}</ButtonText>
       </Button>
-      <Drawer isOpen={isOpen}>
+      <Drawer
+        //@ts-ignore
+        isOpen={isOpen}
+      >
         <DrawerBackdrop {...backdropEvents} />
         <DrawerContent anchor={anchor}>
           <Center minWidth="$20" minHeight="$20">
@@ -46,7 +49,7 @@ const BaseDrawer = ({ anchor }: any) => {
 
 export const DrawerStory = () => {
   return (
-    <Slide isOpen={true}>
+    <Slide isOpen="true">
       <HStack space="md">
         {ANCHORS.map((anchor) => {
           return <BaseDrawer key={anchor} anchor={anchor} />;
