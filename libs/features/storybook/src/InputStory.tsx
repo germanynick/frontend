@@ -3,7 +3,7 @@ import { Home } from '@mylong.frontend/core-icons';
 
 const BaseInput = ({ variant }: any) => {
   return (
-    <Slide isOpen={true}>
+    <Slide isOpen="true">
       <VStack space="md">
         <Input variant={variant} size="sm">
           <InputField placeholder={`${variant} Size=sm`} />

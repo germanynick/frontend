@@ -1,4 +1,5 @@
-import { styled } from '@gluestack-style/react';
+// eslint-disable-next-line no-restricted-imports
+import { styled } from '@gluestack-ui/themed';
 import { AnimationResolver } from '@gluestack-style/animation-plugin';
 import { Motion } from '@legendapp/motion';
 
@@ -48,7 +49,6 @@ export const Slide = styled(
           //@ts-ignore
           ':animate': CENTER,
         },
-        false: {},
       },
       anchor: {
         left: {
@@ -109,12 +109,6 @@ export const Slide = styled(
     ],
     defaultProps: {
       anchor: 'right',
-
-      //@ts-ignore
-      isOpen: false,
-
-      //@ts-ignore
-      disabledAnimation: false,
     },
   },
   { componentName: 'Slide' },

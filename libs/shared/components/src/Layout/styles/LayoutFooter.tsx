@@ -4,6 +4,7 @@ export const LayoutFooter = styled(
   View,
   {
     height: 'auto',
+    backgroundColor: '$white',
   },
   { componentName: 'LayoutFooter' },
 );

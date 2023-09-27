@@ -3,7 +3,7 @@ import { SignInContainer } from '@mylong.frontend/features-signin';
 
 export const SignInStory = () => {
   return (
-    <Slide isOpen={true}>
+    <Slide isOpen="true">
       <SignInContainer />
     </Slide>
   );

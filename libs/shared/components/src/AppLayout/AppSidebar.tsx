@@ -33,9 +33,7 @@ const MENU: IItem[] = [
     label: 'Stepper',
     items: [
       { label: 'Gluestack', path: '/stepper/gluestack' },
-      { label: 'Shadcn', path: '/stepper/shadcn' },
       { label: 'Taillwind', path: '/stepper/tailwind' },
-      { label: 'Daisy', path: '/stepper/daisy' },
     ],
   },
 
@@ -107,7 +105,10 @@ export const MenuItem: FC<IItem> = ({ icon, label, items, path }) => {
         )}
       </SideBarItem>
       {items?.length && (
-        <Collapse isOpen={expanded}>
+        <Collapse
+          //@ts-ignore
+          isOpen={expanded}
+        >
           {items?.map(({ label, path }, index) => (
             <SideBarItem key={index} states={{ active: path === pathname }}>
               <SideBarSlot>

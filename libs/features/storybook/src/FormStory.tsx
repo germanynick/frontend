@@ -20,7 +20,7 @@ export const FormStory = () => {
   const passwordController = useFieldController('password', form);
 
   return (
-    <Slide isOpen={true}>
+    <Slide isOpen="true">
       <VStack space="md">
         <InputField label="Input Field" placeholder="Placeholder" controller={emailController} />
         <PasswordField label="Password Field" placeholder="Placeholder" controller={passwordController} />

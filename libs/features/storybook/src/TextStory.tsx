@@ -15,11 +15,11 @@ const TYPES: ComponentProps<typeof Text>['size'][] = [
 
 export const TextStory = () => {
   return (
-    <Slide isOpen={true}>
+    <Slide isOpen="true">
       <VStack space="md">
-        {TYPES.map((size) => (
-          <HStack key={size} space="md">
-            <Text size={size}>{size} For Example</Text>
+        {TYPES.map((size, index) => (
+          <HStack key={index} space="md">
+            <Text size={size}>{String(size)} For Example</Text>
           </HStack>
         ))}
       </VStack>

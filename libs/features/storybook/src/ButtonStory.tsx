@@ -70,7 +70,10 @@ export const ButtonStory = () => {
     <>
       <Title>Button</Title>
       <Meta name="description" content="Button Meta" />
-      <Slide isOpen={true}>
+      <Slide
+        //@ts-ignore
+        isOpen={true}
+      >
         <HStack space="md" sx={{ '@base': { flexDirection: 'column' }, '@md': { flexDirection: 'row' } }}>
           <ButtonSize />
           {ACTIONS.map((action) => (

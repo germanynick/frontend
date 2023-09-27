@@ -18,10 +18,10 @@ const FONT_WEIGHTS: ComponentProps<typeof Heading>['fontWeight'][] = [
 
 export const HeaderStory = () => {
   return (
-    <Slide isOpen={true}>
+    <Slide isOpen="true">
       <VStack space="md">
-        {TYPES.map((size) => (
-          <HStack key={size} space="md">
+        {TYPES.map((size, index) => (
+          <HStack key={index} space="md">
             <Heading size={size}>{size} (Default)</Heading>
             {FONT_WEIGHTS.map((fontWeight) => (
               <Heading key={fontWeight} size={size} fontWeight={fontWeight}>
